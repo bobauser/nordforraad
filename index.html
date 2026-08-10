@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ordlæring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --menu-1:#241458;
+    --menu-2:#b3562f;
+    --flat-bg:#1b1a26;
+    --flat-bg-2:#25233a;
+    --card-bg:#ffffff;
+    --pill-bg:#f4f1ea;
+    --pill-bg-selected:#241458;
+    --pill-text:#221f33;
+    --text-light:#f4f1ea;
+    --text-muted:#c9c4d8;
+    --accent-gold:#e8c547;
+    --correct:#3fae5a;
+    --wrong:#d9534f;
+    --final-1:#0a0a0c;
+    --final-2:#333338;
+    --score-gray:#8a8496;
+    --score-red:#e2685f;
+    --score-orange:#e0a545;
+    --score-green:#4dbb72;
+    --radius-pill: 999px;
+    --radius-card: 18px;
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "Sora", "Segoe UI", sans-serif;
+    font-family: var(--font-body);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    background: linear-gradient(160deg, var(--menu-1), var(--menu-2));
+    color:var(--text-light);
+    transition: background 0.4s ease;
+  }
+  body.screen-quiz, body.screen-wordlist-detail{
+    background: linear-gradient(180deg, var(--flat-bg), var(--flat-bg-2));
+  }
+  body.final-exam{
+    background: linear-gradient(160deg, var(--final-1), var(--final-2)) !important;
+  }
+  #app{
+    max-width:720px;
+    margin:0 auto;
+    min-height:100vh;
+    padding:28px 24px 60px;
+    position:relative;
+  }
+  .hidden{display:none !important;}
+
+  /* ---------- header / profile ---------- */
+  .topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:28px;
+  }
+  .brand{
+    font-size:1.6rem;
+    letter-spacing:0.01em;
+    font-family:var(--font-display);
+    font-weight:600;
+  }
+  .brand small{
+    display:block;
+    font-size:0.85rem;
+    color:var(--text-muted);
+    font-family:var(--font-body);
+    font-weight:400;
+    margin-top:2px;
+  }
+  #profileBtn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.25);
+    color:var(--text-light);
+    border-radius:var(--radius-pill);
+    padding:8px 14px;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:0.95rem;
+  }
+  #profileBtn .avatar{font-size:1.3rem;}
+  #profileBtn:hover{background:rgba(255,255,255,0.15);}
+
+  /* ---------- menu ---------- */
+  .menu-grid{display:flex;flex-direction:column;gap:16px;margin-top:12px;}
+  .menu-card{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:var(--radius-card);
+    padding:20px 22px;
+    cursor:pointer;
+    text-align:left;
+    color:var(--text-light);
+    font-family:inherit;
+    font-size:1.1rem;
+  }
+  .menu-card small{display:block;color:var(--text-muted);font-size:0.85rem;margin-top:4px;}
+  .menu-card:hover{background:rgba(255,255,255,0.14);}
+
+  .final-btn{
+    background:#050505;
+    border:2px solid #ffffff;
+    color:var(--accent-gold);
+    border-radius:14px;
+    padding:20px 22px;
+    font-size:1.15rem;
+    font-family:inherit;
+    cursor:pointer;
+    text-align:left;
+  }
+  .final-btn small{display:block;color:#cfcfcf;font-size:0.85rem;margin-top:4px;}
+
+  .sprakpoeng-banner{
+    margin-top:24px;
+    text-align:center;
+    color:var(--text-muted);
+    font-size:0.95rem;
+  }
+  .sprakpoeng-banner b{color:var(--accent-gold);font-size:1.1rem;}
+
+  /* ---------- wordlist ---------- */
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    color:var(--text-light);
+    cursor:pointer;
+    margin-bottom:18px;
+    font-size:1rem;
+    opacity:0.85;
+  }
+  .back-link:hover{opacity:1;}
+  h1.screen-title{margin:0 0 18px;font-weight:500;font-size:1.9rem;font-family:var(--font-display);}
+  #wordSearch{
+    width:100%;
+    padding:12px 16px;
+    border-radius:var(--radius-pill);
+    border:1px solid rgba(255,255,255,0.3);
+    background:rgba(255,255,255,0.9);
+    color:#222;
+    font-family:inherit;
+    font-size:1rem;
+    margin-bottom:18px;
+  }
+  .word-row{
+    display:flex;
+    align-items:stretch;
+    border-radius:var(--radius-pill);
+    background:var(--pill-bg);
+    color:var(--pill-text);
+    margin-bottom:10px;
+    overflow:hidden;
+  }
+  .word-row .check-area{
+    padding:12px 18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex:1;
+    cursor:pointer;
+    user-select:none;
+    border-radius:var(--radius-pill) 0 0 var(--radius-pill);
+    transition: background 0.2s ease;
+  }
+  .word-row.selected .check-area{background:#d8cffb;}
+  .word-row .check-area input{width:16px;height:16px;}
+  .word-row .score-badge{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:0.95rem;
+    padding:2px 10px;
+    border-radius:var(--radius-pill);
+    margin-right:10px;
+    min-width:34px;
+    text-align:center;
+  }
+  .word-row .score-badge.neutral{background:#ece9e2;color:var(--score-gray);}
+  .word-row .score-badge.red{background:#fbe1de;color:#b8382c;}
+  .word-row .score-badge.orange{background:#fbead2;color:#a5680e;}
+  .word-row .score-badge.green{background:#dff3e4;color:#217a45;}
+  .word-row .detail-area{
+    padding:12px 20px 12px 4px;
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+    border-left:1px solid rgba(0,0,0,0.08);
+    color:#6a6a6a;
+  }
+  .word-row .detail-area:hover{color:#221f33;background:rgba(0,0,0,0.04);}
+  .empty-note{color:var(--text-muted);text-align:center;margin-top:30px;}
+  .wordlist-toolbar{display:flex;justify-content:flex-end;margin-bottom:14px;}
+
+  .word-tag{
+    font-size:0.68rem;
+    padding:2px 9px;
+    border-radius:var(--radius-pill);
+    background:rgba(120,120,130,0.16);
+    color:#6b6b76;
+    margin-left:8px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    white-space:nowrap;
+    vertical-align:middle;
+  }
+  .word-row.ineligible{opacity:0.6;}
+  .word-row.ineligible .check-area{cursor:not-allowed;background:#e9e7e2 !important;}
+  .word-row.ineligible .ord-text{color:#8a8496;}
+
+  .growth-panel{
+    text-align:center;
+    background:rgba(255,255,255,0.08);
+    border-radius:var(--radius-card);
+    padding:26px 20px;
+    margin-bottom:22px;
+  }
+  .growth-panel .growth-pct{
+    font-family:var(--font-display);
+    font-size:2.6rem;
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .growth-panel .growth-label{color:var(--text-muted);font-size:0.9rem;margin-top:4px;}
+  .growth-panel .growth-meta{display:flex;justify-content:center;gap:26px;margin-top:16px;font-size:0.85rem;color:var(--text-muted);}
+  .growth-panel .growth-meta b{color:var(--text-light);display:block;font-size:1.1rem;font-family:var(--font-display);}
+
+  /* ---------- modal ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;
+    background:rgba(0,0,0,0.55);
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;
+    z-index:50;
+  }
+  .modal-box{
+    background:#fff;
+    color:#221f33;
+    border-radius:20px;
+    max-width:420px;
+    width:100%;
+    padding:28px;
+    text-align:center;
+  }
+  .modal-box h2{margin:0 0 18px;font-weight:600;font-family:var(--font-display);font-size:1.6rem;}
+  .modal-box .def-block{margin-bottom:16px;text-align:left;}
+  .modal-box .def-label{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:#8a8496;margin-bottom:4px;}
+  .modal-box .def-text{font-size:1rem;line-height:1.4;}
+  .modal-close{
+    margin-top:10px;
+    background:#221f33;
+    color:#fff;
+    border:none;
+    border-radius:var(--radius-pill);
+    padding:10px 22px;
+    cursor:pointer;
+    font-family:inherit;
+  }
+
+  /* profile modal */
+  .emoji-choices{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0;}
+  .emoji-choices button{
+    font-size:1.4rem;
+    background:#f4f1ea;
+    border:2px solid transparent;
+    border-radius:12px;
+    width:46px;height:46px;
+    cursor:pointer;
+  }
+  .emoji-choices button.active{border-color:#241458;}
+  .modal-box input[type=text]{
+    width:100%;padding:10px 14px;border-radius:10px;border:1px solid #ccc;
+    font-family:inherit;font-size:1rem;margin-top:6px;
+  }
+
+  /* ---------- quiz setup ---------- */
+  .setup-row{margin-bottom:20px;}
+  .setup-row .label{font-size:0.9rem;color:var(--text-muted);margin-bottom:8px;}
+  .choice-pills{display:flex;gap:10px;flex-wrap:wrap;}
+  .choice-pill{
+    padding:10px 18px;border-radius:var(--radius-pill);
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.3);
+    color:var(--text-light);cursor:pointer;font-family:inherit;font-size:0.95rem;
+  }
+  .choice-pill.active{background:var(--accent-gold);color:#221f33;border-color:var(--accent-gold);}
+  .primary-btn{
+    background:var(--accent-gold);
+    color:#221f33;
+    border:none;
+    padding:14px 26px;
+    border-radius:var(--radius-pill);
+    font-size:1.05rem;
+    font-family:inherit;
+    cursor:pointer;
+    margin-top:8px;
+  }
+  .primary-btn:disabled{opacity:0.4;cursor:not-allowed;}
+  .secondary-btn{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.4);
+    color:var(--text-light);
+    padding:12px 22px;
+    border-radius:var(--radius-pill);
+    font-family:inherit;
+    cursor:pointer;
+  }
+
+  /* ---------- quiz screen ---------- */
+  .quiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .quiz-mode-label{color:var(--accent-gold);font-weight:600;display:flex;align-items:center;gap:6px;}
+  body.final-exam .quiz-mode-label{font-size:1.2rem;}
+  .quiz-progress{color:var(--text-muted);}
+  body.final-exam .quiz-progress{color:var(--accent-gold);}
+  hr.rule{border:none;border-top:1px solid rgba(255,255,255,0.25);margin:10px 0 30px;}
+  .question-card{text-align:center;margin-bottom:30px;}
+  .question-kicker{color:var(--text-muted);font-size:0.95rem;margin-bottom:16px;}
+  .question-text{font-size:1.35rem;line-height:1.55;font-family:var(--font-display);font-style:italic;font-weight:500;}
+  body.final-exam .question-text{color:#fff;}
+  .quiz-options{display:flex;flex-direction:column;gap:12px;margin-top:26px;}
+  .quiz-option{
+    background:var(--pill-bg);
+    color:var(--pill-text);
+    border:none;
+    padding:14px 20px;
+    border-radius:var(--radius-pill);
+    font-family:inherit;
+    font-size:1.05rem;
+    cursor:pointer;
+    text-align:left;
+  }
+  .quiz-option.correct{background:#c9f0d3;}
+  .quiz-option.wrong{background:#f6cfcd;}
+  .quiz-option:disabled{cursor:default;}
+  .write-answer-row{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:26px;}
+  .write-answer-row label{color:var(--text-muted);}
+  body.final-exam .write-answer-row label{color:var(--text-light);}
+  .write-answer-row input{
+    padding:12px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.3);
+    background:rgba(255,255,255,0.9);color:#222;font-family:inherit;font-size:1rem;
+    width:220px;
+  }
+  .feedback-row{text-align:center;margin-top:20px;min-height:26px;color:var(--text-muted);}
+  .feedback-row.correct{color:var(--correct);}
+  .feedback-row.wrong{color:var(--wrong);}
+  .quiz-actions{display:flex;justify-content:center;gap:12px;margin-top:26px;}
+  .reveal-box{
+    text-align:center;margin-top:18px;padding:16px;border-radius:14px;
+    background:rgba(255,255,255,0.08);
+  }
+  .reveal-box .answer-word{font-size:1.4rem;color:var(--accent-gold);margin:6px 0;}
+  .reveal-box .reveal-flex{display:flex;justify-content:center;align-items:flex-start;gap:28px;flex-wrap:wrap;}
+  .your-guesses{text-align:center;}
+  .your-guesses .def-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:6px;}
+  .guesses-stack{display:inline-flex;flex-direction:column;}
+  .guess-line{
+    padding:3px 4px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+    color:#f3b3ad;
+    font-family:var(--font-display);
+    font-style:italic;
+  }
+  .guess-line:last-child{border-bottom:none;}
+
+  .score-delta-popup{
+    text-align:center;margin-top:16px;font-family:var(--font-display);font-size:1.1rem;
+    display:flex;justify-content:center;align-items:baseline;gap:8px;color:var(--text-muted);
+  }
+  .score-delta-popup .total{font-weight:600;color:var(--text-light);display:inline-block;transition:transform 0.12s ease;}
+  .score-delta-popup .total.bump{transform:translateY(-6px);}
+  .score-delta-popup .delta{font-size:0.95rem;font-family:var(--font-body);font-weight:600;transition:opacity 0.3s ease;}
+  .score-delta-popup .delta.plus{color:var(--correct);}
+  .score-delta-popup .delta.minus{color:var(--wrong);}
+  .score-delta-popup .delta.fade-out{opacity:0;}
+
+  #skipNextBtn{margin-top:16px;}
+  #finishEarlyBtn.finish-ready{
+    background:var(--correct);
+    color:#fff;
+    border-color:var(--correct);
+  }
+  .cancel-quiz-link{
+    display:block;
+    text-align:center;
+    margin-top:34px;
+    color:var(--text-muted);
+    font-size:0.85rem;
+    cursor:pointer;
+    opacity:0.75;
+  }
+  .cancel-quiz-link:hover{opacity:1;color:var(--wrong);}
+
+  .checkpoint-box{text-align:center;padding-top:50px;}
+  .checkpoint-box h1{font-family:var(--font-display);font-weight:600;font-size:1.7rem;margin-bottom:6px;}
+  .checkpoint-box p.sub{color:var(--text-muted);margin-bottom:26px;}
+  .checkpoint-box .score-box{
+    display:inline-block;background:rgba(255,255,255,0.1);
+    border-radius:20px;padding:22px 36px;margin-bottom:30px;
+  }
+  .checkpoint-box .score-box .big{font-size:2.1rem;color:var(--accent-gold);font-family:var(--font-display);}
+  .checkpoint-box .score-box .lbl{color:var(--text-muted);font-size:0.9rem;}
+  .checkpoint-actions{display:flex;flex-direction:column;gap:12px;align-items:center;}
+
+  .special-chars-row{
+    display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:14px;
+  }
+  .special-chars-row button{
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.25);
+    color:var(--text-light);
+    border-radius:8px;
+    padding:6px 11px;
+    font-family:var(--font-display);
+    font-size:1.05rem;
+    cursor:pointer;
+  }
+  .special-chars-row button:hover{background:rgba(255,255,255,0.22);}
+  body.final-exam .special-chars-row button{color:#fff;border-color:rgba(255,255,255,0.35);}
+
+  .timer-bar-wrap{
+    margin-top:24px;
+    text-align:center;
+    opacity:0;
+    transform:translateY(8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .timer-bar-wrap.visible{opacity:1;transform:translateY(0);}
+  .timer-emoji{
+    display:inline-block;
+    font-size:1.1rem;
+    margin-bottom:5px;
+    animation: timerBounce 1.1s ease-in-out infinite;
+  }
+  @keyframes timerBounce{
+    0%,100%{transform:translateY(0) rotate(0deg);}
+    25%{transform:translateY(-4px) rotate(-10deg);}
+    50%{transform:translateY(0) rotate(0deg);}
+    75%{transform:translateY(-2px) rotate(9deg);}
+  }
+  .timer-bar-track{
+    height:8px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.15);
+    overflow:hidden;
+    max-width:260px;
+    margin:0 auto;
+  }
+  .timer-bar-fill{
+    height:100%;
+    border-radius:999px;
+    background:rgba(255,255,255,0.55);
+    width:100%;
+  }
+
+  /* ---------- victory ---------- */
+  .victory{text-align:center;padding-top:40px;}
+  .victory h1{font-size:2rem;margin-bottom:6px;font-family:var(--font-display);font-weight:600;display:inline-flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .victory p.sub{color:var(--text-muted);margin-bottom:30px;font-size:1.05rem;}
+  .victory .score-box{
+    display:inline-block;background:rgba(255,255,255,0.1);
+    border-radius:20px;padding:24px 40px;margin-bottom:30px;
+  }
+  .victory .score-box .big{font-size:2.4rem;color:var(--accent-gold);}
+  .victory .score-box .lbl{color:var(--text-muted);font-size:0.9rem;}
+  .victory.bad h1{color:var(--wrong);}
+  .victory.bad .score-box .big{color:var(--wrong);}
+
+  .victory-emoji{
+    display:inline-block;
+    font-size:2rem;
+    opacity:0;
+    transform:rotate(-220deg);
+    animation: emojiSpinIn 0.7s cubic-bezier(.2,.8,.3,1) forwards;
+  }
+  @keyframes emojiSpinIn{
+    from{opacity:0;transform:rotate(-220deg);}
+    to{opacity:1;transform:rotate(0deg);}
+  }
+
+  /* ---------- import ---------- */
+  textarea#importText{
+    width:100%;min-height:180px;border-radius:14px;border:1px solid rgba(255,255,255,0.3);
+    background:rgba(255,255,255,0.9);color:#222;font-family:monospace;font-size:0.95rem;
+    padding:14px;margin-bottom:14px;
+  }
+  .import-preview{max-height:260px;overflow:auto;margin-bottom:16px;}
+  .import-row{
+    display:flex;justify-content:space-between;background:rgba(255,255,255,0.08);
+    border-radius:10px;padding:10px 14px;margin-bottom:6px;font-size:0.9rem;
+  }
+  .import-row .missing{color:#f6b8b8;}
+  .hint{color:var(--text-muted);font-size:0.85rem;margin-bottom:16px;line-height:1.5;}
+
+  @media (max-width:480px){
+    #app{padding:20px 16px 50px;}
+    .write-answer-row{flex-direction:column;}
+  }
+
+  /* ---------- intro / rocket loading screen ---------- */
+  #screen-intro{
+    position:fixed;inset:0;z-index:200;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background: linear-gradient(160deg, var(--final-1), var(--final-2));
+    transition: opacity 0.6s ease;
+  }
+  #screen-intro.fade-out{opacity:0;pointer-events:none;}
+  #screen-intro.hidden{display:none;}
+
+  .rocket-wrap{
+    position:relative;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    animation: rocketIdle 1.8s ease-in-out infinite;
+    margin-bottom:36px;
+  }
+  .rocket-wrap.launch{
+    animation: rocketLaunch 1s cubic-bezier(.4,0,.2,1) forwards;
+  }
+  @keyframes rocketIdle{
+    0%,100%{ transform: translateY(0) rotate(-3deg); }
+    50%{ transform: translateY(-16px) rotate(3deg); }
+  }
+  @keyframes rocketLaunch{
+    0%{ transform: translateY(0) rotate(0deg); opacity:1; }
+    100%{ transform: translateY(-1000px) rotate(-6deg); opacity:0; }
+  }
+  .rocket-topper{
+    font-size:1.8rem;
+    margin-bottom:-14px;
+    z-index:2;
+  }
+  .rocket-body{
+    font-size:4rem;
+    transform: rotate(45deg);
+    z-index:1;
+  }
+  .rocket-smoke{
+    position:relative;
+    width:60px;
+    height:40px;
+    margin-top:-10px;
+  }
+  .rocket-smoke span{
+    position:absolute;
+    left:50%;
+    top:0;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:rgba(230,230,235,0.55);
+    animation: smokePuff 1.4s ease-out infinite;
+  }
+  .rocket-smoke span:nth-child(1){ animation-delay:0s; margin-left:-14px; }
+  .rocket-smoke span:nth-child(2){ animation-delay:0.35s; margin-left:-4px; }
+  .rocket-smoke span:nth-child(3){ animation-delay:0.7s; margin-left:6px; }
+  .rocket-smoke span:nth-child(4){ animation-delay:1.05s; margin-left:-2px; }
+  @keyframes smokePuff{
+    0%{ transform: translateY(0) scale(0.6); opacity:0.7; }
+    100%{ transform: translateY(38px) scale(1.6); opacity:0; }
+  }
+
+  .intro-loading-label{
+    color:var(--accent-gold);
+    font-family:var(--font-display);
+    font-size:1.15rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .intro-quote{
+    color:#b9b9c4;
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:0.95rem;
+    margin-top:14px;
+    max-width:340px;
+    text-align:center;
+    min-height:1.4em;
+    opacity:0;
+    animation: quoteFade 3.2s ease-in-out infinite;
+  }
+  @keyframes quoteFade{
+    0%{opacity:0;}
+    15%{opacity:1;}
+    85%{opacity:1;}
+    100%{opacity:0;}
+  }
+</style>
+</head>
+<body id="body">
+
+<div id="screen-intro">
+  <div class="rocket-wrap" id="rocketWrap">
+    <div class="rocket-topper" id="rocketTopper">🦉</div>
+    <div class="rocket-body">🚀</div>
+    <div class="rocket-smoke">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="intro-loading-label" id="introLoadingLabel">Laster inn ordforrådet ditt…</div>
+  <div class="intro-quote" id="introQuote"></div>
+</div>
+
+<div id="app">
+
+  <!-- shared topbar (hidden inside active quiz) -->
+  <div class="topbar" id="topbar">
+    <div class="brand">Ordlæring<small>Norsk ordforråd, litt om gangen</small></div>
+    <button id="profileBtn">
+      <span class="avatar" id="profileAvatar">🦉</span>
+      <span id="profileName">Spiller</span>
+    </button>
+  </div>
+
+  <!-- ===================== MENU ===================== -->
+  <div id="screen-menu">
+    <div class="menu-grid">
+      <button class="menu-card" data-action="open-wordlist">
+        Ordliste
+        <small>Bla, søk og velg ukens begreper</small>
+      </button>
+      <button class="menu-card" data-action="open-mine-ord">
+        Mine ord
+        <small>Dine markerte ord og fremgangen din</small>
+      </button>
+      <button class="menu-card" data-action="open-quiz-setup">
+        Start quiz
+        <small>Multiple choice og skriveoppgaver</small>
+      </button>
+      <button class="final-btn" data-action="start-final-exam">
+        Final Exam ✏️
+        <small>Alle ord i sirkulasjon denne uken. Krever 100%.</small>
+      </button>
+      <button class="menu-card" data-action="open-import">
+        Importer ord
+        <small>Lim inn din egen ordliste</small>
+      </button>
+    </div>
+    <div class="sprakpoeng-banner">
+      Språkpoeng: <b id="menuSprakpoeng">0</b>
+    </div>
+  </div>
+
+  <!-- ===================== ORDLISTE ===================== -->
+  <div id="screen-wordlist" class="hidden">
+    <div class="back-link" data-action="back-to-menu">‹ Tilbake</div>
+    <h1 class="screen-title">Ordliste</h1>
+    <div class="wordlist-toolbar">
+      <button class="secondary-btn" id="downloadBackupBtn" style="margin-right:8px;">⬇ Last ned ordliste</button>
+      <button class="secondary-btn" id="uploadBackupBtn">⬆ Last opp</button>
+      <input type="file" id="uploadBackupInput" accept="application/json" class="hidden">
+    </div>
+    <input type="text" id="wordSearch" placeholder="Søk her">
+    <div id="wordRows"></div>
+    <div class="empty-note hidden" id="wordEmptyNote">Ingen ord matcher søket.</div>
+  </div>
+
+  <!-- ===================== MINE ORD ===================== -->
+  <div id="screen-mine-ord" class="hidden">
+    <div class="back-link" data-action="back-to-menu">‹ Tilbake</div>
+    <h1 class="screen-title">Mine ord</h1>
+    <div class="growth-panel" id="growthPanel"></div>
+    <div id="mineOrdRows"></div>
+    <div class="empty-note hidden" id="mineOrdEmptyNote">Du har ikke markert noen ord ennå. Gå til Ordliste for å velge noen.</div>
+  </div>
+
+  <!-- ===================== QUIZ SETUP ===================== -->
+  <div id="screen-quiz-setup" class="hidden">
+    <div class="back-link" data-action="back-to-menu">‹ Tilbake</div>
+    <h1 class="screen-title">Start quiz</h1>
+
+    <div class="setup-row">
+      <div class="label">Hvilke ord?</div>
+      <div class="choice-pills">
+        <button class="choice-pill active" data-group="source" data-value="weekly">Mine valgte ord (<span id="weeklyCount">0</span>)</button>
+        <button class="choice-pill" data-group="source" data-value="random">Tilfeldig utvalg</button>
+      </div>
+    </div>
+
+    <div class="setup-row" id="randomCountRow" style="display:none;">
+      <div class="label">Antall tilfeldige ord</div>
+      <div class="choice-pills">
+        <button class="choice-pill" data-group="randomcount" data-value="5">5</button>
+        <button class="choice-pill active" data-group="randomcount" data-value="10">10</button>
+        <button class="choice-pill" data-group="randomcount" data-value="20">20</button>
+      </div>
+    </div>
+
+    <div class="setup-row">
+      <div class="label">Runde­lengde</div>
+      <div class="choice-pills">
+        <button class="choice-pill active" data-group="length" data-value="short">Kort (5)</button>
+        <button class="choice-pill" data-group="length" data-value="medium">Medium (10–15)</button>
+        <button class="choice-pill" data-group="length" data-value="long">Lang (20–30)</button>
+      </div>
+    </div>
+
+    <button class="primary-btn" id="startQuizBtn">Start</button>
+  </div>
+
+  <!-- ===================== QUIZ ===================== -->
+  <div id="screen-quiz" class="hidden">
+    <div class="quiz-header">
+      <div class="quiz-mode-label" id="quizModeLabel"></div>
+      <div class="quiz-progress" id="quizProgress">1 / 5</div>
+    </div>
+    <hr class="rule">
+
+    <div class="question-card">
+      <div class="question-kicker" id="questionKicker">Hvilket begrep er dette?</div>
+      <div class="question-text" id="questionText"></div>
+    </div>
+
+    <div class="quiz-options hidden" id="quizOptions"></div>
+
+    <div class="write-answer-row hidden" id="writeAnswerRow">
+      <label for="writeAnswerInput">Svar:</label>
+      <input type="text" id="writeAnswerInput" placeholder="Skriv her" autocomplete="off">
+      <button class="primary-btn" id="submitWriteBtn">Sjekk</button>
+    </div>
+    <div class="special-chars-row hidden" id="specialCharsRow">
+      <button type="button" data-char="æ">æ</button>
+      <button type="button" data-char="ø">ø</button>
+      <button type="button" data-char="å">å</button>
+      <button type="button" data-char="ä">ä</button>
+      <button type="button" data-char="ö">ö</button>
+      <button type="button" data-char="ü">ü</button>
+      <button type="button" data-char="ß">ß</button>
+      <button type="button" data-char="é">é</button>
+      <button type="button" data-char="è">è</button>
+      <button type="button" data-char="ê">ê</button>
+      <button type="button" data-char="ë">ë</button>
+      <button type="button" data-char="à">à</button>
+      <button type="button" data-char="ç">ç</button>
+      <button type="button" data-char="ñ">ñ</button>
+    </div>
+
+    <div class="feedback-row" id="feedbackRow"></div>
+    <div class="score-delta-popup hidden" id="scoreDeltaPopup">
+      <span class="total" id="scoreDeltaTotal">0</span>
+      <span class="delta" id="scoreDeltaAmount"></span>
+    </div>
+    <div class="reveal-box hidden" id="revealBox">
+      <div class="reveal-flex">
+        <div>
+          <div>Riktig begrep var:</div>
+          <div class="answer-word" id="revealWord"></div>
+        </div>
+        <div class="your-guesses hidden" id="yourGuessesBox">
+          <div class="def-label">Dine svar:</div>
+          <div class="guesses-stack" id="guessesList"></div>
+        </div>
+      </div>
+      <button class="secondary-btn" id="typoBtn">Var det bare en skrivefeil?</button>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="secondary-btn hidden" id="skipNextBtn">Neste ›</button>
+      <button class="secondary-btn hidden" id="finishEarlyBtn">Finish</button>
+    </div>
+    <div class="timer-bar-wrap hidden" id="timerBarWrap">
+      <div class="timer-emoji">⏱</div>
+      <div class="timer-bar-track"><div class="timer-bar-fill" id="timerBarFill"></div></div>
+    </div>
+    <span class="cancel-quiz-link" id="cancelQuizLink">Avbryt quiz</span>
+  </div>
+
+  <!-- ===================== CHECKPOINT / PAUSE ===================== -->
+  <div id="screen-checkpoint" class="hidden">
+    <div class="checkpoint-box">
+      <h1>Bra jobba så langt!</h1>
+      <p class="sub" id="checkpointSub"></p>
+      <div class="score-box">
+        <div class="big" id="checkpointScore">0 / 0</div>
+        <div class="lbl">riktige svar hittil</div>
+      </div>
+      <div class="checkpoint-actions">
+        <button class="primary-btn" id="continuePlayingBtn">Fortsett spill</button>
+        <button class="secondary-btn" id="endHereBtn">Avslutt runden her</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== VICTORY ===================== -->
+  <div id="screen-victory" class="hidden">
+    <div class="victory" id="victoryBox">
+      <h1><span id="victoryTitleText">Gratulerer, du klarte det!</span><span class="victory-emoji" id="victoryEmoji"></span></h1>
+      <p class="sub" id="victorySub"></p>
+      <div class="score-box">
+        <div class="big" id="victoryPoints">+0</div>
+        <div class="lbl">språkpoeng denne runden</div>
+      </div>
+      <div>
+        <button class="primary-btn" data-action="back-to-menu">Tilbake til meny</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== IMPORT ===================== -->
+  <div id="screen-import" class="hidden">
+    <div class="back-link" data-action="back-to-menu">‹ Tilbake</div>
+    <h1 class="screen-title">Importer ord</h1>
+    <div class="hint">
+      Én linje per ord. Format: <code>Ord: engelsk: akademisk: standard</code> — alle felt utenom ordet er valgfrie.
+      Har du bare en ren ordliste (ett ord per linje, ingen kolon), er det også helt greit — resten fylles ut senere.
+    </div>
+    <textarea id="importText" placeholder="Meritt: merit: Begrep som beskriver fortjenstfulle handlinger, bragder eller oppnådde prestasjoner: Noe bra du har gjort eller oppnådd&#10;Premiss:::&#10;Historisk"></textarea>
+    <button class="secondary-btn" id="parseImportBtn">Konverter</button>
+    <div class="import-preview" id="importPreview"></div>
+    <button class="primary-btn hidden" id="confirmImportBtn">Legg til i ordlisten</button>
+  </div>
+
+</div>
+
+<!-- ===================== MODALS (injected via JS) ===================== -->
+<div id="modalRoot"></div>
+
+<script>
+/* =========================================================
+   STORAGE ADAPTER
+   Uses window.storage when available (Claude.ai artifact),
+   falls back to localStorage for standalone/Railway deploys,
+   and finally to an in-memory object if neither exists.
+   ========================================================= */
+const memoryFallback = {};
+const Storage = {
+  async get(key){
+    try{
+      if(window.storage){
+        const r = await window.storage.get(key, false);
+        return r ? JSON.parse(r.value) : null;
+      }
+    }catch(e){ /* key not found or backend unavailable */ }
+    try{
+      if(!window.storage && window.localStorage){
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : null;
+      }
+    }catch(e){}
+    return memoryFallback[key] ?? null;
+  },
+  async set(key, value){
+    try{
+      if(window.storage){
+        await window.storage.set(key, JSON.stringify(value), false);
+        return true;
+      }
+    }catch(e){}
+    try{
+      if(!window.storage && window.localStorage){
+        localStorage.setItem(key, JSON.stringify(value));
+        return true;
+      }
+    }catch(e){}
+    memoryFallback[key] = value;
+    return true;
+  }
+};
+
+/* =========================================================
+   PLACEHOLDER DATA — erstattes av import / lagret data
+   ========================================================= */
+const PLACEHOLDER_WORDS = [
+  {ord:"Meritt", engelsk:"merit", akademisk:"Begrep som beskriver fortjenstfulle handlinger, bragder eller oppnådde prestasjoner.", standard:"Noe bra du har gjort eller oppnådd som gir deg anerkjennelse."},
+  {ord:"Premiss", engelsk:"premise", akademisk:"En forutsetning, en grunnleggende antakelse eller et utsagn som ligger til grunn for en logisk slutning, en argumentasjon eller en beslutning.", standard:"Noe man tar for gitt før man bygger et argument videre."},
+  {ord:"Historisk", engelsk:"historical", akademisk:"Ord som forklarer at et argument eller en historie har grunnlag i fakta basert på erfaring eller allmennkunnskap.", standard:"Noe som faktisk har skjedd før, ikke oppdiktet."},
+  {ord:"Intravenøs", engelsk:"intravenous", akademisk:"Som gis eller foregår direkte inn i en blodåre.", standard:"Noe som sprøytes rett inn i blodet."},
+  {ord:"Promiskuøs", engelsk:"promiscuous", akademisk:"Som har mange og skiftende (seksual)partnere, eller som blander sammen ulikeartede ting uten system.", standard:"Som ikke holder seg til én ting/person, blander mye."},
+  {ord:"Beskjeden", engelsk:"modest", akademisk:"Som ikke fremhever seg selv eller egne prestasjoner; tilbakeholden.", standard:"Som ikke skryter av seg selv."},
+  {ord:"Omfattende", engelsk:"extensive", akademisk:"Som dekker eller inkluderer mye; vidtrekkende i omfang.", standard:"Som er stort eller dekker mye."},
+  {ord:"Smaragd", engelsk:"emerald", akademisk:"En grønn, verdifull edelstein av mineralet beryll.", standard:"En grønn, dyr stein/smykkestein."}
+];
+
+/* =========================================================
+   STATE
+   ========================================================= */
+let wordList = [];       // [{id, ord, engelsk, akademisk, standard, score, weekly}]
+let profile = { username:"Spiller", emoji:"🦉", sprakpoeng:0, roundsPlayed:0, recentAccuracies:[], growthSnapshot:null, growthTrend:'flat', pendingSuggestion:null };
+let quiz = null;         // active quiz session state
+const EMOJI_CHOICES = ["🦉","🦊","🐨","🐢","🦁","🐙","🐝","🦄","🐺","🐧","🦖","🐬"];
+const MOTIVATION = [
+  "Du er helt suveren! Fortsett slik og veien til Mensa-medlemskap er ikke langt unna!",
+  "Ordforrådet ditt vokser raskere enn ugress i juli.",
+  "Imponerende! Ordbøkene begynner å bli redde for deg.",
+  "Du klarte det — hjernen din takker deg (sannsynligvis).",
+  "Nok en runde i boks. Du er ustoppelig!",
+  "Fantastisk innsats — du er offisielt farligere i en samtale nå."
+];
+
+/* =========================================================
+   SOUND EFFECTS (placeholder beeps — swap with real audio files later)
+   Call Sound.play('mcCorrect' | 'mcWrong' | 'writeCorrect' | 'writeWrongFinal'
+                    | 'typoRescueCorrect' | 'typoRescueWrong'
+                    | 'quizComplete' | 'quizPerfect' | 'quizAllWrong')
+   ========================================================= */
+const Sound = {
+  ctx: null,
+  ensureCtx(){
+    if(!this.ctx){
+      try{ this.ctx = new (window.AudioContext || window.webkitAudioContext)(); }catch(e){ this.ctx = null; }
+    }
+    return this.ctx;
+  },
+  beep(freq, duration, type='sine', gain=0.05){
+    const ctx = this.ensureCtx();
+    if(!ctx) return;
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = type;
+    osc.frequency.value = freq;
+    g.gain.value = gain;
+    osc.connect(g); g.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + duration);
+  },
+  play(name){
+    // TODO: replace these placeholder beeps with real sound files (see Sound.play call sites)
+    switch(name){
+      case 'mcCorrect': this.beep(660, 0.15); break;
+      case 'mcWrong': this.beep(180, 0.2, 'square'); break;
+      case 'writeCorrect': this.beep(720, 0.18); break;
+      case 'writeWrongFinal': this.beep(140, 0.35, 'sawtooth', 0.07); break;
+      case 'typoRescueCorrect': this.beep(500, 0.15); break;
+      case 'typoRescueWrong': this.beep(120, 0.3, 'square', 0.07); break;
+      case 'quizComplete': this.beep(500, 0.2); setTimeout(()=>this.beep(650,0.25),150); break;
+      case 'quizPerfect': this.beep(600,0.15); setTimeout(()=>this.beep(800,0.15),120); setTimeout(()=>this.beep(1000,0.25),240); break;
+      case 'quizAllWrong': this.beep(220,0.3,'sawtooth',0.06); setTimeout(()=>this.beep(160,0.4,'sawtooth',0.06),200); break;
+    }
+  }
+};
+
+function scoreColorClass(word){
+  if(!word.attempts) return 'neutral';
+  if(word.score < 0) return 'red';
+  if(word.score < 6) return 'orange';
+  return 'green';
+}
+
+function isQuizEligible(word){
+  return !!(word.akademisk && word.akademisk.trim()) && !!(word.standard && word.standard.trim());
+}
+
+/* Growth index: average score of weekly-marked (eligible) words,
+   normalized against a -5 (floor) .. +15 (strong mastery) scale. */
+const GROWTH_FLOOR = -5;
+const GROWTH_CEILING = 15;
+
+function computeGrowthPercent(){
+  const words = wordList.filter(w => w.weekly && isQuizEligible(w));
+  if(words.length === 0) return null;
+  const avg = words.reduce((sum,w) => sum + w.score, 0) / words.length;
+  const pct = Math.round(((avg - GROWTH_FLOOR) / (GROWTH_CEILING - GROWTH_FLOOR)) * 100);
+  return Math.max(0, Math.min(100, pct));
+}
+
+function growthColor(pct){
+  if(pct === null) return { color:'#8a8496', label:'Ingen data ennå' };
+  if(pct >= 85) return { color:'#1fae4b', label:'Sterk mestring' };
+  if(pct >= 65) return { color:'#63c98a', label:'God fremgang' };
+  if(pct >= 50) return { color:'#e0a545', label:'Middels' };
+  if(pct >= 30) return { color:'#c9711f', label:'Trenger øving' };
+  if(pct >= 15) return { color:'#e2685f', label:'Svakt' };
+  if(pct >= 5) return { color:'#b8382c', label:'Sliter mye' };
+  return { color:'#2b2b2b', label:'Nesten ingen mestring' };
+}
+
+function trendArrow(trend){
+  if(trend === 'up') return { symbol:'↑', color:'#3fae5a' };
+  if(trend === 'down') return { symbol:'↓', color:'#d9534f' };
+  return { symbol:'↔', color:'#e0a545' };
+}
+
+function slug(s){
+  return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+}
+
+/* =========================================================
+   PROFILE CODE — compact, obfuscated export/import string
+   Format (before base64): "{emojiIndex}|{username}|{id}:{score}:{attempts},{id}:{score}:{attempts},..."
+   Words are keyed by their stable slug id rather than array position —
+   that way the code still mostly works even if the master wordlist is
+   reordered or grows; only genuinely removed words are dropped on import.
+   ========================================================= */
+function encodeProfileCode(){
+  const emojiIdx = Math.max(0, EMOJI_CHOICES.indexOf(profile.emoji));
+  const uname = encodeURIComponent(profile.username);
+  const wordPart = wordList
+    .filter(w => w.attempts > 0)
+    .map(w => `${w.id}:${w.score}:${w.attempts}`)
+    .join(',');
+  const raw = `${emojiIdx}|${uname}|${wordPart}`;
+  return btoa(unescape(encodeURIComponent(raw)));
+}
+
+function decodeProfileCode(code){
+  const raw = decodeURIComponent(escape(atob(code.trim())));
+  const [emojiIdxStr, unameEnc, wordPart] = raw.split('|');
+  const emoji = EMOJI_CHOICES[parseInt(emojiIdxStr, 10)] || '🦉';
+  const username = decodeURIComponent(unameEnc || '') || 'Spiller';
+  const entries = (wordPart || '').split(',').filter(Boolean).map(seg => {
+    const [id, score, attempts] = seg.split(':');
+    return { id, score: Number(score), attempts: Number(attempts) };
+  });
+  return { emoji, username, entries };
+}
+
+function applyProfileCode(code){
+  const { emoji, username, entries } = decodeProfileCode(code);
+  profile.emoji = emoji;
+  profile.username = username;
+  let matched = 0, skipped = 0;
+  entries.forEach(e => {
+    const w = wordList.find(x => x.id === e.id);
+    if(w){ w.score = e.score; w.attempts = e.attempts; matched++; }
+    else skipped++;
+  });
+  return { matched, skipped, total: entries.length };
+}
+
+/* =========================================================
+   REMOTE WORDLIST (optional) — fill in a direct, CORS-friendly JSON URL.
+   NOTE: a plain "shared" Google Drive link usually will NOT work here —
+   Drive doesn't send the CORS header browsers require for fetch(), and
+   larger files get routed through an HTML confirmation page instead of
+   raw JSON. Something like a GitHub raw file, a Gist, or a small static
+   host (Netlify/Cloudflare Pages) tends to work reliably. Leave blank to
+   just use the locally saved / placeholder list.
+   ========================================================= */
+const REMOTE_WORDLIST_URL = ""; // e.g. "https://raw.githubusercontent.com/you/repo/main/ord.json"
+
+async function fetchRemoteWordList(){
+  if(!REMOTE_WORDLIST_URL) return null;
+  try{
+    const res = await fetch(REMOTE_WORDLIST_URL, { cache:'no-store' });
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    if(!Array.isArray(data)) throw new Error('Forventet en JSON-array');
+    return data;
+  }catch(e){
+    console.warn('Kunne ikke hente ekstern ordliste (' + e.message + '), bruker lokal liste i stedet.');
+    return null;
+  }
+}
+
+/* =========================================================
+   INIT
+   ========================================================= */
+async function init(){
+  const savedWords = await Storage.get("wordlist");
+  const savedProfile = await Storage.get("profile");
+  const remoteWords = await fetchRemoteWordList(); // null if not configured or fetch failed
+
+  if(remoteWords){
+    // Remote list is canonical; overlay any saved local progress by matching id.
+    const savedById = new Map((savedWords || []).map(w => [w.id || slug(w.ord), w]));
+    wordList = remoteWords.map(w => {
+      const id = slug(w.ord);
+      const prior = savedById.get(id);
+      return {
+        id, ord: w.ord,
+        engelsk: w.engelsk || "",
+        akademisk: w.akademisk || "",
+        standard: w.standard || "",
+        score: prior ? prior.score : 0,
+        weekly: prior ? !!prior.weekly : false,
+        attempts: prior ? (prior.attempts || 0) : 0
+      };
+    });
+  } else {
+    wordList = savedWords && savedWords.length ? savedWords : PLACEHOLDER_WORDS.map(w => ({
+      id: slug(w.ord),
+      ord: w.ord,
+      engelsk: w.engelsk || "",
+      akademisk: w.akademisk || "",
+      standard: w.standard || "",
+      score: 0,
+      weekly: false,
+      attempts: 0
+    }));
+  }
+  // backfill attempts field for lists saved before this field existed
+  wordList.forEach(w => { if(typeof w.attempts !== 'number') w.attempts = w.score !== 0 ? 1 : 0; });
+  if(savedProfile) profile = savedProfile;
+  if(typeof profile.roundsPlayed !== 'number') profile.roundsPlayed = 0;
+  if(!Array.isArray(profile.recentAccuracies)) profile.recentAccuracies = [];
+  if(typeof profile.growthSnapshot === 'undefined') profile.growthSnapshot = null;
+  if(!profile.growthTrend) profile.growthTrend = 'flat';
+  if(typeof profile.pendingSuggestion === 'undefined') profile.pendingSuggestion = null;
+
+  renderProfile();
+  renderWordRows();
+  renderMenu();
+  bindGlobalEvents();
+  maybeShowSuggestionPopup();
+  runIntroSequence();
+}
+
+const INTRO_QUOTES = [
+  "Et nytt ord i dag er en ny dør i morgen.",
+  "Ordforråd bygges ett forsøk om gangen.",
+  "Den beste tiden å lære et ord var i går. Den nest beste er nå.",
+  "Små runder, stor fremgang.",
+  "Språk er en øvelse, ikke en test."
+];
+
+function runIntroSequence(){
+  document.getElementById('rocketTopper').textContent = profile.emoji || '🦉';
+  document.getElementById('introQuote').textContent = INTRO_QUOTES[Math.floor(Math.random()*INTRO_QUOTES.length)];
+
+  const MIN_DISPLAY_MS = 2400; // simulated loading window
+  setTimeout(() => {
+    document.getElementById('rocketWrap').classList.add('launch');
+    setTimeout(() => {
+      const intro = document.getElementById('screen-intro');
+      intro.classList.add('fade-out');
+      setTimeout(() => intro.classList.add('hidden'), 650);
+    }, 550); // let the rocket clear the screen before the whole overlay fades
+  }, MIN_DISPLAY_MS);
+}
+
+async function persist(){
+  await Storage.set("wordlist", wordList);
+  await Storage.set("profile", profile);
+}
+
+/* =========================================================
+   SCREEN NAVIGATION
+   ========================================================= */
+function showScreen(id){
+  document.querySelectorAll('#app > div[id^="screen-"]').forEach(el => el.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.getElementById('topbar').classList.toggle('hidden', id === 'screen-quiz');
+  document.body.classList.toggle('screen-quiz', id === 'screen-quiz');
+  if(id !== 'screen-quiz') document.body.classList.remove('final-exam');
+}
+
+function backToMenu(){
+  quiz = null;
+  document.body.classList.remove('final-exam');
+  renderMenu();
+  showScreen('screen-menu');
+  maybeShowSuggestionPopup();
+}
+
+function renderMenu(){
+  document.getElementById('menuSprakpoeng').textContent = profile.sprakpoeng;
+}
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+function renderProfile(){
+  document.getElementById('profileAvatar').textContent = profile.emoji;
+  document.getElementById('profileName').textContent = profile.username;
+}
+
+function openProfileModal(){
+  const box = document.createElement('div');
+  box.className = 'modal-overlay';
+  box.innerHTML = `
+    <div class="modal-box">
+      <h2>Din profil</h2>
+      <label style="font-size:0.85rem;color:#8a8496;">Brukernavn</label>
+      <input type="text" id="usernameInput" value="${profile.username}">
+      <div style="margin-top:16px;font-size:0.85rem;color:#8a8496;">Velg emoji-avatar</div>
+      <div class="emoji-choices" id="emojiChoices">
+        ${EMOJI_CHOICES.map(e => `<button data-emoji="${e}" class="${e===profile.emoji?'active':''}">${e}</button>`).join('')}
+      </div>
+      <button class="modal-close" id="saveProfileBtn">Lagre</button>
+      <hr class="rule" style="margin:20px 0 14px;border-top:1px solid #eee;">
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <button class="secondary-btn" id="saveProfileCodeBtn" style="color:#221f33;border-color:#ccc;">Lagre min profilkode</button>
+        <button class="secondary-btn" id="restoreProfileCodeBtn" style="color:#221f33;border-color:#ccc;">Gjenopprett fra kode</button>
+      </div>
+    </div>`;
+  document.getElementById('modalRoot').appendChild(box);
+
+  let chosenEmoji = profile.emoji;
+  box.querySelectorAll('#emojiChoices button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      box.querySelectorAll('#emojiChoices button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      chosenEmoji = btn.dataset.emoji;
+    });
+  });
+  box.addEventListener('click', (e) => { if(e.target === box) box.remove(); });
+  box.querySelector('#saveProfileBtn').addEventListener('click', async () => {
+    profile.username = box.querySelector('#usernameInput').value.trim() || "Spiller";
+    profile.emoji = chosenEmoji;
+    renderProfile();
+    await persist();
+    box.remove();
+  });
+
+  box.querySelector('#saveProfileCodeBtn').addEventListener('click', () => {
+    const code = encodeProfileCode();
+    showProfileCodeModal(code);
+  });
+  box.querySelector('#restoreProfileCodeBtn').addEventListener('click', () => {
+    showRestoreCodeModal();
+  });
+}
+
+function showProfileCodeModal(code){
+  const box = document.createElement('div');
+  box.className = 'modal-overlay';
+  box.innerHTML = `
+    <div class="modal-box">
+      <h2>Din profilkode</h2>
+      <div class="def-text" style="margin-bottom:12px;">
+        Kopier og lagre denne koden et trygt sted (f.eks. i Notater). Bruk "Gjenopprett fra kode" for å hente profilen tilbake senere eller på en annen enhet.
+      </div>
+      <textarea id="profileCodeText" readonly style="width:100%;min-height:90px;border-radius:10px;border:1px solid #ccc;padding:10px;font-family:monospace;font-size:0.85rem;word-break:break-all;">${code}</textarea>
+      <button class="modal-close" id="copyProfileCodeBtn" style="margin-top:12px;">Kopier</button>
+    </div>`;
+  document.getElementById('modalRoot').appendChild(box);
+  const textarea = box.querySelector('#profileCodeText');
+  textarea.addEventListener('click', () => textarea.select());
+  box.addEventListener('click', (e) => { if(e.target === box) box.remove(); });
+  box.querySelector('#copyProfileCodeBtn').addEventListener('click', async () => {
+    try{
+      await navigator.clipboard.writeText(code);
+      box.querySelector('#copyProfileCodeBtn').textContent = 'Kopiert!';
+    }catch(e){
+      textarea.select();
+      document.execCommand('copy');
+      box.querySelector('#copyProfileCodeBtn').textContent = 'Kopiert!';
+    }
+  });
+}
+
+function showRestoreCodeModal(){
+  const box = document.createElement('div');
+  box.className = 'modal-overlay';
+  box.innerHTML = `
+    <div class="modal-box">
+      <h2>Gjenopprett fra kode</h2>
+      <div class="def-text" style="margin-bottom:12px;">Lim inn profilkoden din under.</div>
+      <textarea id="restoreCodeInput" style="width:100%;min-height:90px;border-radius:10px;border:1px solid #ccc;padding:10px;font-family:monospace;font-size:0.85rem;word-break:break-all;"></textarea>
+      <button class="modal-close" id="applyRestoreCodeBtn" style="margin-top:12px;">Bruk kode</button>
+    </div>`;
+  document.getElementById('modalRoot').appendChild(box);
+  box.addEventListener('click', (e) => { if(e.target === box) box.remove(); });
+  box.querySelector('#applyRestoreCodeBtn').addEventListener('click', async () => {
+    const code = box.querySelector('#restoreCodeInput').value;
+    try{
+      const { matched, skipped, total } = applyProfileCode(code);
+      await persist();
+      renderProfile();
+      renderWordRows();
+      updateWeeklyCount();
+      renderMenu();
+      box.remove();
+      alert(`Profil gjenopprettet. ${matched} av ${total} ord matchet mot din nåværende ordliste${skipped ? ` (${skipped} fantes ikke lenger og ble hoppet over)` : ''}.`);
+    }catch(e){
+      alert('Klarte ikke å lese koden. Sjekk at den er kopiert i sin helhet.');
+    }
+  });
+}
+
+/* =========================================================
+   ORDLISTE
+   ========================================================= */
+function renderWordRows(filter=""){
+  const container = document.getElementById('wordRows');
+  const f = filter.trim().toLowerCase();
+  const rows = wordList.filter(w => w.ord.toLowerCase().includes(f));
+  container.innerHTML = "";
+  document.getElementById('wordEmptyNote').classList.toggle('hidden', rows.length > 0);
+
+  rows.forEach(w => {
+    const eligible = isQuizEligible(w);
+    const row = document.createElement('div');
+    row.className = 'word-row' + (w.weekly && eligible ? ' selected' : '') + (eligible ? '' : ' ineligible');
+    const missingEnglishTag = (eligible && !(w.engelsk && w.engelsk.trim())) ? `<span class="word-tag">🚫🇬🇧</span>` : '';
+    row.innerHTML = `
+      <label class="check-area">
+        <input type="checkbox" ${w.weekly && eligible ? 'checked' : ''} ${eligible ? '' : 'disabled'} data-id="${w.id}">
+        <span class="ord-text">${w.ord}</span>
+        ${missingEnglishTag}
+      </label>
+      <span class="score-badge ${scoreColorClass(w)}">${w.attempts ? w.score : 0}</span>
+      <div class="detail-area" data-detail="${w.id}">›</div>
+    `;
+    container.appendChild(row);
+  });
+
+  container.querySelectorAll('input[type=checkbox]:not(:disabled)').forEach(cb => {
+    cb.addEventListener('change', async () => {
+      const w = wordList.find(x => x.id === cb.dataset.id);
+      w.weekly = cb.checked;
+      cb.closest('.word-row').classList.toggle('selected', cb.checked);
+      updateWeeklyCount();
+      await persist();
+    });
+  });
+  container.querySelectorAll('[data-detail]').forEach(el => {
+    el.addEventListener('click', () => openWordDetail(el.dataset.detail));
+  });
+}
+
+function openWordDetail(id){
+  const w = wordList.find(x => x.id === id);
+  if(!w) return;
+  const box = document.createElement('div');
+  box.className = 'modal-overlay';
+  box.innerHTML = `
+    <div class="modal-box">
+      <h2>${w.ord}</h2>
+      <div class="def-block">
+        <div class="def-label">Akademisk definisjon</div>
+        <div class="def-text">${w.akademisk || "<em>Ikke fylt ut ennå</em>"}</div>
+      </div>
+      <div class="def-block">
+        <div class="def-label">Enklere forklaring</div>
+        <div class="def-text">${w.standard || "<em>Ikke fylt ut ennå</em>"}</div>
+      </div>
+      <button class="modal-close" id="closeDetail">Lukk</button>
+    </div>`;
+  document.getElementById('modalRoot').appendChild(box);
+  box.addEventListener('click', (e) => { if(e.target === box) box.remove(); });
+  box.querySelector('#closeDetail').addEventListener('click', () => box.remove());
+}
+
+function updateWeeklyCount(){
+  document.getElementById('weeklyCount').textContent = wordList.filter(w => w.weekly && isQuizEligible(w)).length;
+}
+
+/* =========================================================
+   MINE ORD + FREMGANGSINDEKS
+   ========================================================= */
+function renderMineOrd(){
+  const mine = wordList.filter(w => w.weekly && isQuizEligible(w));
+  const pct = computeGrowthPercent();
+  const { color, label } = growthColor(pct);
+  const { symbol, color: arrowColor } = trendArrow(profile.growthTrend);
+
+  document.getElementById('growthPanel').innerHTML = `
+    <div class="growth-pct" style="color:${color};">
+      ${pct === null ? '–' : pct + '%'}
+      <span style="color:${arrowColor};font-size:1.8rem;">${symbol}</span>
+    </div>
+    <div class="growth-label">${label}</div>
+    <div class="growth-meta">
+      <div><b>${mine.length}</b>ord i sirkulasjon</div>
+      <div><b>${profile.roundsPlayed}</b>runder spilt</div>
+      <div><b>${profile.sprakpoeng}</b>språkpoeng</div>
+    </div>
+  `;
+
+  const rowsWrap = document.getElementById('mineOrdRows');
+  rowsWrap.innerHTML = '';
+  document.getElementById('mineOrdEmptyNote').classList.toggle('hidden', mine.length > 0);
+  [...mine].sort((a,b) => a.score - b.score).forEach(w => {
+    const row = document.createElement('div');
+    row.className = 'word-row selected';
+    const missingEnglishTag = !(w.engelsk && w.engelsk.trim()) ? `<span class="word-tag">🚫🇬🇧</span>` : '';
+    row.innerHTML = `
+      <label class="check-area" style="cursor:default;">
+        <span class="ord-text">${w.ord}</span>
+        ${missingEnglishTag}
+      </label>
+      <span class="score-badge ${scoreColorClass(w)}">${w.attempts ? w.score : 0}</span>
+      <div class="detail-area" data-detail="${w.id}">›</div>
+    `;
+    rowsWrap.appendChild(row);
+  });
+  rowsWrap.querySelectorAll('[data-detail]').forEach(el => {
+    el.addEventListener('click', () => openWordDetail(el.dataset.detail));
+  });
+}
+
+/* =========================================================
+   SUGGESTION POPUP — based on recent quiz accuracy pattern
+   ========================================================= */
+function evaluateSuggestion(accuracy){
+  if(!Array.isArray(profile.recentAccuracies)) profile.recentAccuracies = [];
+  profile.recentAccuracies.push(accuracy);
+  if(profile.recentAccuracies.length > 5) profile.recentAccuracies.shift();
+
+  const last2 = profile.recentAccuracies.slice(-2);
+  const last3 = profile.recentAccuracies.slice(-3);
+
+  if(last2.length === 2 && last2.every(a => a < 0.5)){
+    profile.pendingSuggestion = "Du har feilet en del på de siste rundene. Vurder å redusere antall ord i quizen, eller bytt ut noen av de vanskeligste ordene med nye — det kan gjøre læringen mindre overveldende.";
+  } else if(last3.length === 3 && last3.every(a => a >= 0.85)){
+    profile.pendingSuggestion = "Du presterer veldig bra på ordene dine nå! Vurder å legge til flere ord i sirkulasjon — du ser ut til å ha kapasitet til raskere fremgang.";
+  } else {
+    profile.pendingSuggestion = null;
+  }
+}
+
+function maybeShowSuggestionPopup(){
+  if(!profile.pendingSuggestion) return;
+  const message = profile.pendingSuggestion;
+  const box = document.createElement('div');
+  box.className = 'modal-overlay';
+  box.innerHTML = `
+    <div class="modal-box">
+      <h2>Et lite tips</h2>
+      <div class="def-text" style="margin-bottom:18px;">${message}</div>
+      <button class="modal-close" id="closeSuggestion">Greit, takk!</button>
+    </div>`;
+  document.getElementById('modalRoot').appendChild(box);
+  const dismiss = async () => {
+    profile.pendingSuggestion = null;
+    await persist();
+    box.remove();
+  };
+  box.addEventListener('click', (e) => { if(e.target === box) dismiss(); });
+  box.querySelector('#closeSuggestion').addEventListener('click', dismiss);
+}
+
+/* =========================================================
+   QUIZ SETUP
+   ========================================================= */
+let setupState = { source:"weekly", randomcount:10, length:"short" };
+
+function bindSetupPills(){
+  document.querySelectorAll('.choice-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.dataset.group;
+      document.querySelectorAll(`.choice-pill[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      setupState[group] = btn.dataset.value;
+      document.getElementById('randomCountRow').style.display = setupState.source === 'random' ? 'block' : 'none';
+    });
+  });
+}
+
+function lengthToCount(length, poolSize){
+  if(length === 'short') return Math.min(5, poolSize);
+  if(length === 'medium') return Math.min(12, poolSize);
+  return Math.min(25, poolSize);
+}
+
+/* =========================================================
+   QUIZ ENGINE
+   ========================================================= */
+function pickPool(){
+  if(setupState.source === 'weekly'){
+    return wordList.filter(w => w.weekly && isQuizEligible(w));
+  }
+  const shuffled = [...wordList].filter(isQuizEligible).sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, Number(setupState.randomcount));
+}
+
+function prioritizedSample(pool, n){
+  // 80% worst score first, 20% random from the rest — keeps everything in rotation
+  const sorted = [...pool].sort((a,b) => a.score - b.score);
+  const worstCount = Math.ceil(n * 0.8);
+  const worst = sorted.slice(0, worstCount);
+  const rest = sorted.slice(worstCount);
+  const restShuffled = rest.sort(() => Math.random() - 0.5);
+  const combined = [...worst, ...restShuffled].slice(0, n);
+  return combined.sort(() => Math.random() - 0.5);
+}
+
+function buildQuestion(word, pool){
+  const type = Math.random() < 0.5 ? 'mc' : 'write';
+  if(type === 'write' || pool.length < 3){
+    return { type:'write', word, attempts:0, typoUsed:false, guesses:[] };
+  }
+  // multiple choice: random distractor pick (either fully random or similarity-based)
+  const others = pool.filter(w => w.id !== word.id);
+  let distractors;
+  if(Math.random() < 0.5 || others.length < 3){
+    distractors = [...others].sort(() => Math.random() - 0.5).slice(0,3);
+  } else {
+    distractors = [...others].sort((a,b) => levenshtein(a.ord, word.ord) - levenshtein(b.ord, word.ord)).slice(0,3);
+  }
+  const options = [...distractors, word].sort(() => Math.random() - 0.5);
+  return { type:'mc', word, options };
+}
+
+function levenshtein(a, b){
+  a = a.toLowerCase(); b = b.toLowerCase();
+  const dp = Array.from({length:a.length+1}, (_,i) => [i, ...Array(b.length).fill(0)]);
+  for(let j=0;j<=b.length;j++) dp[0][j]=j;
+  for(let i=1;i<=a.length;i++){
+    for(let j=1;j<=b.length;j++){
+      dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1] : 1+Math.min(dp[i-1][j-1],dp[i-1][j],dp[i][j-1]);
+    }
+  }
+  return dp[a.length][b.length];
+}
+
+function startQuiz(isFinalExam){
+  const pool = isFinalExam ? wordList.filter(w => w.weekly && isQuizEligible(w)) : pickPool();
+  if(pool.length === 0){
+    alert("Ingen ord tilgjengelig. Velg noen ord i Ordlisten først.");
+    return;
+  }
+  const n = isFinalExam ? pool.length : lengthToCount(setupState.length, pool.length);
+  const chosen = isFinalExam ? pool : prioritizedSample(pool, n);
+
+  quiz = {
+    pool, isFinalExam,
+    questions: chosen.map(w => buildQuestion(w, pool)),
+    index: 0,
+    correctCount: 0,
+    totalCount: chosen.length,
+    lengthKey: setupState.length
+  };
+
+  document.body.classList.toggle('final-exam', isFinalExam);
+  showScreen('screen-quiz');
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const q = quiz.questions[quiz.index];
+  document.getElementById('quizModeLabel').textContent = quiz.isFinalExam ? 'Final Exam ✏️' : 'Quiz';
+  document.getElementById('quizProgress').textContent = `${quiz.index+1} / ${quiz.questions.length}`;
+  document.getElementById('feedbackRow').textContent = '';
+  document.getElementById('feedbackRow').className = 'feedback-row';
+  document.getElementById('revealBox').classList.add('hidden');
+  document.getElementById('yourGuessesBox').classList.add('hidden');
+  document.getElementById('finishEarlyBtn').classList.toggle('hidden', quiz.isFinalExam);
+  {
+    const finishBtn = document.getElementById('finishEarlyBtn');
+    const remaining = quiz.questions.length - quiz.index - 1;
+    if(remaining <= 0){
+      finishBtn.textContent = 'Fullfør Quiz';
+      finishBtn.classList.add('finish-ready');
+    } else {
+      finishBtn.textContent = 'Fullfør tidlig';
+      finishBtn.classList.remove('finish-ready');
+    }
+  }
+  document.getElementById('scoreDeltaPopup').classList.add('hidden');
+  document.getElementById('scoreDeltaAmount').classList.remove('fade-out');
+  document.getElementById('skipNextBtn').classList.add('hidden');
+  if(pendingAdvanceTimeout){ clearTimeout(pendingAdvanceTimeout); pendingAdvanceTimeout = null; }
+  document.getElementById('timerBarWrap').classList.remove('visible');
+  document.getElementById('timerBarWrap').classList.add('hidden');
+
+  if(q.type === 'mc'){
+    document.getElementById('questionKicker').textContent = 'Hvilket av disse begrepene handler beskrivelsen om?';
+    document.getElementById('questionText').textContent = `"${q.word.standard || q.word.akademisk}"`;
+    document.getElementById('quizOptions').classList.remove('hidden');
+    document.getElementById('writeAnswerRow').classList.add('hidden');
+    document.getElementById('specialCharsRow').classList.add('hidden');
+    const optWrap = document.getElementById('quizOptions');
+    optWrap.innerHTML = '';
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      btn.textContent = opt.ord;
+      btn.addEventListener('click', (evt) => answerMC(opt, evt));
+      optWrap.appendChild(btn);
+    });
+  } else {
+    document.getElementById('questionKicker').textContent = 'Hvilket begrep er dette?';
+    document.getElementById('questionText').textContent = `"${q.word.standard || q.word.akademisk}"`;
+    document.getElementById('quizOptions').classList.add('hidden');
+    document.getElementById('writeAnswerRow').classList.remove('hidden');
+    document.getElementById('specialCharsRow').classList.remove('hidden');
+    const input = document.getElementById('writeAnswerInput');
+    input.value = '';
+    input.disabled = false;
+    input.focus();
+  }
+}
+
+let pendingAdvanceTimeout = null;
+
+function applyWordDelta(word, delta){
+  const oldScore = word.score;
+  word.attempts = (word.attempts || 0) + 1;
+  word.score = Math.max(-5, word.score + delta);
+  return { oldScore, newScore: word.score };
+}
+
+function showScoreDelta(oldScore, delta){
+  if(delta === 0) return; // nothing to animate
+  const popup = document.getElementById('scoreDeltaPopup');
+  const totalEl = document.getElementById('scoreDeltaTotal');
+  const deltaEl = document.getElementById('scoreDeltaAmount');
+  const newScore = oldScore + delta;
+
+  popup.classList.remove('hidden');
+  totalEl.textContent = oldScore;
+  deltaEl.textContent = (delta > 0 ? '+' : '') + delta;
+  deltaEl.className = 'delta ' + (delta > 0 ? 'plus' : 'minus');
+
+  // after 1s, fade out the delta chip and count the total up/down to the new score over ~0.4s
+  setTimeout(() => {
+    deltaEl.classList.add('fade-out');
+    const steps = Math.abs(newScore - oldScore);
+    if(steps === 0) return;
+    const stepMs = Math.max(30, Math.floor(400 / steps));
+    let current = oldScore;
+    const dir = newScore > oldScore ? 1 : -1;
+    const timer = setInterval(() => {
+      current += dir;
+      totalEl.textContent = current;
+      totalEl.classList.add('bump');
+      setTimeout(() => totalEl.classList.remove('bump'), 120);
+      if(current === newScore) clearInterval(timer);
+    }, stepMs);
+  }, 1000);
+}
+
+function scheduleAdvance(delayMs){
+  document.getElementById('skipNextBtn').classList.remove('hidden');
+  showTimerBar(delayMs);
+  pendingAdvanceTimeout = setTimeout(() => {
+    pendingAdvanceTimeout = null;
+    hideTimerBar();
+    document.getElementById('skipNextBtn').classList.add('hidden');
+    nextQuestionOrFinish();
+  }, delayMs);
+}
+
+function skipToNext(){
+  if(pendingAdvanceTimeout){
+    clearTimeout(pendingAdvanceTimeout);
+    pendingAdvanceTimeout = null;
+  }
+  document.getElementById('skipNextBtn').classList.add('hidden');
+  hideTimerBar();
+  nextQuestionOrFinish();
+}
+
+function nextQuestionOrFinish(){
+  quiz.index++;
+  if(quiz.index >= quiz.questions.length){
+    showCheckpoint();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showCheckpoint(){
+  const total = quiz.index; // questions answered so far in this segment
+  const correct = quiz.correctCount;
+  const correctDisplay = Number.isInteger(correct) ? correct : correct.toFixed(1);
+  document.getElementById('checkpointScore').textContent = `${correctDisplay} / ${total}`;
+  const pct = total > 0 ? Math.round((correct/total)*100) : 0;
+  document.getElementById('checkpointSub').textContent =
+    pct >= 90 ? 'Du treffer nesten alt — imponerende!' :
+    pct >= 60 ? 'Solid innsats, du er godt på vei.' :
+    'Litt ujevnt denne gangen — det er helt greit, det er sånn man lærer.';
+  showScreen('screen-checkpoint');
+}
+
+function continuePlaying(){
+  const extra = prioritizedSample(quiz.pool, Math.min(5, quiz.pool.length)).map(w => buildQuestion(w, quiz.pool));
+  quiz.questions = quiz.questions.concat(extra);
+  quiz.totalCount = quiz.questions.length;
+  document.body.classList.toggle('final-exam', quiz.isFinalExam);
+  showScreen('screen-quiz');
+  renderQuestion();
+}
+
+function answerMC(opt, evt){
+  const q = quiz.questions[quiz.index];
+  const optWrap = document.getElementById('quizOptions');
+  [...optWrap.children].forEach(btn => {
+    btn.disabled = true;
+    if(btn.textContent === q.word.ord) btn.classList.add('correct');
+    else if(evt && btn === evt.target) btn.classList.add('wrong');
+  });
+  const correct = opt.id === q.word.id;
+  const fb = document.getElementById('feedbackRow');
+
+  // Multiple choice never changes word score in Final Exam mode (+0 always),
+  // but still counts toward the pass/fail accuracy requirement.
+  const delta = quiz.isFinalExam ? 0 : (correct ? 2 : -1);
+  const { oldScore } = applyWordDelta(q.word, delta);
+
+  if(correct){
+    fb.textContent = 'Riktig!';
+    fb.classList.add('correct');
+    quiz.correctCount++;
+    Sound.play('mcCorrect');
+  } else {
+    fb.textContent = `Feil — riktig svar var "${q.word.ord}"`;
+    fb.classList.add('wrong');
+    Sound.play('mcWrong');
+  }
+  showScoreDelta(oldScore, delta);
+  scheduleAdvance(ADVANCE_DELAY);
+}
+
+function normalizeAnswer(s, strict){
+  let v = s.trim().toLowerCase();
+  if(!strict) v = v.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  return v;
+}
+
+function insertSpecialChar(ch){
+  const input = document.getElementById('writeAnswerInput');
+  const start = input.selectionStart ?? input.value.length;
+  const end = input.selectionEnd ?? input.value.length;
+  input.value = input.value.slice(0, start) + ch + input.value.slice(end);
+  const pos = start + ch.length;
+  input.focus();
+  input.setSelectionRange(pos, pos);
+}
+
+/* =========================================================
+   ADVANCE TIMER BAR
+   ========================================================= */
+const ADVANCE_DELAY = 2600; // includes the ~1.4s score-count animation plus an extra second of breathing room
+
+function showTimerBar(durationMs){
+  const wrap = document.getElementById('timerBarWrap');
+  const fill = document.getElementById('timerBarFill');
+  wrap.classList.remove('hidden');
+  void wrap.offsetWidth;
+  wrap.classList.add('visible');
+  fill.style.transition = 'none';
+  fill.style.width = '100%';
+  void fill.offsetWidth;
+  fill.style.transition = `width ${durationMs}ms linear`;
+  fill.style.width = '0%';
+}
+
+function hideTimerBar(){
+  const wrap = document.getElementById('timerBarWrap');
+  wrap.classList.remove('visible');
+  setTimeout(() => wrap.classList.add('hidden'), 350);
+}
+
+function renderGuessesBox(q){
+  const box = document.getElementById('yourGuessesBox');
+  const list = document.getElementById('guessesList');
+  if(!q.guesses || q.guesses.length === 0){ box.classList.add('hidden'); return; }
+  list.innerHTML = q.guesses.map(g => `<div class="guess-line">${g ? g.replace(/</g,'&lt;') : '<em>(tomt)</em>'}</div>`).join('');
+  box.classList.remove('hidden');
+}
+
+function submitWriteAnswer(){
+  const q = quiz.questions[quiz.index];
+  const input = document.getElementById('writeAnswerInput');
+  const given = input.value;
+  q.attempts++;
+
+  const strict = quiz.isFinalExam;
+  if(normalizeAnswer(given, strict) === normalizeAnswer(q.word.ord, strict)){
+    const delta = quiz.isFinalExam ? 0 : 2;
+    const { oldScore } = applyWordDelta(q.word, delta);
+    const fb = document.getElementById('feedbackRow');
+    fb.textContent = quiz.isFinalExam ? 'Riktig!' : 'Riktig! +2 poeng';
+    fb.classList.add('correct');
+    quiz.correctCount++;
+    input.disabled = true;
+    Sound.play('writeCorrect');
+    showScoreDelta(oldScore, delta);
+    scheduleAdvance(ADVANCE_DELAY);
+    return;
+  }
+
+  q.guesses.push(given.trim());
+
+  if(q.attempts < 2){
+    const fb = document.getElementById('feedbackRow');
+    fb.textContent = 'Feil, prøv igjen.';
+    fb.classList.add('wrong');
+    input.value = '';
+    input.focus();
+    return;
+  }
+
+  // 2 attempts used, still wrong -> reveal + score penalty (same in both modes)
+  const delta = -1;
+  const { oldScore } = applyWordDelta(q.word, delta);
+  const fb = document.getElementById('feedbackRow');
+  fb.textContent = `Ingen flere forsøk. ${delta} poeng`;
+  fb.classList.add('wrong');
+  input.disabled = true;
+  document.getElementById('revealWord').textContent = q.word.ord;
+  document.getElementById('revealBox').classList.remove('hidden');
+  renderGuessesBox(q);
+  Sound.play('writeWrongFinal');
+  showScoreDelta(oldScore, delta);
+  // no auto-advance here — user chooses "skrivefeil" or Finish/Neste manually
+  document.getElementById('skipNextBtn').classList.remove('hidden');
+}
+
+function handleTypoFlow(){
+  const q = quiz.questions[quiz.index];
+  if(q.typoUsed){ return; }
+  q.typoUsed = true;
+  document.getElementById('revealBox').classList.add('hidden');
+  document.getElementById('revealWord').textContent = '';
+  document.getElementById('skipNextBtn').classList.add('hidden');
+  const input = document.getElementById('writeAnswerInput');
+  input.disabled = false;
+  input.value = '';
+  input.focus();
+  document.getElementById('feedbackRow').textContent = 'Skriv begrepet på nytt — denne gangen teller det.';
+  document.getElementById('feedbackRow').className = 'feedback-row';
+  document.getElementById('scoreDeltaPopup').classList.add('hidden');
+
+  const submitOnce = () => {
+    const strict = quiz.isFinalExam;
+    const rawGiven = input.value;
+    const given = normalizeAnswer(rawGiven, strict);
+    const correct = given === normalizeAnswer(q.word.ord, strict);
+    const delta = correct ? (quiz.isFinalExam ? 0 : 1) : -1;
+    const { oldScore } = applyWordDelta(q.word, delta);
+
+    if(correct){
+      document.getElementById('feedbackRow').textContent = quiz.isFinalExam ? 'Riktig denne gangen!' : 'Riktig denne gangen! +1 poeng (skrivefeil-redning)';
+      document.getElementById('feedbackRow').classList.add('correct');
+      quiz.correctCount += 0.5;
+      Sound.play('typoRescueCorrect');
+    } else {
+      q.guesses.push(rawGiven.trim());
+      document.getElementById('feedbackRow').textContent = `Fortsatt feil — riktig var "${q.word.ord}". ${delta} poeng`;
+      document.getElementById('feedbackRow').classList.add('wrong');
+      document.getElementById('revealWord').textContent = q.word.ord;
+      document.getElementById('revealBox').classList.remove('hidden');
+      renderGuessesBox(q);
+      Sound.play('typoRescueWrong');
+    }
+    showScoreDelta(oldScore, delta);
+    input.disabled = true;
+    document.getElementById('submitWriteBtn').removeEventListener('click', submitOnce);
+    scheduleAdvance(ADVANCE_DELAY);
+  };
+  document.getElementById('submitWriteBtn').addEventListener('click', submitOnce, { once:true });
+}
+
+function finishQuizEarly(){
+  const remaining = quiz.questions.length - quiz.index - 1;
+  if(remaining <= 0){ finishQuiz(); return; }
+  const ok = confirm(`Du har ${remaining} oppgave(r) igjen. Vil du avslutte runden nå likevel?`);
+  if(ok) finishQuiz();
+}
+
+function confirmCancelQuiz(){
+  const box = document.createElement('div');
+  box.className = 'modal-overlay';
+  box.innerHTML = `
+    <div class="modal-box">
+      <h2>Er du sikker?</h2>
+      <div class="def-text" style="margin-bottom:18px;">
+        Quizen avbrytes og du får ingen språkpoeng for denne runden. Ordene du allerede har svart på beholder poengendringene sine.
+      </div>
+      <div style="display:flex;gap:10px;justify-content:center;">
+        <button class="secondary-btn" id="cancelQuizNo" style="color:#221f33;border-color:#ccc;">Nei, fortsett quiz</button>
+        <button class="modal-close" id="cancelQuizYes">Ja, avbryt</button>
+      </div>
+    </div>`;
+  document.getElementById('modalRoot').appendChild(box);
+  box.addEventListener('click', (e) => { if(e.target === box) box.remove(); });
+  box.querySelector('#cancelQuizNo').addEventListener('click', () => box.remove());
+  box.querySelector('#cancelQuizYes').addEventListener('click', () => {
+    box.remove();
+    if(pendingAdvanceTimeout){ clearTimeout(pendingAdvanceTimeout); pendingAdvanceTimeout = null; }
+    quiz = null;
+    document.body.classList.remove('final-exam');
+    backToMenu();
+  });
+}
+
+async function finishQuiz(){
+  const accuracy = quiz.correctCount / quiz.totalCount;
+  let earned = 0;
+  const sizeFactor = quiz.totalCount >= 18 ? 1 : quiz.totalCount >= 8 ? 0.6 : 0.35;
+  const lengthFactor = quiz.lengthKey === 'long' ? 1.1 : quiz.lengthKey === 'medium' ? 1 : 0.85;
+  if(accuracy >= 0.999) earned = Math.round((2 + 3 * sizeFactor) * lengthFactor);
+  else if(accuracy >= 0.5) earned = Math.round((1 + 1.5 * sizeFactor) * lengthFactor);
+  else earned = accuracy > 0 ? 1 : 0;
+
+  if(quiz.isFinalExam && accuracy < 0.999){
+    earned = 0;
+  }
+
+  profile.sprakpoeng += earned;
+  profile.roundsPlayed += 1;
+  evaluateSuggestion(accuracy);
+
+  const newPct = computeGrowthPercent();
+  if(newPct !== null){
+    const prevPct = profile.growthSnapshot;
+    if(prevPct === null || typeof prevPct === 'undefined'){
+      profile.growthTrend = 'flat';
+    } else if(newPct > prevPct + 2){
+      profile.growthTrend = 'up';
+    } else if(newPct < prevPct - 2){
+      profile.growthTrend = 'down';
+    } else {
+      profile.growthTrend = 'flat';
+    }
+    profile.growthSnapshot = newPct;
+  }
+
+  await persist();
+
+  const examFailed = quiz.isFinalExam && accuracy < 0.999;
+  const isPerfect = accuracy >= 0.999 && !examFailed;
+  const isAllWrong = quiz.correctCount === 0;
+
+  const GREAT_EMOJI = ["😋","😍","🤩","😁","😛","😲","🤯","🥵"];
+  const NORMAL_EMOJI = ["😀","😄","😉","☺","😏"];
+  const BAD_EMOJI = ["😣","😨","🥶","🤮","💀"];
+
+  const victoryBox = document.getElementById('victoryBox');
+  const emojiEl = document.getElementById('victoryEmoji');
+  victoryBox.className = 'victory' + (examFailed || isAllWrong ? ' bad' : '');
+
+  let pickFrom, titleText, subText, soundName;
+  if(examFailed){
+    pickFrom = BAD_EMOJI;
+    titleText = 'Ikke helt i mål denne gangen';
+    subText = 'Final Exam krever 100% riktig. Ta en ny runde med vanlig quiz og prøv igjen søndag.';
+    soundName = 'quizAllWrong';
+  } else if(isAllWrong){
+    pickFrom = BAD_EMOJI;
+    titleText = 'Den runden var tøff';
+    subText = 'Alle svarene ble feil denne gangen — men nå vet du nøyaktig hvilke ord som trenger mer øving.';
+    soundName = 'quizAllWrong';
+  } else if(isPerfect){
+    pickFrom = GREAT_EMOJI;
+    titleText = 'Gratulerer, du klarte det!';
+    subText = MOTIVATION[Math.floor(Math.random()*MOTIVATION.length)];
+    soundName = 'quizPerfect';
+  } else {
+    pickFrom = NORMAL_EMOJI;
+    titleText = 'Gratulerer, du klarte det!';
+    subText = MOTIVATION[Math.floor(Math.random()*MOTIVATION.length)];
+    soundName = 'quizComplete';
+  }
+
+  document.getElementById('victoryTitleText').textContent = titleText;
+  document.getElementById('victorySub').textContent = subText;
+  document.getElementById('victoryPoints').textContent = `${earned >= 0 ? '+' : ''}${earned}`;
+  emojiEl.textContent = pickFrom[Math.floor(Math.random()*pickFrom.length)];
+  emojiEl.style.animation = 'none';
+  void emojiEl.offsetWidth; // restart animation
+  emojiEl.style.animation = '';
+  Sound.play(soundName);
+
+  document.body.classList.remove('final-exam');
+  showScreen('screen-victory');
+  renderWordRows(document.getElementById('wordSearch').value);
+  renderMenu();
+}
+
+/* =========================================================
+   IMPORT
+   ========================================================= */
+let importedRows = [];
+
+function parseImportLine(line){
+  if(!line.trim()) return null;
+  if(line.includes(':')){
+    const parts = line.split(':').map(p => p.trim());
+    const [ord, engelsk='', akademisk='', standard=''] = parts;
+    if(!ord) return null;
+    return { ord, engelsk, akademisk, standard };
+  }
+  return { ord: line.trim(), engelsk:'', akademisk:'', standard:'' };
+}
+
+function parseImportText(text){
+  return text.split('\n').map(parseImportLine).filter(Boolean);
+}
+
+function renderImportPreview(rows){
+  const wrap = document.getElementById('importPreview');
+  wrap.innerHTML = rows.map(r => `
+    <div class="import-row">
+      <span><b>${r.ord}</b></span>
+      <span class="${!r.akademisk && !r.standard ? 'missing' : ''}">
+        ${r.akademisk || r.standard ? 'definisjon(er) funnet' : 'ingen definisjon ennå'}
+      </span>
+    </div>`).join('');
+  document.getElementById('confirmImportBtn').classList.toggle('hidden', rows.length === 0);
+}
+
+async function confirmImport(){
+  importedRows.forEach(r => {
+    const id = slug(r.ord);
+    const existing = wordList.find(w => w.id === id);
+    if(existing){
+      existing.engelsk = r.engelsk || existing.engelsk;
+      existing.akademisk = r.akademisk || existing.akademisk;
+      existing.standard = r.standard || existing.standard;
+    } else {
+      wordList.push({ id, ord:r.ord, engelsk:r.engelsk, akademisk:r.akademisk, standard:r.standard, score:0, weekly:false, attempts:0 });
+    }
+  });
+  await persist();
+  renderWordRows();
+  updateWeeklyCount();
+  document.getElementById('importText').value = '';
+  document.getElementById('importPreview').innerHTML = '';
+  document.getElementById('confirmImportBtn').classList.add('hidden');
+  showScreen('screen-wordlist');
+}
+
+/* =========================================================
+   EXPORT (download JSON backup)
+   ========================================================= */
+function downloadBackup(){
+  const data = JSON.stringify({ wordList, profile }, null, 2);
+  const blob = new Blob([data], { type:'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'ordlaering-backup.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function handleUploadBackup(evt){
+  const file = evt.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = async () => {
+    try{
+      const parsed = JSON.parse(reader.result);
+      if(Array.isArray(parsed.wordList)){
+        wordList = parsed.wordList.map(w => ({ attempts:0, ...w }));
+      }
+      if(parsed.profile) profile = parsed.profile;
+      if(typeof profile.roundsPlayed !== 'number') profile.roundsPlayed = 0;
+      if(!Array.isArray(profile.recentAccuracies)) profile.recentAccuracies = [];
+      if(typeof profile.growthSnapshot === 'undefined') profile.growthSnapshot = null;
+      if(!profile.growthTrend) profile.growthTrend = 'flat';
+      if(typeof profile.pendingSuggestion === 'undefined') profile.pendingSuggestion = null;
+      wordList.forEach(w => { if(typeof w.attempts !== 'number') w.attempts = w.score !== 0 ? 1 : 0; });
+      await persist();
+      renderProfile();
+      renderWordRows();
+      updateWeeklyCount();
+      renderMenu();
+      alert('Ordliste og profil lastet inn.');
+    }catch(e){
+      alert('Klarte ikke å lese filen. Er det en gyldig backup-fil?');
+    }
+    evt.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+/* =========================================================
+   EVENT BINDING
+   ========================================================= */
+function bindGlobalEvents(){
+  document.querySelectorAll('[data-action="back-to-menu"]').forEach(el => el.addEventListener('click', backToMenu));
+  document.querySelector('[data-action="open-wordlist"]').addEventListener('click', () => showScreen('screen-wordlist'));
+  document.querySelector('[data-action="open-mine-ord"]').addEventListener('click', () => { renderMineOrd(); showScreen('screen-mine-ord'); });
+  document.querySelector('[data-action="open-quiz-setup"]').addEventListener('click', () => { updateWeeklyCount(); showScreen('screen-quiz-setup'); });
+  document.querySelector('[data-action="open-import"]').addEventListener('click', () => showScreen('screen-import'));
+  document.querySelector('[data-action="start-final-exam"]').addEventListener('click', () => startQuiz(true));
+
+  document.getElementById('profileBtn').addEventListener('click', openProfileModal);
+  document.getElementById('wordSearch').addEventListener('input', (e) => renderWordRows(e.target.value));
+
+  bindSetupPills();
+  document.getElementById('startQuizBtn').addEventListener('click', () => startQuiz(false));
+  document.getElementById('submitWriteBtn').addEventListener('click', submitWriteAnswer);
+  document.getElementById('writeAnswerInput').addEventListener('keydown', (e) => { if(e.key === 'Enter') submitWriteAnswer(); });
+  document.getElementById('typoBtn').addEventListener('click', handleTypoFlow);
+  document.getElementById('finishEarlyBtn').addEventListener('click', finishQuizEarly);
+  document.getElementById('continuePlayingBtn').addEventListener('click', continuePlaying);
+  document.getElementById('endHereBtn').addEventListener('click', finishQuiz);
+  document.getElementById('cancelQuizLink').addEventListener('click', confirmCancelQuiz);
+  document.getElementById('skipNextBtn').addEventListener('click', skipToNext);
+  document.querySelectorAll('#specialCharsRow button').forEach(btn => {
+    btn.addEventListener('click', () => insertSpecialChar(btn.dataset.char));
+  });
+
+  document.getElementById('downloadBackupBtn').addEventListener('click', downloadBackup);
+  document.getElementById('uploadBackupBtn').addEventListener('click', () => document.getElementById('uploadBackupInput').click());
+  document.getElementById('uploadBackupInput').addEventListener('change', handleUploadBackup);
+
+  document.getElementById('parseImportBtn').addEventListener('click', () => {
+    importedRows = parseImportText(document.getElementById('importText').value);
+    renderImportPreview(importedRows);
+  });
+  document.getElementById('confirmImportBtn').addEventListener('click', confirmImport);
+}
+
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,1899 @@
+{
+  "wordList": [
+    {
+      "id": "meritt",
+      "ord": "Meritt",
+      "engelsk": "merit",
+      "akademisk": "betyr fortjenstfulle handlinger, prestasjoner eller bragder. ",
+      "standard": "Gode resultater og viktige ting du har klart.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "premiss",
+      "ord": "Premiss",
+      "engelsk": "premise",
+      "akademisk": "er en forutsetning, en grunnleggende antakelse eller et utsagn som ligger til grunn for en logisk slutning, en argumentasjon eller en beslutning.",
+      "standard": "En påstand som danner utgangspunktet for en slutning eller en konklusjon.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "historisk",
+      "ord": "Historisk",
+      "engelsk": "historical",
+      "akademisk": "Ord som forklarer at et argument eller en historie har grunnlag i fakta basert på erfaring eller allmennkunnskap.",
+      "standard": "Noe som faktisk har skjedd før, ikke oppdiktet.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "intraven-s",
+      "ord": "Intravenøs",
+      "engelsk": "intravenous",
+      "akademisk": "betyr at noe tilføres direkte inn i en vene/blodåre",
+      "standard": "Medisinen eller væsken går rett i blodbanen og virker med en gang.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "beskjeden",
+      "ord": "Beskjeden",
+      "engelsk": "modest",
+      "akademisk": "Som ikke fremhever seg selv eller egne prestasjoner; tilbakeholden.",
+      "standard": "Som ikke skryter av seg selv.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "omfattende",
+      "ord": "Omfattende",
+      "engelsk": "extensive",
+      "akademisk": "Som dekker eller inkluderer mye; vidtrekkende i omfang.",
+      "standard": "Som er stort eller dekker mye.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "smaragd",
+      "ord": "Smaragd",
+      "engelsk": "emerald",
+      "akademisk": "En grønn, verdifull edelstein av mineralet beryll.",
+      "standard": "En grønn, dyr stein/smykkestein.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "bebreide",
+      "ord": "Bebreide",
+      "engelsk": "",
+      "akademisk": "Ord som betyr å klandre, kritisere eller uttrykke misnøye med noen for noe de har gjort",
+      "standard": "Å uttrykke misnøye for noe som er gjort.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "iver",
+      "ord": "Iver",
+      "engelsk": "",
+      "akademisk": "Betyr en sterk og utålmodig lyst, glød, innsatsvilje eller dyp interesse for å få gjort noe",
+      "standard": "Man har en lyst til å få noe gjort.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ansvarsl-shet",
+      "ord": "Ansvarsløshet",
+      "engelsk": "",
+      "akademisk": "Å være ansvarsløs eller uansvarlig. Mangel på evne, vilje eller følelse til å ta ansvar for handlinger, plikter eller konsekvenser.",
+      "standard": "Man handler uten å tenke over konsekvens for en selv eller andre. Tar ikke stilling til konsekvenser.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "intrikat",
+      "ord": "Intrikat",
+      "engelsk": "",
+      "akademisk": "Betyr innviklet, innfløkt, komplisert eller vanskelig. Det beskriver noe som er vanskelig å forstå, løse eller finne ut av fordi det har mange små deler eller detaljer som henger sammen.",
+      "standard": "Beskriver noe som er vanskelig å forstå grunnet sin kompleksitet.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "omforent",
+      "ord": "Omforent",
+      "engelsk": "",
+      "akademisk": "Noe som man har blitt enig om, avtalt eller vedtatt i fellesskap",
+      "standard": "Felles enighet der en gruppe deler nøyaktig samme oppfatning.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ekstase",
+      "ord": "Ekstase",
+      "engelsk": "",
+      "akademisk": "En intens tilstand av sterk henrykkelse, vill begeistring eller en følelse av å være ute av seg selv. Fra Gresk: å settes utenfor seg selv",
+      "standard": "En følelse av enorm, overveldende glede eller lykke.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "henrykkelse",
+      "ord": "Henrykkelse",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "gledesrus",
+      "ord": "Gledesrus",
+      "engelsk": "",
+      "akademisk": "En tilstand fylt av enorm glede og lykke som kan minnes om en rusende tilstand.",
+      "standard": "En dyp følelse av lettelse og eufori",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "distre",
+      "ord": "Distré",
+      "engelsk": "",
+      "akademisk": "betyr å være åndsfraværende, tankespredt eller glemsk, ofte fordi man er oppslukt av egne tanker og ikke følger med på det som skjer rundt seg",
+      "standard": "Glemmer ting lett",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "blygsel",
+      "ord": "Blygsel",
+      "engelsk": "",
+      "akademisk": "betyr skamfølelse, sjenanse eller en følelse av blygskap. Ordet brukes om det å være sjenert, å føle en flauhet eller å ha en finfølelse som gjør en tilbakeholden.",
+      "standard": "Skamfølelse, sjenanse eller bluferdighet.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sjenanse",
+      "ord": "Sjenanse ",
+      "engelsk": "",
+      "akademisk": "Betyr sjenerthet, forlegenhet eller blygsel. Det beskriver en følelse av usikkerhet, sjenerthet eller hemning i sosiale situasjoner, spesielt rundt ukjente mennesker.",
+      "standard": "Å føle seg utilpass, forsiktig eller nervøs i møte med andre.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "fort-rnet",
+      "ord": "Fortørnet",
+      "engelsk": "",
+      "akademisk": "betyr å være svært sint, arg, fornærmet eller forarget over noe",
+      "standard": "Vond, irritert eller opprørt.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "utilstrekkelighet",
+      "ord": "Utilstrekkelighet",
+      "engelsk": "",
+      "akademisk": "betyr at noe ikke strekker til, ikke er bra nok, eller mangler det som trengs for å løse en oppgave",
+      "standard": "At ressurser, kunnskap eller midler er for små til å dekke et behov.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "indignert",
+      "ord": "Indignert",
+      "engelsk": "",
+      "akademisk": "betyr å være forarget, opprørt eller krenket over noe man opplever som urettferdig eller moralsk forkastelig.",
+      "standard": "Uttrykker en rettferdig eller moralsk harme, ikke bare vanlig sinne.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "butt",
+      "ord": "Butt",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "bagatell",
+      "ord": "Bagatell",
+      "engelsk": "",
+      "akademisk": "en ubetydelig eller uvesentlig ting, også kalt en småting.",
+      "standard": "Noe som har liten verdi eller lav viktighet.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sporenstreks",
+      "ord": "Sporenstreks",
+      "engelsk": "",
+      "akademisk": "å gjøre noe øyeblikkelig, med en gang, eller å dra direkte av sted uten stans.",
+      "standard": "Å gjøre noe uten å nøle eller vente.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "skutte",
+      "ord": "Skutte",
+      "engelsk": "",
+      "akademisk": "å gjøre raske rykninger eller bevegelser med skuldrene eller overkroppen, som regel fordi man fryser (er kald) eller føler ubehag",
+      "standard": "Riste på seg, grøsse eller hufse seg sammen.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "fynde",
+      "ord": "Fynde",
+      "engelsk": "",
+      "akademisk": "betyr kraft, vekt, virkningsfullhet eller en kort og rammende evne i en uttrykksmåte",
+      "standard": "Å gjøre noe med stor kraft, iver, innsatsvilje eller ettertrykk.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "lavm-lt",
+      "ord": "Lavmælt",
+      "engelsk": "",
+      "akademisk": "betyr å snakke med svak stemme, eller å være dempet og stillfarende uten store ord",
+      "standard": "En person eller samtale med en svak, dempet stemme.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "traurig",
+      "ord": "Traurig",
+      "engelsk": "",
+      "akademisk": "betyr trist, sørgmodig, kjedelig, nitrist eller nedslått",
+      "standard": "Noe som er preget av eller vekker sorg",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "s-rgmodig",
+      "ord": "Sørgmodig",
+      "engelsk": "",
+      "akademisk": "betyr å være trist, bedrøvet eller preget av en dyp og stille sorg. ",
+      "standard": "Trist, sorgfull, modløs eller melankolsk.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forbehold",
+      "ord": "Forbehold",
+      "engelsk": "",
+      "akademisk": "betyr en reservasjon, betingelse eller begrensning som knyttes til en avtale, et bud eller en uttalelse",
+      "standard": "En innskrenkning i det man sier eller lover.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "utspekulert",
+      "ord": "Utspekulert",
+      "engelsk": "",
+      "akademisk": "betyr at noe er lurt uttenkt, listig, slu eller beregnende",
+      "standard": "En gjennomtenkt, smart eller listig fremgangsmåte.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "perpleks",
+      "ord": "Perpleks",
+      "engelsk": "Perplex",
+      "akademisk": "Å være _ betyr å være forbløffet, forvirret, rådvill eller lamslått",
+      "standard": "Forvirret, forbløffet, rådvill, betuttet eller ute av stand til å reagere.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "vettugt",
+      "ord": "Vettugt",
+      "engelsk": "",
+      "akademisk": "betyr forstandig, klok, fornuftig eller at noen har sitt vett i behold",
+      "standard": "Å oppføre seg på en logisk og moden måte.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "vitnesbyrd",
+      "ord": "Vitnesbyrd",
+      "engelsk": "",
+      "akademisk": "betyr et utsagn eller en erklæring bygd på personlig kjennskap, et bevis på en sannhet, eller en personlig bekjennelse av sin tro. . Det kan også brukes som et annet ord for et vitnemål eller en attest.",
+      "standard": "En uttalelse om det man har sett, hørt eller erfart, eller en skriftlig attest.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "storsinnet",
+      "ord": "Storsinnet",
+      "engelsk": "",
+      "akademisk": "betyr å ha eller vise storsinn – det vil si å være edelmodig, raus, sjenerøs eller tilgivende.",
+      "standard": "Edel, nobel, gavmild og storslått.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "oppbragt",
+      "ord": "Oppbragt",
+      "engelsk": "",
+      "akademisk": "betyr sint, opphisset, forarget eller indignert",
+      "standard": "Være sint, opphisset eller ute av seg av mishag.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "korumpere",
+      "ord": "Korumpere",
+      "engelsk": "",
+      "akademisk": "betyr å ødelegge eller forderve noen moralsk, ofte gjennom bestikkelser eller ved å gjøre noen korrupt.",
+      "standard": "Å ødelegge noens ærlighet eller prinsipper ",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "mishag",
+      "ord": "Mishag",
+      "engelsk": "",
+      "akademisk": "betyr motvilje, misnøye eller en følelse av å ikke like noe. ",
+      "standard": "Motvilje, misnøye eller avsmak.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "l-stadianer",
+      "ord": "Læstadianer",
+      "engelsk": "",
+      "akademisk": "En læstadianer er tilhenger av læstadianismen, en konservativ, luthersk vekkelsesbevegelse stiftet på midten av 1800-tallet av den svenske presten og botanikeren Lars Levi Læstadius. ",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "gemen",
+      "ord": "Gemen",
+      "engelsk": "",
+      "akademisk": "betyr som regel simpel, sjofel eller tarvelig. Det kan også bety alminnelig eller felles i eldre eller faste uttrykk",
+      "standard": "Noe som er æreløst, slemt eller svakt gjort.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "nubbesjans",
+      "ord": "Nubbesjans",
+      "engelsk": "",
+      "akademisk": "betyr å ikke ha den minste eller ringeste mulighet til å klare noe.",
+      "standard": "Fornektelse av å ha noen mulighet til å klare noe.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "monoman",
+      "ord": "Monoman",
+      "engelsk": "",
+      "akademisk": "betyr å være sykelig opptatt av, eller ha en ekstremt ensidig interesse for, én bestemt ting eller idé.",
+      "standard": "noen som er intenst og ensporet opptatt av et særskilt tema",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "tendensi-st",
+      "ord": "Tendensiøst",
+      "engelsk": "",
+      "akademisk": "betyr at noe er bevisst ensidig, partisk eller farget for å fremme en bestemt mening eller sak.",
+      "standard": "Informasjon eller argumenter velges ut med hensikt for å støtte ett bestemt syn.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "gyselig",
+      "ord": "Gyselig",
+      "engelsk": "",
+      "akademisk": "betyr fryktelig, skremmende eller svært ubehagelig. ",
+      "standard": "Noe som er stygt eller dårlig",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "var",
+      "ord": "Vár",
+      "engelsk": "",
+      "akademisk": "betyr å lett merke noe, ømfintlig varsom, årvåken, forsiktig",
+      "standard": "Å være forsiktig eller oppmerksom.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "stagnert",
+      "ord": "Stagnert",
+      "engelsk": "",
+      "akademisk": "betyr å stoppe opp eller gå i stå, slik at utvikling, vekst eller framgang opphører.",
+      "standard": "At en prosess eller vekst mister farten og stanser helt.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ulendt",
+      "ord": "Ulendt",
+      "engelsk": "",
+      "akademisk": "betyr enten noe som er lodden eller hårete, eller noe som er uklar, vag og vanskelig å forstå.",
+      "standard": "Lodden, hårete eller krusete",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "pittoreske",
+      "ord": "Pittoreske",
+      "engelsk": "",
+      "akademisk": "betyr malerisk, det vil si noe som er idyllisk, vakkert eller estetisk tiltalende på en måte som egner seg til å bli malt eller fotografert.",
+      "standard": "Noe som utstråler en sjarmerende og koselig atmosfære.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sanndru",
+      "ord": "Sanndru",
+      "engelsk": "",
+      "akademisk": "betyr sannferdig, troverdig eller pålitelig.",
+      "standard": "Sannferdig, ærlig, til å stole på.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ublu",
+      "ord": "Ublu",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "kjensgjerning",
+      "ord": "Kjensgjerning",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "stagnere",
+      "ord": "Stagnere",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "banal",
+      "ord": "Banal",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "uutgrunnelig",
+      "ord": "Uutgrunnelig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "snurt",
+      "ord": "Snurt",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "skansom",
+      "ord": "Skånsom",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "megetsigende",
+      "ord": "Megetsigende",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "rsma",
+      "ord": "Ørsmå",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "dis",
+      "ord": "Dis",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "finurlig",
+      "ord": "Finurlig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "listig",
+      "ord": "Listig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "snedig",
+      "ord": "Snedig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "tilforlatelig",
+      "ord": "Tilforlatelig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "mett-av-dage",
+      "ord": "Mett av dage",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "gestikulere",
+      "ord": "Gestikulere",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "klarlagt",
+      "ord": "Klarlagt",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "flegma",
+      "ord": "Flegma",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sysselsetting",
+      "ord": "Sysselsetting",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "henvist",
+      "ord": "Henvist",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "pretensi-s",
+      "ord": "Pretensiøs",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "trasig",
+      "ord": "Trasig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "krekslig",
+      "ord": "Krekslig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "skansomt",
+      "ord": "skånsomt",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "passere-revy",
+      "ord": "Passere revy",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forringelse",
+      "ord": "Forringelse",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forkleinelse",
+      "ord": "Forkleinelse",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "beleilig",
+      "ord": "Beleilig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "bekvem",
+      "ord": "Bekvem",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ubekvem",
+      "ord": "Ubekvem",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "gunstig",
+      "ord": "Gunstig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "h-velig",
+      "ord": "Høvelig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "nyans",
+      "ord": "Nyans",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "fornedre",
+      "ord": "Fornedre",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "makaber",
+      "ord": "Makaber",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ansiennitet",
+      "ord": "Ansiennitet",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ambivalent",
+      "ord": "Ambivalent",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forfengelig",
+      "ord": "Forfengelig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "falleferdig",
+      "ord": "Falleferdig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forfallende",
+      "ord": "Forfallende",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forverrende",
+      "ord": "Forverrende",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "fortreffelighet",
+      "ord": "Fortreffelighet",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "kinkig",
+      "ord": "Kinkig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ettern-ler",
+      "ord": "Etternøler",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "prek-r",
+      "ord": "Prekær",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "a-beve",
+      "ord": "Å beve",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "omsv-p",
+      "ord": "Omsvøp",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sentimentalitet",
+      "ord": "Sentimentalitet",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "traust",
+      "ord": "Traust",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "kvasikoselige",
+      "ord": "Kvasikoselige",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "pedantisk",
+      "ord": "Pedantisk",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "bagateller",
+      "ord": "Bagateller",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sigen",
+      "ord": "Sigen",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "enklave",
+      "ord": "Enklave",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "hjemmel",
+      "ord": "Hjemmel",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forgodtbefinnende",
+      "ord": "Forgodtbefinnende",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "lumsk",
+      "ord": "Lumsk",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forkastelig",
+      "ord": "Forkastelig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "befengt",
+      "ord": "Befengt",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "geleide",
+      "ord": "Geleide",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "rekvisitt",
+      "ord": "Rekvisitt",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forpurre",
+      "ord": "Forpurre",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "diffus",
+      "ord": "Diffus",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sinnrik",
+      "ord": "Sinnrik",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "kl-ktig",
+      "ord": "Kløktig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "innrette",
+      "ord": "Innrette",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "spakne",
+      "ord": "Spakne",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "kaver",
+      "ord": "Kaver",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "trass",
+      "ord": "Trass",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "fortrapt",
+      "ord": "Fortrapt",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "brokker",
+      "ord": "Brokker",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "a-lire",
+      "ord": "Å lire",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forskanet",
+      "ord": "Forskånet",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "skansel",
+      "ord": "Skånsel",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "inkubere",
+      "ord": "Inkubere",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "soignert",
+      "ord": "Soignert",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "irrgang",
+      "ord": "Irrgang",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "nyss",
+      "ord": "Nyss",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "d-sig",
+      "ord": "Døsig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forsonende",
+      "ord": "Forsonende",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "krakilsk",
+      "ord": "Krakilsk",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "skjemmes",
+      "ord": "Skjemmes",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ymte",
+      "ord": "Ymte",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "blivende",
+      "ord": "Blivende",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "gemyttlig",
+      "ord": "Gemyttlig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "andektig",
+      "ord": "Andektig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "bombastisk",
+      "ord": "Bombastisk",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "svulstige",
+      "ord": "Svulstige",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "h-ysttravende",
+      "ord": "Høysttravende",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "fraser",
+      "ord": "Fraser",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "pretensi-st",
+      "ord": "Pretensiøst",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "konvensjonelle",
+      "ord": "Konvensjonelle",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "banalt",
+      "ord": "Banalt",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "fragmentert",
+      "ord": "Fragmentert",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "rasjonelt",
+      "ord": "Rasjonelt",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sammenstilling",
+      "ord": "Sammenstilling",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "grasi-s",
+      "ord": "Grasiøs",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "fornedre-seg",
+      "ord": "Fornedre seg",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "stimulerende",
+      "ord": "Stimulerende",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "lirer",
+      "ord": "Lirer",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "frynsete",
+      "ord": "Frynsete",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ugjendrivelig",
+      "ord": "Ugjendrivelig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "forstand",
+      "ord": "Forstand",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "juridisk",
+      "ord": "Juridisk",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "salgs-yemed",
+      "ord": "Salgsøyemed",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "persona-non-grata",
+      "ord": "persona non grata",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "tiln-rme",
+      "ord": "Tilnærme",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "kassable",
+      "ord": "Kassable",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "tvetydig",
+      "ord": "Tvetydig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "utagering",
+      "ord": "Utagering",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "anstendighet",
+      "ord": "Anstendighet",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "bevillingen",
+      "ord": "bevillingen",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "hasard",
+      "ord": "Hasard",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "esentrisk",
+      "ord": "Esentrisk",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "overveldene",
+      "ord": "Overveldene",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "vidl-ftig",
+      "ord": "Vidløftig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "plundrende",
+      "ord": "Plundrende",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "djerv",
+      "ord": "Djerv",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "uinnvidd",
+      "ord": "Uinnvidd",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "pertentlig",
+      "ord": "Pertentlig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "agens",
+      "ord": "Agens",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "tapsaversjon",
+      "ord": "Tapsaversjon",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "annvendelig",
+      "ord": "Annvendelig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sjargong",
+      "ord": "Sjargong",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "klebrig",
+      "ord": "Klebrig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "grasil",
+      "ord": "Grasil",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "ukuelig",
+      "ord": "Ukuelig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "liflighet",
+      "ord": "Liflighet",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "skral",
+      "ord": "Skral",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "skr-pelig",
+      "ord": "Skrøpelig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "subtil",
+      "ord": "Subtil",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "rager",
+      "ord": "Rager",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "meritter",
+      "ord": "Meritter",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "avlang",
+      "ord": "Avlang",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "molifonken",
+      "ord": "Molifonken",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sluk-ret",
+      "ord": "Slukøret",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "sta-i-beit",
+      "ord": "Stå i beit",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "alminnelig",
+      "ord": "Alminnelig",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "intransitiv",
+      "ord": "Intransitiv",
+      "engelsk": "",
+      "akademisk": "",
+      "standard": "",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    },
+    {
+      "id": "promisku-s",
+      "ord": "Promiskuøs",
+      "engelsk": "promiscuous",
+      "akademisk": "Som har mange og skiftende (seksual)partnere, eller som blander sammen ulikeartede ting uten system.",
+      "standard": "Som ikke holder seg til én ting/person, blander mye.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
+    }
+  ],
+  "profile": {
+    "username": "EdWin",
+    "emoji": "🦉",
+    "sprakpoeng": 0
+  }
+}
