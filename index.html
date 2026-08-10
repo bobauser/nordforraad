@@ -1047,8 +1047,13 @@ async function fetchRemoteWordList(){
     const res = await fetch(REMOTE_WORDLIST_URL, { cache:'no-store' });
     if(!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
-    if(!Array.isArray(data)) throw new Error('Forventet en JSON-array');
-    return data;
+    // Accept either a bare array of words, or the {wordList, profile} shape
+    // produced by the "Last ned ordliste" backup export.
+    const list = Array.isArray(data) ? data
+      : (data && Array.isArray(data.wordList)) ? data.wordList
+      : null;
+    if(!list) throw new Error('Forventet en JSON-array eller et objekt med et "wordList"-felt');
+    return list;
   }catch(e){
     console.warn('Kunne ikke hente ekstern ordliste (' + e.message + '), bruker lokal liste i stedet.');
     return null;
