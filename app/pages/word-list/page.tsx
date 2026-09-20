@@ -2,7 +2,7 @@ export default function WordList() {
     return (
         //   <!-- ===================== ORDLISTE ===================== -->
         //style="margin-right:8px;"
-        <div id="screen-wordlist" className="hidden">
+        <div id="screen-wordlist">
             <div className="back-link" data-action="back-to-menu">‹ Tilbake</div>
             <h1 className="screen-title">Ordliste</h1>
             <div className="wordlist-toolbar">

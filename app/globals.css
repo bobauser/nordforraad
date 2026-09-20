@@ -40,6 +40,10 @@
     background: linear-gradient(160deg, var(--menu-1), var(--menu-2));
     color:var(--text-light);
     transition: background 0.4s ease;
+    max-width: 720px;
+    margin: 0px auto;
+    padding: 28px;
+    min-height: 100vh;
   }
   body.screen-quiz, body.screen-wordlist-detail{
     background: linear-gradient(180deg, var(--flat-bg), var(--flat-bg-2));
@@ -68,6 +72,8 @@
     letter-spacing:0.01em;
     font-family:var(--font-display);
     font-weight:600;
+    color: white;
+    text-decoration: none;
   }
   .brand small{
     display:block;
