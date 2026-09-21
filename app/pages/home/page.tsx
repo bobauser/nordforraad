@@ -7,7 +7,7 @@ export default function HomeComponent() {
         // <!-- ===================== MENU ===================== -->
         <div id="screen-menu">
             <div className="menu-grid">
-            <button onClick={() => router.push("/word-list")} className="menu-card" data-action="open-wordlist">
+            <button onClick={() => router.push("/pages/word-list")} className="menu-card" data-action="open-wordlist">
                 Ordliste
                 <small>Bla, søk og velg ukens begreper</small>
             </button>

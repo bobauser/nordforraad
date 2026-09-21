@@ -1,10 +1,13 @@
 // app/api/users/route.ts
 import { NextResponse } from "next/server";
 import { notFound } from 'next/navigation';
+import { GetProfileEmoji } from "@/app/utils/profilestringtools";
 
-export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) 
+export async function GET(req: Request, { params }: { params: Promise<{ id: string }> })
 {
     const { id } = await params; // async i nyere versjoner
+    const { searchParams } = new URL(req.url);
+    const emoji_id = Number(searchParams.get('emoji_id'))
 
     const id_number = Number(id);
     // Valgfritt: Sjekk om ID faktisk er et gyldig tall
@@ -16,7 +19,8 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
     if (name === null) {
         notFound();
     } else {
-        return NextResponse.json([{ id: id_number, name: name }]);
+        let emoji = GetProfileEmoji(emoji_id)
+        return NextResponse.json([{ id: id_number, username: name, emoji: emoji, spraakpoeng: 0}]);
     }
 }
 
