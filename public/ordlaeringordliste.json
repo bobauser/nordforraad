@@ -1809,6 +1809,16 @@
       "score": 0,
       "weekly": false,
       "attempts": 0
+    },
+    {
+      "id": "amor-s",
+      "ord": "Amorøs",
+      "engelsk": "",
+      "akademisk": "Ordet beskriver noe som gjelder erotisk kjærlighet. Elskovsfull",
+      "standard": "Person som er romantisk eller lysten på erotikk.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
     }
   ]
 }

@@ -67,6 +67,15 @@
     align-items:flex-start;
     margin-bottom:28px;
   }
+  .wordSeperator {
+    font-size: larger;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 2px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    width: max-content;
+  }
   .brand{
     font-size:1.6rem;
     letter-spacing:0.01em;

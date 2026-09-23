@@ -5,7 +5,7 @@ export default function TopBar() {
         <div className="topbar" id="topbar">
             <div className="brand">
                 <Link href="/">Nordforråd</Link>
-                <small>Norsk ordforråd, litt om gangen</small>
+                <small>Norsk ordforråd, ett ord om gangen</small>
             </div>
             <button id="profileBtn">
             <span className="avatar" id="profileAvatar">🦉</span>
