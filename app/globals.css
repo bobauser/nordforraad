@@ -24,6 +24,15 @@
     --font-body: "Sora", "Segoe UI", sans-serif;
     font-family: var(--font-body);
   }
+
+  body { /*TODO: is this already present or do we need to provide fonts here?*/
+    font-family: var(--font-sora), sans-serif;
+  }
+
+  h1, h2, h3, .serif {
+    font-family: var(--font-fraunces), serif;
+  }
+
   *{box-sizing:border-box;}
   body{
     margin:0;
@@ -31,6 +40,10 @@
     background: linear-gradient(160deg, var(--menu-1), var(--menu-2));
     color:var(--text-light);
     transition: background 0.4s ease;
+    max-width: 720px;
+    margin: 0px auto;
+    padding: 28px;
+    min-height: 100vh;
   }
   body.screen-quiz, body.screen-wordlist-detail{
     background: linear-gradient(180deg, var(--flat-bg), var(--flat-bg-2));
@@ -54,11 +67,22 @@
     align-items:flex-start;
     margin-bottom:28px;
   }
+  .wordSeperator {
+    font-size: larger;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 2px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    width: max-content;
+  }
   .brand{
     font-size:1.6rem;
     letter-spacing:0.01em;
     font-family:var(--font-display);
     font-weight:600;
+    color: white;
+    text-decoration: none;
   }
   .brand small{
     display:block;

@@ -511,16 +511,6 @@
       "attempts": 0
     },
     {
-      "id": "stagnere",
-      "ord": "Stagnere",
-      "engelsk": "",
-      "akademisk": "",
-      "standard": "",
-      "score": 0,
-      "weekly": false,
-      "attempts": 0
-    },
-    {
       "id": "banal",
       "ord": "Banal",
       "engelsk": "",
@@ -713,16 +703,6 @@
     {
       "id": "krekslig",
       "ord": "Krekslig",
-      "engelsk": "",
-      "akademisk": "",
-      "standard": "",
-      "score": 0,
-      "weekly": false,
-      "attempts": 0
-    },
-    {
-      "id": "skansomt",
-      "ord": "skånsomt",
       "engelsk": "",
       "akademisk": "",
       "standard": "",
@@ -1001,16 +981,6 @@
       "attempts": 0
     },
     {
-      "id": "bagateller",
-      "ord": "Bagateller",
-      "engelsk": "",
-      "akademisk": "",
-      "standard": "",
-      "score": 0,
-      "weekly": false,
-      "attempts": 0
-    },
-    {
       "id": "sigen",
       "ord": "Sigen",
       "engelsk": "",
@@ -1201,16 +1171,6 @@
       "attempts": 0
     },
     {
-      "id": "a-lire",
-      "ord": "Å lire",
-      "engelsk": "",
-      "akademisk": "",
-      "standard": "",
-      "score": 0,
-      "weekly": false,
-      "attempts": 0
-    },
-    {
       "id": "forskanet",
       "ord": "Forskånet",
       "engelsk": "",
@@ -1391,28 +1351,8 @@
       "attempts": 0
     },
     {
-      "id": "pretensi-st",
-      "ord": "Pretensiøst",
-      "engelsk": "",
-      "akademisk": "",
-      "standard": "",
-      "score": 0,
-      "weekly": false,
-      "attempts": 0
-    },
-    {
       "id": "konvensjonelle",
       "ord": "Konvensjonelle",
-      "engelsk": "",
-      "akademisk": "",
-      "standard": "",
-      "score": 0,
-      "weekly": false,
-      "attempts": 0
-    },
-    {
-      "id": "banalt",
-      "ord": "Banalt",
       "engelsk": "",
       "akademisk": "",
       "standard": "",
@@ -1453,16 +1393,6 @@
     {
       "id": "grasi-s",
       "ord": "Grasiøs",
-      "engelsk": "",
-      "akademisk": "",
-      "standard": "",
-      "score": 0,
-      "weekly": false,
-      "attempts": 0
-    },
-    {
-      "id": "fornedre-seg",
-      "ord": "Fornedre seg",
       "engelsk": "",
       "akademisk": "",
       "standard": "",
@@ -1811,16 +1741,6 @@
       "attempts": 0
     },
     {
-      "id": "meritter",
-      "ord": "Meritter",
-      "engelsk": "",
-      "akademisk": "",
-      "standard": "",
-      "score": 0,
-      "weekly": false,
-      "attempts": 0
-    },
-    {
       "id": "avlang",
       "ord": "Avlang",
       "engelsk": "",
@@ -1889,11 +1809,16 @@
       "score": 0,
       "weekly": false,
       "attempts": 0
+    },
+    {
+      "id": "amor-s",
+      "ord": "Amorøs",
+      "engelsk": "",
+      "akademisk": "Ordet beskriver noe som gjelder erotisk kjærlighet. Elskovsfull",
+      "standard": "Person som er romantisk eller lysten på erotikk.",
+      "score": 0,
+      "weekly": false,
+      "attempts": 0
     }
-  ],
-  "profile": {
-    "username": "EdWin",
-    "emoji": "🦉",
-    "sprakpoeng": 0
-  }
+  ]
 }
