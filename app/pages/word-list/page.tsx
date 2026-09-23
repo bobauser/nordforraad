@@ -40,24 +40,8 @@ export default function WordList() {
                 console.error("Kunne ikke hente ord:", err);
             }
         }
-        // FIXME: Move GetProfile to a higher Hierarchy. -->
-        // async function getProfile() {
-        //     try {
-        //         // just for fun, get a random name every time!
-        //         const id = Math.floor(Math.random() * (4 - 1 + 1)) + 1; // eventuelt: Math.floor(Math.random() * 4) + 1
-        //         const emojisid = Math.floor(Math.random() * (13 - 0 + 1)) + 0; // eventuelt: Math.floor(Math.random() * 14)
-        //         const res = await fetch(`/api/users/1?id=1&emoji_id=1`)
-        //         const data = await res.json();
-        //         console.log("YUS, hentet profil")
-        //         console.log(data)
-        //     } catch(err) {
-        //         console.error("Uku leleh")
-        //     }
-        // }
-        // ^^^^
         if (fetchOneTime == 0) {
             fetchallwords()
-            // getProfile() //<--- part of the function above
             fetchOneTime = 1
         }
     }, [])
