@@ -1,7 +1,9 @@
 // app/api/users/route.ts
 import { NextResponse } from "next/server";
 import { notFound } from 'next/navigation';
-import { GetProfileEmoji } from "@/app/utils/profilestringtools";
+import { ValidationResult } from "@/app/types/user";
+import { UserString } from "@/app/types/user";
+import { checkUserAgainstDatabase } from "@/app/services/userService";
 
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }> })
 {
@@ -15,30 +17,13 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
         return NextResponse.json({ error: 'Ugyldig ID-format' }, { status: 400 });
     }
 
-    let name = testProfiles(id_number);
-    if (name === null) {
+    let profile: ValidationResult = checkUserAgainstDatabase(id_number);
+
+    if (!profile.valid || !profile.parsed) {
         notFound();
     } else {
-        let emoji = GetProfileEmoji(emoji_id)
-        return NextResponse.json([{ id: id_number, username: name, emoji: emoji, spraakpoeng: 0}]);
+        // let emoji = GetProfileEmoji(emoji_id)
+        let user:UserString = profile.parsed
+        return NextResponse.json({emojiIndex: user.emojiIndex, username: user.username, words: user.words});
     }
-}
-
-
-function testProfiles(id: number) {
-    switch (id) {
-        case 1:
-            return "Bob";
-            break;
-        case 2:
-            return "Garry";
-            break;
-        case 3:
-            return "Terrence";
-            break;
-        case 4:
-            return "Perry";
-            break;
-    }
-    return null;
 }
