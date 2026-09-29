@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Word, WordAndExtraData } from "@/app/types/word";
 import { WordRow } from "@/app/components/words/wordcomponents";
@@ -12,7 +13,7 @@ export default function WordList() {
     let filterOneTime = 0
 
     function addRandomVals(word: Word): WordAndExtraData {
-        let newWordData: WordAndExtraData = {
+        const newWordData: WordAndExtraData = {
             worddata: word,
             weekly: Math.random() > 0.5,
         }
@@ -56,7 +57,7 @@ export default function WordList() {
     return (
         //   <!-- ===================== ORDLISTE ===================== -->
         <div id="screen-wordlist">
-            <div className="back-link" data-action="back-to-menu">‹ Tilbake</div>
+            <Link href="/" className="back-link" data-action="back-to-menu">{"< Tilbake"}</Link>
             <h1 className="screen-title">Ordliste</h1>
             <div className="wordlist-toolbar">
                 {/* TODO: evaluate wether the download button should be included in the actual quiz */}
