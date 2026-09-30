@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Word, WordAndExtraData } from "@/app/types/word";
 import { WordRow } from "@/app/components/words/wordcomponents";
+import { useUser } from "@/app/context/userContext";
 
 //TODO: Delete this later?
 type doOnceVariables = {
@@ -12,6 +13,8 @@ type doOnceVariables = {
 
 // TODO: View definition from WordRow. Update Cloud userstring once you chose words for a quiz, so that it updates in the cloud after 5 seconds (not every time you interact with a word, thats too frequent).
 export default function WordList() {
+    const { user /*, setUser */ } = useUser();
+    
     const [rawDataList, setRawDataList] = useState<Word[]>([]);
     const [wordsList, setWordsList] = useState<Word[]>([]);
     const [nonDefinedList, setNonDefinedList] = useState<Word[]>([]);
