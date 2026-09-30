@@ -8,6 +8,7 @@ import { useUser } from "../context/userContext";
 
 export default function TopBar() {
     const { user /*, setUser */ } = useUser();
+    // TODO: Clean up removed API call implementation -->
     // const [userProfile, setUserProfile] = useState<UserString | null>(null)
     // const [noUserCookie, setNoUserCookie] = useState(false)
     // const [userString, setUserString] = useState("")

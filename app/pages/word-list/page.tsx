@@ -78,6 +78,7 @@ export default function WordList() {
             {/* <button className="secondary-btn" id="uploadBackupBtn">⬆ Last opp</button> */}
             <input type="file" id="uploadBackupInput" accept="application/json" className="hidden"></input>
             </div>
+            {/* TODO: bring back filtering here --> */}
             <input type="text" id="wordSearch" placeholder="Søk her"></input>
             <div id="wordRows">
                 {/* Vis innlastingstekst */}

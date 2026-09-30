@@ -35,7 +35,6 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const user = await userService.getCurrentUser();
-  
 
   return (
     <html
