@@ -1,0 +1,3291 @@
+{
+  "app": "satd-tracker",
+  "version": 1,
+  "folder": "nordforraad",
+  "created": "2026-09-30T20:46:19.823Z",
+  "lastScan": "2026-09-30T21:19:54.522Z",
+  "settings": {
+    "autoRefresh": 0,
+    "rootPath": "",
+    "extraIgnore": ""
+  },
+  "nextId": 38,
+  "items": {
+    "s1": {
+      "id": "s1",
+      "key": "app/components/modals/profileModal.tsx::fn:openProfileModal::FIXME: fix this broken mess#1",
+      "file": "app/components/modals/profileModal.tsx",
+      "line": 5,
+      "commentEnd": 5,
+      "type": "FIXME",
+      "match": "FIXME",
+      "comment": "FIXME: fix this broken mess",
+      "anchor": {
+        "kind": "function",
+        "name": "openProfileModal",
+        "line": 6
+      },
+      "fnEnd": 61,
+      "compromised": 56,
+      "before": [
+        {
+          "n": 2,
+          "t": "import { useUser } from \"@/app/context/userContext\";",
+          "k": "code"
+        },
+        {
+          "n": 3,
+          "t": "import { getAllEmojiChoices } from \"@/app/utils/profilestringtools\";",
+          "k": "code"
+        },
+        {
+          "n": 4,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 5,
+          "t": "// FIXME: fix this broken mess",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 6,
+          "t": "export default function openProfileModal(){",
+          "k": "fn"
+        },
+        {
+          "n": 7,
+          "t": "    const { user /*, setUser */ } = useUser();",
+          "k": "code"
+        },
+        {
+          "n": 8,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 9,
+          "t": "    const listOfEmojies = getAllEmojiChoices()",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s2": {
+      "id": "s2",
+      "key": "app/components/words/wordcomponents.tsx::line:13::FIXME: OBS, this is just randomized, when real userdata is handled, weekly should actually be the result of a useraction. If user clicked work \"spise\", this word should be active as weekly when you open the wordlist#1",
+      "file": "app/components/words/wordcomponents.tsx",
+      "line": 13,
+      "commentEnd": 13,
+      "type": "FIXME",
+      "match": "FIXME",
+      "comment": "FIXME: OBS, this is just randomized, when real userdata is handled, weekly should actually be the result of a useraction. If user clicked work \"spise\", this word should be active as weekly when you open the wordlist",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 10,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 11,
+          "t": "export function WordRow({data}: WordRowProps) {",
+          "k": "code"
+        },
+        {
+          "n": 12,
+          "t": "    let _word = data.worddata",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 13,
+          "t": "    const [wordChecked, setWordChecked] = useState(data.weekly); //FIXME: OBS, this is just randomized, when real userdata is handled, weekly should actually be the result of a useraction. If user clicked work \"spise\", this word should be active as weekly when you open the wordlist",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 14,
+          "t": "    const hasDefinition = UndefinedWordDefinition(_word.standard, _word.akademisk)",
+          "k": "code"
+        },
+        {
+          "n": 15,
+          "t": "    const missingEnglishTag = ",
+          "k": "code"
+        },
+        {
+          "n": 16,
+          "t": "    (hasDefinition && !(_word.engelsk && _word.engelsk.trim())) ? (<span className=\"word-tag\">🚫🇬🇧</span>) : null;",
+          "k": "code"
+        },
+        {
+          "n": 17,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s3": {
+      "id": "s3",
+      "key": "app/components/words/wordcomponents.tsx::line:19::FIXME: Get a better name for a word missing definition, making it unavailable for tests. Ineligeble is okay, but too open for interpetation.#1",
+      "file": "app/components/words/wordcomponents.tsx",
+      "line": 19,
+      "commentEnd": 19,
+      "type": "FIXME",
+      "match": "FIXME",
+      "comment": "FIXME: Get a better name for a word missing definition, making it unavailable for tests. Ineligeble is okay, but too open for interpetation.",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 16,
+          "t": "    (hasDefinition && !(_word.engelsk && _word.engelsk.trim())) ? (<span className=\"word-tag\">🚫🇬🇧</span>) : null;",
+          "k": "code"
+        },
+        {
+          "n": 17,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 18,
+          "t": "    const className =",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 19,
+          "t": "    // FIXME: Get a better name for a word missing definition, making it unavailable for tests. Ineligeble is okay, but too open for interpetation.",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 20,
+          "t": "    \"word-row\" +",
+          "k": "code"
+        },
+        {
+          "n": 21,
+          "t": "    (wordChecked && hasDefinition ? \" selected\" : \"\") +",
+          "k": "code"
+        },
+        {
+          "n": 22,
+          "t": "    (hasDefinition ? \"\" : \" ineligible\"); // FIXME-part2: this <<--",
+          "k": "code"
+        },
+        {
+          "n": 23,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s4": {
+      "id": "s4",
+      "key": "app/components/words/wordcomponents.tsx::line:22::FIXME-part2: this <<--#1",
+      "file": "app/components/words/wordcomponents.tsx",
+      "line": 22,
+      "commentEnd": 22,
+      "type": "FIXME",
+      "match": "FIXME",
+      "comment": "FIXME-part2: this <<--",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 19,
+          "t": "    // FIXME: Get a better name for a word missing definition, making it unavailable for tests. Ineligeble is okay, but too open for interpetation.",
+          "k": "code"
+        },
+        {
+          "n": 20,
+          "t": "    \"word-row\" +",
+          "k": "code"
+        },
+        {
+          "n": 21,
+          "t": "    (wordChecked && hasDefinition ? \" selected\" : \"\") +",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 22,
+          "t": "    (hasDefinition ? \"\" : \" ineligible\"); // FIXME-part2: this <<--",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 23,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 24,
+          "t": "    // TODO: Fix User Datastring once word has been selected. Click on as many words as you want, within 5 seconds of non-interaction, save to cloud. Probably parent component's job, not the wordrow itself",
+          "k": "code"
+        },
+        {
+          "n": 25,
+          "t": "    // function updateWordValue() {} //<-- from todo above, should update data somehow",
+          "k": "code"
+        },
+        {
+          "n": 26,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s5": {
+      "id": "s5",
+      "key": "app/components/words/wordcomponents.tsx::line:24::TODO: Fix User Datastring once word has been selected. Click on as many words as you want, within 5 seconds of non-interaction, save to cloud. Probably parent component's job, not the wordrow itself function updateWordValue() {} //<-- from todo above, should update data somehow#1",
+      "file": "app/components/words/wordcomponents.tsx",
+      "line": 24,
+      "commentEnd": 25,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Fix User Datastring once word has been selected. Click on as many words as you want, within 5 seconds of non-interaction, save to cloud. Probably parent component's job, not the wordrow itself\nfunction updateWordValue() {} //<-- from todo above, should update data somehow",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 21,
+          "t": "    (wordChecked && hasDefinition ? \" selected\" : \"\") +",
+          "k": "code"
+        },
+        {
+          "n": 22,
+          "t": "    (hasDefinition ? \"\" : \" ineligible\"); // FIXME-part2: this <<--",
+          "k": "code"
+        },
+        {
+          "n": 23,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 24,
+          "t": "    // TODO: Fix User Datastring once word has been selected. Click on as many words as you want, within 5 seconds of non-interaction, save to cloud. Probably parent component's job, not the wordrow itself",
+          "k": "comment"
+        },
+        {
+          "n": 25,
+          "t": "    // function updateWordValue() {} //<-- from todo above, should update data somehow",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 26,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 27,
+          "t": "    return (",
+          "k": "code"
+        },
+        {
+          "n": 28,
+          "t": "    <div className={className}>",
+          "k": "code"
+        },
+        {
+          "n": 29,
+          "t": "      <label className=\"check-area\">",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s6": {
+      "id": "s6",
+      "key": "app/components/words/wordcomponents.tsx::line:35::TODO: when clicked, change isWeekly for the word in the users data!#1",
+      "file": "app/components/words/wordcomponents.tsx",
+      "line": 35,
+      "commentEnd": 35,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: when clicked, change isWeekly for the word in the users data!",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 32,
+          "t": "          disabled={!hasDefinition}",
+          "k": "code"
+        },
+        {
+          "n": 33,
+          "t": "          onChange={() => {setWordChecked(!wordChecked)}} //uses isWeekly",
+          "k": "code"
+        },
+        {
+          "n": 34,
+          "t": "          checked={wordChecked}",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 35,
+          "t": "          // TODO: when clicked, change isWeekly for the word in the users data!",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 36,
+          "t": "        />",
+          "k": "code"
+        },
+        {
+          "n": 37,
+          "t": "        <span className=\"ord-text\">{_word.ord}</span>",
+          "k": "code"
+        },
+        {
+          "n": 38,
+          "t": "        {missingEnglishTag}",
+          "k": "code"
+        },
+        {
+          "n": 39,
+          "t": "      </label>",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s7": {
+      "id": "s7",
+      "key": "app/components/topbar.tsx::line:11::TODO: Clean up removed API call implementation --> const [userProfile, setUserProfile] = useState<UserString | null>(null) const [noUserCookie, setNoUserCookie] = useState(false) const [userString, setUserString] = useState(\"\") let fetchProfileOnce = 0#1",
+      "file": "app/components/topbar.tsx",
+      "line": 11,
+      "commentEnd": 15,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Clean up removed API call implementation -->\nconst [userProfile, setUserProfile] = useState<UserString | null>(null)\nconst [noUserCookie, setNoUserCookie] = useState(false)\nconst [userString, setUserString] = useState(\"\")\nlet fetchProfileOnce = 0",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 8,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 9,
+          "t": "export default function TopBar() {",
+          "k": "code"
+        },
+        {
+          "n": 10,
+          "t": "    const { user /*, setUser */ } = useUser();",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 11,
+          "t": "    // TODO: Clean up removed API call implementation -->",
+          "k": "comment"
+        },
+        {
+          "n": 12,
+          "t": "    // const [userProfile, setUserProfile] = useState<UserString | null>(null)",
+          "k": "comment"
+        },
+        {
+          "n": 13,
+          "t": "    // const [noUserCookie, setNoUserCookie] = useState(false)",
+          "k": "comment"
+        },
+        {
+          "n": 14,
+          "t": "    // const [userString, setUserString] = useState(\"\")",
+          "k": "comment"
+        },
+        {
+          "n": 15,
+          "t": "    // let fetchProfileOnce = 0",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 16,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 17,
+          "t": "    // FIXME: Move GetProfile to a higher Hierarchy. -->",
+          "k": "code"
+        },
+        {
+          "n": 18,
+          "t": "    // async function getProfile() {",
+          "k": "code"
+        },
+        {
+          "n": 19,
+          "t": "    //     try {",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s8": {
+      "id": "s8",
+      "key": "app/components/topbar.tsx::line:17::FIXME: Move GetProfile to a higher Hierarchy. --> async function getProfile() { try { // just for fun, get a random name every time! const id = Math.floor(Math.random() * (4 - 1 + 1)) + 1; // eventuelt: Math.floor(Math.random() * 4) + 1 // const emojisid = Math.floor(Math.random() * (13 - 0 + 1)) + 0; // eventuelt: Math.floor(Math.random() * 14) const res = await fetch(`/api/users/${id}`) const data = await res.json(); const userData: UserString = data#1",
+      "file": "app/components/topbar.tsx",
+      "line": 17,
+      "commentEnd": 25,
+      "type": "FIXME",
+      "match": "FIXME",
+      "comment": "FIXME: Move GetProfile to a higher Hierarchy. -->\nasync function getProfile() {\ntry {\n// just for fun, get a random name every time!\nconst id = Math.floor(Math.random() * (4 - 1 + 1)) + 1; // eventuelt: Math.floor(Math.random() * 4) + 1\n// const emojisid = Math.floor(Math.random() * (13 - 0 + 1)) + 0; // eventuelt: Math.floor(Math.random() * 14)\nconst res = await fetch(`/api/users/${id}`)\nconst data = await res.json();\nconst userData: UserString = data",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 14,
+          "t": "    // const [userString, setUserString] = useState(\"\")",
+          "k": "code"
+        },
+        {
+          "n": 15,
+          "t": "    // let fetchProfileOnce = 0",
+          "k": "code"
+        },
+        {
+          "n": 16,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 17,
+          "t": "    // FIXME: Move GetProfile to a higher Hierarchy. -->",
+          "k": "comment"
+        },
+        {
+          "n": 18,
+          "t": "    // async function getProfile() {",
+          "k": "comment"
+        },
+        {
+          "n": 19,
+          "t": "    //     try {",
+          "k": "comment"
+        },
+        {
+          "n": 20,
+          "t": "    //         // just for fun, get a random name every time!",
+          "k": "comment"
+        },
+        {
+          "n": 21,
+          "t": "    //         const id = Math.floor(Math.random() * (4 - 1 + 1)) + 1; // eventuelt: Math.floor(Math.random() * 4) + 1",
+          "k": "comment"
+        },
+        {
+          "n": 22,
+          "t": "    //         // const emojisid = Math.floor(Math.random() * (13 - 0 + 1)) + 0; // eventuelt: Math.floor(Math.random() * 14)",
+          "k": "comment"
+        },
+        {
+          "n": 23,
+          "t": "    //         const res = await fetch(`/api/users/${id}`)",
+          "k": "comment"
+        },
+        {
+          "n": 24,
+          "t": "    //         const data = await res.json();",
+          "k": "comment"
+        },
+        {
+          "n": 25,
+          "t": "    //         const userData: UserString = data",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 26,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 27,
+          "t": "    //         setUserProfile(userData)",
+          "k": "code"
+        },
+        {
+          "n": 28,
+          "t": "    //         setNoUserCookie(false) //TODO: if the user could not be found, set UserCookie not found to True",
+          "k": "code"
+        },
+        {
+          "n": 29,
+          "t": "    //         console.log(\"YUS, hentet profil\")",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s9": {
+      "id": "s9",
+      "key": "app/components/topbar.tsx::line:28::setNoUserCookie(false) //TODO: if the user could not be found, set UserCookie not found to True console.log(\"YUS, hentet profil\") console.log(data) } catch(err) { console.error(\"Uku leleh\\n\" + err) } } // ^^^^#1",
+      "file": "app/components/topbar.tsx",
+      "line": 28,
+      "commentEnd": 35,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "setNoUserCookie(false) //TODO: if the user could not be found, set UserCookie not found to True\nconsole.log(\"YUS, hentet profil\")\nconsole.log(data)\n} catch(err) {\nconsole.error(\"Uku leleh\\n\" + err)\n}\n}\n// ^^^^",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 25,
+          "t": "    //         const userData: UserString = data",
+          "k": "code"
+        },
+        {
+          "n": 26,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 27,
+          "t": "    //         setUserProfile(userData)",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 28,
+          "t": "    //         setNoUserCookie(false) //TODO: if the user could not be found, set UserCookie not found to True",
+          "k": "comment"
+        },
+        {
+          "n": 29,
+          "t": "    //         console.log(\"YUS, hentet profil\")",
+          "k": "comment"
+        },
+        {
+          "n": 30,
+          "t": "    //         console.log(data)",
+          "k": "comment"
+        },
+        {
+          "n": 31,
+          "t": "    //     } catch(err) {",
+          "k": "comment"
+        },
+        {
+          "n": 32,
+          "t": "    //         console.error(\"Uku leleh\\n\" + err)",
+          "k": "comment"
+        },
+        {
+          "n": 33,
+          "t": "    //     }",
+          "k": "comment"
+        },
+        {
+          "n": 34,
+          "t": "    // }",
+          "k": "comment"
+        },
+        {
+          "n": 35,
+          "t": "    // // ^^^^",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 36,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 37,
+          "t": "    // useEffect(() => {",
+          "k": "code"
+        },
+        {
+          "n": 38,
+          "t": "    //     if (fetchProfileOnce == 0) {",
+          "k": "code"
+        },
+        {
+          "n": 39,
+          "t": "    //         getProfile()",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s10": {
+      "id": "s10",
+      "key": "app/pages/word-list/page.tsx::line:7::TODO: Delete this later?#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 7,
+      "commentEnd": 7,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Delete this later?",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 4,
+          "t": "import { Word, WordAndExtraData } from \"@/app/types/word\";",
+          "k": "code"
+        },
+        {
+          "n": 5,
+          "t": "import { WordRow } from \"@/app/components/words/wordcomponents\";",
+          "k": "code"
+        },
+        {
+          "n": 6,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 7,
+          "t": "//TODO: Delete this later?",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 8,
+          "t": "type doOnceVariables = {",
+          "k": "code"
+        },
+        {
+          "n": 9,
+          "t": "    fetchOneTime: number,",
+          "k": "code"
+        },
+        {
+          "n": 10,
+          "t": "    filterOneTime: number",
+          "k": "code"
+        },
+        {
+          "n": 11,
+          "t": "}",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T20:46:19.890Z",
+      "status": "missing",
+      "statusDate": "2026-09-30T21:19:41.256Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        },
+        {
+          "status": "missing",
+          "date": "2026-09-30T21:19:41.256Z",
+          "note": "No longer found at its old location"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": {
+        "rows": [
+          {
+            "n": 4,
+            "t": "import { Word, WordAndExtraData } from \"@/app/types/word\";",
+            "k": "code"
+          },
+          {
+            "n": 5,
+            "t": "import { WordRow } from \"@/app/components/words/wordcomponents\";",
+            "k": "code"
+          },
+          {
+            "n": 6,
+            "t": "import { useUser } from \"@/app/context/userContext\";",
+            "k": "code"
+          },
+          {
+            "n": 7,
+            "t": "",
+            "k": "code"
+          },
+          {
+            "n": 8,
+            "t": "//TODO: Delete this later?",
+            "k": "comment"
+          },
+          {
+            "n": 9,
+            "t": "type doOnceVariables = {",
+            "k": "code"
+          },
+          {
+            "n": 10,
+            "t": "    fetchOneTime: number,",
+            "k": "code"
+          },
+          {
+            "n": 11,
+            "t": "    filterOneTime: number",
+            "k": "code"
+          }
+        ],
+        "total": 112
+      }
+    },
+    "s11": {
+      "id": "s11",
+      "key": "app/pages/word-list/page.tsx::fn:WordList::TODO: View definition from WordRow. Update Cloud userstring once you chose words for a quiz, so that it updates in the cloud after 5 seconds (not every time you interact with a word, thats too frequent).#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 14,
+      "commentEnd": 14,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: View definition from WordRow. Update Cloud userstring once you chose words for a quiz, so that it updates in the cloud after 5 seconds (not every time you interact with a word, thats too frequent).",
+      "anchor": {
+        "kind": "function",
+        "name": "WordList",
+        "line": 15
+      },
+      "fnEnd": 112,
+      "compromised": 98,
+      "before": [
+        {
+          "n": 11,
+          "t": "    filterOneTime: number",
+          "k": "code"
+        },
+        {
+          "n": 12,
+          "t": "}",
+          "k": "code"
+        },
+        {
+          "n": 13,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 14,
+          "t": "// TODO: View definition from WordRow. Update Cloud userstring once you chose words for a quiz, so that it updates in the cloud after 5 seconds (not every time you interact with a word, thats too frequent).",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 15,
+          "t": "export default function WordList() {",
+          "k": "fn"
+        },
+        {
+          "n": 16,
+          "t": "    const { user /*, setUser */ } = useUser();",
+          "k": "code"
+        },
+        {
+          "n": 17,
+          "t": "    ",
+          "k": "code"
+        },
+        {
+          "n": 18,
+          "t": "    const [rawDataList, setRawDataList] = useState<Word[]>([]);",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s12": {
+      "id": "s12",
+      "key": "app/pages/word-list/page.tsx::fn:addRandomVals::TODO: remove this function after data replacing the weekly stat#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 26,
+      "commentEnd": 26,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: remove this function after data replacing the weekly stat",
+      "anchor": {
+        "kind": "function",
+        "name": "addRandomVals",
+        "line": 27
+      },
+      "fnEnd": 35,
+      "compromised": 9,
+      "before": [
+        {
+          "n": 23,
+          "t": "    // let filterOneTime = 0",
+          "k": "code"
+        },
+        {
+          "n": 24,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 25,
+          "t": "    // Add random vals is just a test function to add a checkmark to words. For later, it can be removed when this data has been replaced with actual userdata",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 26,
+          "t": "    //TODO: remove this function after data replacing the weekly stat",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 27,
+          "t": "    function addRandomVals(word: Word): WordAndExtraData {",
+          "k": "fn"
+        },
+        {
+          "n": 28,
+          "t": "        const newWordData: WordAndExtraData = {",
+          "k": "code"
+        },
+        {
+          "n": 29,
+          "t": "            worddata: word,",
+          "k": "code"
+        },
+        {
+          "n": 30,
+          "t": "            /* eslint-disable */",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s13": {
+      "id": "s13",
+      "key": "app/pages/word-list/page.tsx::line:75::TODO: evaluate wether the download button should be included in the actual quiz#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 75,
+      "commentEnd": 75,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: evaluate wether the download button should be included in the actual quiz",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 72,
+          "t": "            <Link href=\"/\" className=\"back-link\" data-action=\"back-to-menu\">{\"< Tilbake\"}</Link>",
+          "k": "code"
+        },
+        {
+          "n": 73,
+          "t": "            <h1 className=\"screen-title\">Ordliste</h1>",
+          "k": "code"
+        },
+        {
+          "n": 74,
+          "t": "            <div className=\"wordlist-toolbar\">",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 75,
+          "t": "                {/* TODO: evaluate wether the download button should be included in the actual quiz */}",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 76,
+          "t": "            {/* <button className=\"secondary-btn\" id=\"downloadBackupBtn\">⬇ Last ned ordliste</button>  */}",
+          "k": "code"
+        },
+        {
+          "n": 77,
+          "t": "            {/* TODO: Let users add own words? Or should this be an admin function? Possibly better with an API call to update a file. Potential idea for this project. */}",
+          "k": "code"
+        },
+        {
+          "n": 78,
+          "t": "            {/* <button className=\"secondary-btn\" id=\"uploadBackupBtn\">⬆ Last opp</button> */}",
+          "k": "code"
+        },
+        {
+          "n": 79,
+          "t": "            <input type=\"file\" id=\"uploadBackupInput\" accept=\"application/json\" className=\"hidden\"></input>",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T20:46:19.890Z",
+      "status": "missing",
+      "statusDate": "2026-09-30T21:19:41.256Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        },
+        {
+          "status": "missing",
+          "date": "2026-09-30T21:19:41.256Z",
+          "note": "No longer found at its old location"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": {
+        "rows": [
+          {
+            "n": 72,
+            "t": "    return (",
+            "k": "code"
+          },
+          {
+            "n": 73,
+            "t": "        //   <!-- ===================== ORDLISTE ===================== -->",
+            "k": "code"
+          },
+          {
+            "n": 74,
+            "t": "        <div id=\"screen-wordlist\">",
+            "k": "code"
+          },
+          {
+            "n": 75,
+            "t": "            <Link href=\"/\" className=\"back-link\" data-action=\"back-to-menu\">{\"< Tilbake\"}</Link>",
+            "k": "code"
+          },
+          {
+            "n": 76,
+            "t": "            <h1 className=\"screen-title\">Ordliste</h1>",
+            "k": "code"
+          },
+          {
+            "n": 77,
+            "t": "            <div className=\"wordlist-toolbar\">",
+            "k": "code"
+          },
+          {
+            "n": 78,
+            "t": "                {/* TODO: evaluate wether the download button should be included in the actual quiz */}",
+            "k": "comment"
+          },
+          {
+            "n": 79,
+            "t": "            {/* <button className=\"secondary-btn\" id=\"downloadBackupBtn\">⬇ Last ned ordliste</button>  */}",
+            "k": "code"
+          }
+        ],
+        "total": 112
+      }
+    },
+    "s14": {
+      "id": "s14",
+      "key": "app/pages/word-list/page.tsx::line:77::TODO: Let users add own words? Or should this be an admin function? Possibly better with an API call to update a file. Potential idea for this project.#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 77,
+      "commentEnd": 77,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Let users add own words? Or should this be an admin function? Possibly better with an API call to update a file. Potential idea for this project.",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 74,
+          "t": "            <div className=\"wordlist-toolbar\">",
+          "k": "code"
+        },
+        {
+          "n": 75,
+          "t": "                {/* TODO: evaluate wether the download button should be included in the actual quiz */}",
+          "k": "code"
+        },
+        {
+          "n": 76,
+          "t": "            {/* <button className=\"secondary-btn\" id=\"downloadBackupBtn\">⬇ Last ned ordliste</button>  */}",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 77,
+          "t": "            {/* TODO: Let users add own words? Or should this be an admin function? Possibly better with an API call to update a file. Potential idea for this project. */}",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 78,
+          "t": "            {/* <button className=\"secondary-btn\" id=\"uploadBackupBtn\">⬆ Last opp</button> */}",
+          "k": "code"
+        },
+        {
+          "n": 79,
+          "t": "            <input type=\"file\" id=\"uploadBackupInput\" accept=\"application/json\" className=\"hidden\"></input>",
+          "k": "code"
+        },
+        {
+          "n": 80,
+          "t": "            </div>",
+          "k": "code"
+        },
+        {
+          "n": 81,
+          "t": "            {/* TODO: bring back filtering here --> */}",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T20:46:19.890Z",
+      "status": "missing",
+      "statusDate": "2026-09-30T21:19:41.256Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        },
+        {
+          "status": "missing",
+          "date": "2026-09-30T21:19:41.256Z",
+          "note": "No longer found at its old location"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": {
+        "rows": [
+          {
+            "n": 74,
+            "t": "        <div id=\"screen-wordlist\">",
+            "k": "code"
+          },
+          {
+            "n": 75,
+            "t": "            <Link href=\"/\" className=\"back-link\" data-action=\"back-to-menu\">{\"< Tilbake\"}</Link>",
+            "k": "code"
+          },
+          {
+            "n": 76,
+            "t": "            <h1 className=\"screen-title\">Ordliste</h1>",
+            "k": "code"
+          },
+          {
+            "n": 77,
+            "t": "            <div className=\"wordlist-toolbar\">",
+            "k": "code"
+          },
+          {
+            "n": 78,
+            "t": "                {/* TODO: evaluate wether the download button should be included in the actual quiz */}",
+            "k": "comment"
+          },
+          {
+            "n": 79,
+            "t": "            {/* <button className=\"secondary-btn\" id=\"downloadBackupBtn\">⬇ Last ned ordliste</button>  */}",
+            "k": "code"
+          },
+          {
+            "n": 80,
+            "t": "            {/* TODO: Let users add own words? Or should this be an admin function? Possibly better with an API call to update a file. Potential idea for this project. */}",
+            "k": "comment"
+          },
+          {
+            "n": 81,
+            "t": "            {/* <button className=\"secondary-btn\" id=\"uploadBackupBtn\">⬆ Last opp</button> */}",
+            "k": "code"
+          }
+        ],
+        "total": 112
+      }
+    },
+    "s15": {
+      "id": "s15",
+      "key": "app/pages/word-list/page.tsx::line:81::TODO: bring back filtering here -->#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 81,
+      "commentEnd": 81,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: bring back filtering here -->",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 78,
+          "t": "            {/* <button className=\"secondary-btn\" id=\"uploadBackupBtn\">⬆ Last opp</button> */}",
+          "k": "code"
+        },
+        {
+          "n": 79,
+          "t": "            <input type=\"file\" id=\"uploadBackupInput\" accept=\"application/json\" className=\"hidden\"></input>",
+          "k": "code"
+        },
+        {
+          "n": 80,
+          "t": "            </div>",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 81,
+          "t": "            {/* TODO: bring back filtering here --> */}",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 82,
+          "t": "            <input type=\"text\" id=\"wordSearch\" placeholder=\"Søk her\"></input>",
+          "k": "code"
+        },
+        {
+          "n": 83,
+          "t": "            <div id=\"wordRows\">",
+          "k": "code"
+        },
+        {
+          "n": 84,
+          "t": "                {/* Vis innlastingstekst */}",
+          "k": "code"
+        },
+        {
+          "n": 85,
+          "t": "                {(wordsList.length < 1 && nonDefinedList.length < 1) ? (<p className=\"text-gray-600 text-sm\">{\"(steg 1 / 3) Laster inn ord ...\"}</p>) :",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T20:46:19.890Z",
+      "status": "missing",
+      "statusDate": "2026-09-30T21:19:41.256Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        },
+        {
+          "status": "missing",
+          "date": "2026-09-30T21:19:41.256Z",
+          "note": "No longer found at its old location"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": {
+        "rows": [
+          {
+            "n": 78,
+            "t": "                {/* TODO: evaluate wether the download button should be included in the actual quiz */}",
+            "k": "comment"
+          },
+          {
+            "n": 79,
+            "t": "            {/* <button className=\"secondary-btn\" id=\"downloadBackupBtn\">⬇ Last ned ordliste</button>  */}",
+            "k": "code"
+          },
+          {
+            "n": 80,
+            "t": "            {/* TODO: Let users add own words? Or should this be an admin function? Possibly better with an API call to update a file. Potential idea for this project. */}",
+            "k": "comment"
+          },
+          {
+            "n": 81,
+            "t": "            {/* <button className=\"secondary-btn\" id=\"uploadBackupBtn\">⬆ Last opp</button> */}",
+            "k": "code"
+          },
+          {
+            "n": 82,
+            "t": "            <input type=\"file\" id=\"uploadBackupInput\" accept=\"application/json\" className=\"hidden\"></input>",
+            "k": "code"
+          },
+          {
+            "n": 83,
+            "t": "            </div>",
+            "k": "code"
+          },
+          {
+            "n": 84,
+            "t": "            {/* TODO: bring back filtering here --> */}",
+            "k": "comment"
+          },
+          {
+            "n": 85,
+            "t": "            <input type=\"text\" id=\"wordSearch\" placeholder=\"Søk her\"></input>",
+            "k": "code"
+          }
+        ],
+        "total": 112
+      }
+    },
+    "s16": {
+      "id": "s16",
+      "key": "app/pages/word-list/page.tsx::line:88::TODO: Add the picked word based on the words from the user's list, and update scores too#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 88,
+      "commentEnd": 88,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Add the picked word based on the words from the user's list, and update scores too",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 85,
+          "t": "                {(wordsList.length < 1 && nonDefinedList.length < 1) ? (<p className=\"text-gray-600 text-sm\">{\"(steg 1 / 3) Laster inn ord ...\"}</p>) :",
+          "k": "code"
+        },
+        {
+          "n": 86,
+          "t": "                (wordsList.length > 0 && nonDefinedList.length < 1) ? (<p className=\"text-gray-600 text-sm\">{'(steg 2 / 3) Filtrerer ord...'}</p>) : (",
+          "k": "code"
+        },
+        {
+          "n": 87,
+          "t": "                    <>",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 88,
+          "t": "                    {/* TODO: Add the picked word based on the words from the user's list, and update scores too */}",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 89,
+          "t": "                    <span className=\"wordSeperator\">{`(${wordsList.length}) Ord`}</span>",
+          "k": "code"
+        },
+        {
+          "n": 90,
+          "t": "                    {/* words with definition here --> */}",
+          "k": "code"
+        },
+        {
+          "n": 91,
+          "t": "                    {wordsList && wordsList.map((item, key) => (",
+          "k": "code"
+        },
+        {
+          "n": 92,
+          "t": "                        <WordRow key={key} data={addRandomVals(item)}/>",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T20:46:19.890Z",
+      "status": "missing",
+      "statusDate": "2026-09-30T21:19:41.256Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        },
+        {
+          "status": "missing",
+          "date": "2026-09-30T21:19:41.256Z",
+          "note": "No longer found at its old location"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": {
+        "rows": [
+          {
+            "n": 85,
+            "t": "            <input type=\"text\" id=\"wordSearch\" placeholder=\"Søk her\"></input>",
+            "k": "code"
+          },
+          {
+            "n": 86,
+            "t": "            <div id=\"wordRows\">",
+            "k": "code"
+          },
+          {
+            "n": 87,
+            "t": "                {/* Vis innlastingstekst */}",
+            "k": "code"
+          },
+          {
+            "n": 88,
+            "t": "                {(wordsList.length < 1 && nonDefinedList.length < 1) ? (<p className=\"text-gray-600 text-sm\">{\"(steg 1 / 3) Laster inn ord ...\"}</p>) :",
+            "k": "code"
+          },
+          {
+            "n": 89,
+            "t": "                (wordsList.length > 0 && nonDefinedList.length < 1) ? (<p className=\"text-gray-600 text-sm\">{'(steg 2 / 3) Filtrerer ord...'}</p>) : (",
+            "k": "code"
+          },
+          {
+            "n": 90,
+            "t": "                    <>",
+            "k": "code"
+          },
+          {
+            "n": 91,
+            "t": "                    {/* TODO: Add the picked word based on the words from the user's list, and update scores too */}",
+            "k": "comment"
+          },
+          {
+            "n": 92,
+            "t": "                    <span className=\"wordSeperator\">{`(${wordsList.length}) Ord`}</span>",
+            "k": "code"
+          }
+        ],
+        "total": 112
+      }
+    },
+    "s17": {
+      "id": "s17",
+      "key": "app/services/userService.ts::line:23::TODO: Resolve: Argument for putting this at userservice. This validation should only happen when getting, or saving a userstring. Faulty userstrings will not be interacted with. Therefore, its not a \"util\", not a tool type function that many files will use, and is limited to user based actions#1",
+      "file": "app/services/userService.ts",
+      "line": 23,
+      "commentEnd": 23,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Resolve: Argument for putting this at userservice. This validation should only happen when getting, or saving a userstring. Faulty userstrings will not be interacted with. Therefore, its not a \"util\", not a tool type function that many files will use, and is limited to user based actions",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 20,
+          "t": "const ID_PATTERN = /^[a-z0-9-]+$/; // matches the app's slug() output",
+          "k": "code"
+        },
+        {
+          "n": 21,
+          "t": "// -----------------------------------------------------------------------------",
+          "k": "code"
+        },
+        {
+          "n": 22,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 23,
+          "t": "//TODO: Resolve: Argument for putting this at userservice. This validation should only happen when getting, or saving a userstring. Faulty userstrings will not be interacted with. Therefore, its not a \"util\", not a tool type function that many files will use, and is limited to user based actions",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 24,
+          "t": "//TODO: Go through this long function and validate wheter its heavy and needs re-vamp",
+          "k": "code"
+        },
+        {
+          "n": 25,
+          "t": "export function validateProfileCode(rawCode: unknown): ValidationResult {",
+          "k": "code"
+        },
+        {
+          "n": 26,
+          "t": "  const errors: string[] = [];",
+          "k": "code"
+        },
+        {
+          "n": 27,
+          "t": " ",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s18": {
+      "id": "s18",
+      "key": "app/services/userService.ts::fn:validateProfileCode::TODO: Go through this long function and validate wheter its heavy and needs re-vamp#1",
+      "file": "app/services/userService.ts",
+      "line": 24,
+      "commentEnd": 24,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Go through this long function and validate wheter its heavy and needs re-vamp",
+      "anchor": {
+        "kind": "function",
+        "name": "validateProfileCode",
+        "line": 25
+      },
+      "fnEnd": 127,
+      "compromised": 103,
+      "before": [
+        {
+          "n": 21,
+          "t": "// -----------------------------------------------------------------------------",
+          "k": "code"
+        },
+        {
+          "n": 22,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 23,
+          "t": "//TODO: Resolve: Argument for putting this at userservice. This validation should only happen when getting, or saving a userstring. Faulty userstrings will not be interacted with. Therefore, its not a \"util\", not a tool type function that many files will use, and is limited to user based actions",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 24,
+          "t": "//TODO: Go through this long function and validate wheter its heavy and needs re-vamp",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 25,
+          "t": "export function validateProfileCode(rawCode: unknown): ValidationResult {",
+          "k": "fn"
+        },
+        {
+          "n": 26,
+          "t": "  const errors: string[] = [];",
+          "k": "code"
+        },
+        {
+          "n": 27,
+          "t": " ",
+          "k": "code"
+        },
+        {
+          "n": 28,
+          "t": "  if (typeof rawCode !== 'string' || rawCode.trim().length === 0) {",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s19": {
+      "id": "s19",
+      "key": "app/services/userService.ts::fn:getCurrentUser::TODO: implement this function and try to find user by cookie, return a descriptive message if the browser a: contains no cookie, b: cookie is incorrect (most likely session expire), c: something else happens like an error internally#1",
+      "file": "app/services/userService.ts",
+      "line": 129,
+      "commentEnd": 129,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: implement this function and try to find user by cookie, return a descriptive message if the browser a: contains no cookie, b: cookie is incorrect (most likely session expire), c: something else happens like an error internally",
+      "anchor": {
+        "kind": "function",
+        "name": "getCurrentUser",
+        "line": 130
+      },
+      "fnEnd": 140,
+      "compromised": 11,
+      "before": [
+        {
+          "n": 126,
+          "t": "    return result;",
+          "k": "code"
+        },
+        {
+          "n": 127,
+          "t": "}",
+          "k": "code"
+        },
+        {
+          "n": 128,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 129,
+          "t": "// TODO: implement this function and try to find user by cookie, return a descriptive message if the browser a: contains no cookie, b: cookie is incorrect (most likely session expire), c: something else happens like an error internally",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 130,
+          "t": "export async function getCurrentUser(): Promise<UserString | null> {",
+          "k": "fn"
+        },
+        {
+          "n": 131,
+          "t": "  // const sessionToken = (await cookies()).get(\"session\")?.value;",
+          "k": "code"
+        },
+        {
+          "n": 132,
+          "t": "  // if (!sessionToken) return null;",
+          "k": "code"
+        },
+        {
+          "n": 133,
+          "t": "  // return userRepository.findBySessionToken(sessionToken);",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s20": {
+      "id": "s20",
+      "key": "app/types/word.ts::line:1::TODO: update the Word class, since a word might not need to include scores and attempts (these are user datas). Also, if its activated in a player's account, this data is missing anyway.#1",
+      "file": "app/types/word.ts",
+      "line": 1,
+      "commentEnd": 1,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: update the Word class, since a word might not need to include scores and attempts (these are user datas). Also, if its activated in a player's account, this data is missing anyway.",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [],
+      "commentLines": [
+        {
+          "n": 1,
+          "t": "// TODO: update the Word class, since a word might not need to include scores and attempts (these are user datas). Also, if its activated in a player's account, this data is missing anyway.",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 2,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 3,
+          "t": "export type Word = { ",
+          "k": "code"
+        },
+        {
+          "n": 4,
+          "t": "    id: string;",
+          "k": "code"
+        },
+        {
+          "n": 5,
+          "t": "    ord: string",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s21": {
+      "id": "s21",
+      "key": "app/types/word.ts::line:14::TODO: this is the extra dataclass I use to map values onto the prev class, needs future re-cal?#1",
+      "file": "app/types/word.ts",
+      "line": 14,
+      "commentEnd": 14,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: this is the extra dataclass I use to map values onto the prev class, needs future re-cal?",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 11,
+          "t": "    attempts: number",
+          "k": "code"
+        },
+        {
+          "n": 12,
+          "t": "};",
+          "k": "code"
+        },
+        {
+          "n": 13,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 14,
+          "t": "// TODO: this is the extra dataclass I use to map values onto the prev class, needs future re-cal?",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 15,
+          "t": "export type WordAndExtraData = {",
+          "k": "code"
+        },
+        {
+          "n": 16,
+          "t": "  worddata: Word;",
+          "k": "code"
+        },
+        {
+          "n": 17,
+          "t": "  weekly: boolean; //This datavalue means that a word has been chosen for the weeks current lesson. Although, that might still be a bad name",
+          "k": "code"
+        },
+        {
+          "n": 18,
+          "t": "  // FIXME: rename \"weekly\" to another name? Like selected (too generic?), chosenForQuiz (too concrete but bad name). Weekly itself it too open for interpretation in my opinion",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s22": {
+      "id": "s22",
+      "key": "app/types/word.ts::line:18::FIXME: rename \"weekly\" to another name? Like selected (too generic?), chosenForQuiz (too concrete but bad name). Weekly itself it too open for interpretation in my opinion#1",
+      "file": "app/types/word.ts",
+      "line": 18,
+      "commentEnd": 18,
+      "type": "FIXME",
+      "match": "FIXME",
+      "comment": "FIXME: rename \"weekly\" to another name? Like selected (too generic?), chosenForQuiz (too concrete but bad name). Weekly itself it too open for interpretation in my opinion",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 15,
+          "t": "export type WordAndExtraData = {",
+          "k": "code"
+        },
+        {
+          "n": 16,
+          "t": "  worddata: Word;",
+          "k": "code"
+        },
+        {
+          "n": 17,
+          "t": "  weekly: boolean; //This datavalue means that a word has been chosen for the weeks current lesson. Although, that might still be a bad name",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 18,
+          "t": "  // FIXME: rename \"weekly\" to another name? Like selected (too generic?), chosenForQuiz (too concrete but bad name). Weekly itself it too open for interpretation in my opinion",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 19,
+          "t": "};",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s23": {
+      "id": "s23",
+      "key": "app/utils/databaseMocker.ts::fn:mockUserStringDatabase::TODO: delete mockDB later and connect to actual database#1",
+      "file": "app/utils/databaseMocker.ts",
+      "line": 1,
+      "commentEnd": 1,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: delete mockDB later and connect to actual database",
+      "anchor": {
+        "kind": "function",
+        "name": "mockUserStringDatabase",
+        "line": 2
+      },
+      "fnEnd": 18,
+      "compromised": 17,
+      "before": [],
+      "commentLines": [
+        {
+          "n": 1,
+          "t": "//TODO: delete mockDB later and connect to actual database",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 2,
+          "t": "export function mockUserStringDatabase(id: number) {",
+          "k": "fn"
+        },
+        {
+          "n": 3,
+          "t": "    switch (id) {",
+          "k": "code"
+        },
+        {
+          "n": 4,
+          "t": "        case 1:",
+          "k": "code"
+        },
+        {
+          "n": 5,
+          "t": "            return \"MHxOeVN0YXJ0fG1lcml0dDoyOjIscHJlbWlzczotMTox\";",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s24": {
+      "id": "s24",
+      "key": "app/utils/eligeable.ts::fn:scoreColorClass::TODO: Make sure to fix this part too when the type 'Word' is fixed with updated data, the one below 2#1",
+      "file": "app/utils/eligeable.ts",
+      "line": 3,
+      "commentEnd": 3,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Make sure to fix this part too when the type 'Word' is fixed with updated data, the one below 2",
+      "anchor": {
+        "kind": "function",
+        "name": "scoreColorClass",
+        "line": 4
+      },
+      "fnEnd": 9,
+      "compromised": 6,
+      "before": [
+        {
+          "n": 1,
+          "t": "import { Word } from \"../types/word\";",
+          "k": "code"
+        },
+        {
+          "n": 2,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 3,
+          "t": "// TODO: Make sure to fix this part too when the type 'Word' is fixed with updated data, the one below 2",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 4,
+          "t": "export function scoreColorClass(word: Word) {",
+          "k": "fn"
+        },
+        {
+          "n": 5,
+          "t": "  if(!word.attempts) return 'neutral';",
+          "k": "code"
+        },
+        {
+          "n": 6,
+          "t": "  if(word.score < 0) return 'red';",
+          "k": "code"
+        },
+        {
+          "n": 7,
+          "t": "  if(word.score < 6) return 'orange';",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s25": {
+      "id": "s25",
+      "key": "app/utils/eligeable.ts::fn:isQuizEligible::TODO: Fix below function aswell#1",
+      "file": "app/utils/eligeable.ts",
+      "line": 10,
+      "commentEnd": 10,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Fix below function aswell",
+      "anchor": {
+        "kind": "function",
+        "name": "isQuizEligible",
+        "line": 12
+      },
+      "fnEnd": 14,
+      "compromised": 3,
+      "before": [
+        {
+          "n": 7,
+          "t": "  if(word.score < 6) return 'orange';",
+          "k": "code"
+        },
+        {
+          "n": 8,
+          "t": "  return 'green';",
+          "k": "code"
+        },
+        {
+          "n": 9,
+          "t": "}",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 10,
+          "t": "// TODO: Fix below function aswell",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 11,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 12,
+          "t": "export function isQuizEligible(word: Word){",
+          "k": "fn"
+        },
+        {
+          "n": 13,
+          "t": "  return !!(word.akademisk && word.akademisk.trim()) && !!(word.standard && word.standard.trim());",
+          "k": "code"
+        },
+        {
+          "n": 14,
+          "t": "}",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s26": {
+      "id": "s26",
+      "key": "app/utils/logic.ts::line:10::Rule: if a word contains both standard and academic definitions. FIXME: better functionname?#1",
+      "file": "app/utils/logic.ts",
+      "line": 10,
+      "commentEnd": 10,
+      "type": "FIXME",
+      "match": "FIXME",
+      "comment": "Rule: if a word contains both standard and academic definitions. FIXME: better functionname?",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 7,
+          "t": "        } else return false",
+          "k": "code"
+        },
+        {
+          "n": 8,
+          "t": "    } else return false",
+          "k": "code"
+        },
+        {
+          "n": 9,
+          "t": "}",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 10,
+          "t": "//Rule: if a word contains both standard and academic definitions. FIXME: better functionname?",
+          "k": "comment"
+        }
+      ],
+      "after": [],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s27": {
+      "id": "s27",
+      "key": "app/utils/profilestringtools.ts::fn:ProfileEncoder::FIXME: are these functions made irrelevant by the new Function in userService?#1",
+      "file": "app/utils/profilestringtools.ts",
+      "line": 1,
+      "commentEnd": 1,
+      "type": "FIXME",
+      "match": "FIXME",
+      "comment": "FIXME: are these functions made irrelevant by the new Function in userService?",
+      "anchor": {
+        "kind": "function",
+        "name": "ProfileEncoder",
+        "line": 2
+      },
+      "fnEnd": 4,
+      "compromised": 3,
+      "before": [],
+      "commentLines": [
+        {
+          "n": 1,
+          "t": "//FIXME: are these functions made irrelevant by the new Function in userService?",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 2,
+          "t": "export function ProfileEncoder() {",
+          "k": "fn"
+        },
+        {
+          "n": 3,
+          "t": "    //TODO: implement, use same code as last time",
+          "k": "code"
+        },
+        {
+          "n": 4,
+          "t": "}",
+          "k": "code"
+        },
+        {
+          "n": 5,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s28": {
+      "id": "s28",
+      "key": "app/utils/profilestringtools.ts::line:3::TODO: implement, use same code as last time#1",
+      "file": "app/utils/profilestringtools.ts",
+      "line": 3,
+      "commentEnd": 3,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: implement, use same code as last time",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 1,
+          "t": "//FIXME: are these functions made irrelevant by the new Function in userService?",
+          "k": "code"
+        },
+        {
+          "n": 2,
+          "t": "export function ProfileEncoder() {",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 3,
+          "t": "    //TODO: implement, use same code as last time",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 4,
+          "t": "}",
+          "k": "code"
+        },
+        {
+          "n": 5,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 6,
+          "t": "export function ProfileDecoder() {",
+          "k": "code"
+        },
+        {
+          "n": 7,
+          "t": "    //TODO: decode, x2 ^^",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s29": {
+      "id": "s29",
+      "key": "app/utils/profilestringtools.ts::line:7::TODO: decode, x2 ^^#1",
+      "file": "app/utils/profilestringtools.ts",
+      "line": 7,
+      "commentEnd": 7,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: decode, x2 ^^",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 4,
+          "t": "}",
+          "k": "code"
+        },
+        {
+          "n": 5,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 6,
+          "t": "export function ProfileDecoder() {",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 7,
+          "t": "    //TODO: decode, x2 ^^",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 8,
+          "t": "}",
+          "k": "code"
+        },
+        {
+          "n": 9,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 10,
+          "t": "export function ReadProfileString() {",
+          "k": "code"
+        },
+        {
+          "n": 11,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s30": {
+      "id": "s30",
+      "key": "app/layout.tsx::line:2::TODO: remove geist and geistmono later#1",
+      "file": "app/layout.tsx",
+      "line": 2,
+      "commentEnd": 2,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: remove geist and geistmono later",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 1,
+          "t": "import type { Metadata } from \"next\";",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 2,
+          "t": "import { Geist, Geist_Mono, Fraunces, Sora } from \"next/font/google\"; // TODO: remove geist and geistmono later",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 3,
+          "t": "import \"./globals.css\";",
+          "k": "code"
+        },
+        {
+          "n": 4,
+          "t": "import TopBar from \"./components/topbar\";",
+          "k": "code"
+        },
+        {
+          "n": 5,
+          "t": "import { UserProvider } from \"./context/userContext\";",
+          "k": "code"
+        },
+        {
+          "n": 6,
+          "t": "import * as userService from \"@/app/services/userService\"",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s31": {
+      "id": "s31",
+      "key": "app/globals.css::line:28::TODO: is this already present or do we need to provide fonts here?#1",
+      "file": "app/globals.css",
+      "line": 28,
+      "commentEnd": 28,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: is this already present or do we need to provide fonts here?",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 25,
+          "t": "    font-family: var(--font-body);",
+          "k": "code"
+        },
+        {
+          "n": 26,
+          "t": "  }",
+          "k": "code"
+        },
+        {
+          "n": 27,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 28,
+          "t": "  body { /*TODO: is this already present or do we need to provide fonts here?*/",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 29,
+          "t": "    font-family: var(--font-sora), sans-serif;",
+          "k": "code"
+        },
+        {
+          "n": 30,
+          "t": "  }",
+          "k": "code"
+        },
+        {
+          "n": 31,
+          "t": "",
+          "k": "code"
+        },
+        {
+          "n": 32,
+          "t": "  h1, h2, h3, .serif {",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T20:46:19.890Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T20:46:19.890Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T20:46:19.890Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s33": {
+      "id": "s33",
+      "key": "app/pages/word-list/page.tsx::line:8::TODO: Delete this later?#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 8,
+      "commentEnd": 8,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Delete this later?",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 5,
+          "t": "import { WordRow } from \"@/app/components/words/wordcomponents\";",
+          "k": "code"
+        },
+        {
+          "n": 6,
+          "t": "import { useUser } from \"@/app/context/userContext\";",
+          "k": "code"
+        },
+        {
+          "n": 7,
+          "t": "",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 8,
+          "t": "//TODO: Delete this later?",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 9,
+          "t": "type doOnceVariables = {",
+          "k": "code"
+        },
+        {
+          "n": 10,
+          "t": "    fetchOneTime: number,",
+          "k": "code"
+        },
+        {
+          "n": 11,
+          "t": "    filterOneTime: number",
+          "k": "code"
+        },
+        {
+          "n": 12,
+          "t": "}",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T21:19:41.256Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T21:19:41.256Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T21:19:41.256Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s34": {
+      "id": "s34",
+      "key": "app/pages/word-list/page.tsx::line:78::TODO: evaluate wether the download button should be included in the actual quiz#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 78,
+      "commentEnd": 78,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: evaluate wether the download button should be included in the actual quiz",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 75,
+          "t": "            <Link href=\"/\" className=\"back-link\" data-action=\"back-to-menu\">{\"< Tilbake\"}</Link>",
+          "k": "code"
+        },
+        {
+          "n": 76,
+          "t": "            <h1 className=\"screen-title\">Ordliste</h1>",
+          "k": "code"
+        },
+        {
+          "n": 77,
+          "t": "            <div className=\"wordlist-toolbar\">",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 78,
+          "t": "                {/* TODO: evaluate wether the download button should be included in the actual quiz */}",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 79,
+          "t": "            {/* <button className=\"secondary-btn\" id=\"downloadBackupBtn\">⬇ Last ned ordliste</button>  */}",
+          "k": "code"
+        },
+        {
+          "n": 80,
+          "t": "            {/* TODO: Let users add own words? Or should this be an admin function? Possibly better with an API call to update a file. Potential idea for this project. */}",
+          "k": "code"
+        },
+        {
+          "n": 81,
+          "t": "            {/* <button className=\"secondary-btn\" id=\"uploadBackupBtn\">⬆ Last opp</button> */}",
+          "k": "code"
+        },
+        {
+          "n": 82,
+          "t": "            <input type=\"file\" id=\"uploadBackupInput\" accept=\"application/json\" className=\"hidden\"></input>",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T21:19:41.256Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T21:19:41.256Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T21:19:41.256Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s35": {
+      "id": "s35",
+      "key": "app/pages/word-list/page.tsx::line:80::TODO: Let users add own words? Or should this be an admin function? Possibly better with an API call to update a file. Potential idea for this project.#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 80,
+      "commentEnd": 80,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Let users add own words? Or should this be an admin function? Possibly better with an API call to update a file. Potential idea for this project.",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 77,
+          "t": "            <div className=\"wordlist-toolbar\">",
+          "k": "code"
+        },
+        {
+          "n": 78,
+          "t": "                {/* TODO: evaluate wether the download button should be included in the actual quiz */}",
+          "k": "code"
+        },
+        {
+          "n": 79,
+          "t": "            {/* <button className=\"secondary-btn\" id=\"downloadBackupBtn\">⬇ Last ned ordliste</button>  */}",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 80,
+          "t": "            {/* TODO: Let users add own words? Or should this be an admin function? Possibly better with an API call to update a file. Potential idea for this project. */}",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 81,
+          "t": "            {/* <button className=\"secondary-btn\" id=\"uploadBackupBtn\">⬆ Last opp</button> */}",
+          "k": "code"
+        },
+        {
+          "n": 82,
+          "t": "            <input type=\"file\" id=\"uploadBackupInput\" accept=\"application/json\" className=\"hidden\"></input>",
+          "k": "code"
+        },
+        {
+          "n": 83,
+          "t": "            </div>",
+          "k": "code"
+        },
+        {
+          "n": 84,
+          "t": "            {/* TODO: bring back filtering here --> */}",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T21:19:41.256Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T21:19:41.256Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T21:19:41.256Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s36": {
+      "id": "s36",
+      "key": "app/pages/word-list/page.tsx::line:84::TODO: bring back filtering here -->#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 84,
+      "commentEnd": 84,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: bring back filtering here -->",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 81,
+          "t": "            {/* <button className=\"secondary-btn\" id=\"uploadBackupBtn\">⬆ Last opp</button> */}",
+          "k": "code"
+        },
+        {
+          "n": 82,
+          "t": "            <input type=\"file\" id=\"uploadBackupInput\" accept=\"application/json\" className=\"hidden\"></input>",
+          "k": "code"
+        },
+        {
+          "n": 83,
+          "t": "            </div>",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 84,
+          "t": "            {/* TODO: bring back filtering here --> */}",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 85,
+          "t": "            <input type=\"text\" id=\"wordSearch\" placeholder=\"Søk her\"></input>",
+          "k": "code"
+        },
+        {
+          "n": 86,
+          "t": "            <div id=\"wordRows\">",
+          "k": "code"
+        },
+        {
+          "n": 87,
+          "t": "                {/* Vis innlastingstekst */}",
+          "k": "code"
+        },
+        {
+          "n": 88,
+          "t": "                {(wordsList.length < 1 && nonDefinedList.length < 1) ? (<p className=\"text-gray-600 text-sm\">{\"(steg 1 / 3) Laster inn ord ...\"}</p>) :",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T21:19:41.256Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T21:19:41.256Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T21:19:41.256Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    },
+    "s37": {
+      "id": "s37",
+      "key": "app/pages/word-list/page.tsx::line:91::TODO: Add the picked word based on the words from the user's list, and update scores too#1",
+      "file": "app/pages/word-list/page.tsx",
+      "line": 91,
+      "commentEnd": 91,
+      "type": "TODO",
+      "match": "TODO",
+      "comment": "TODO: Add the picked word based on the words from the user's list, and update scores too",
+      "anchor": {
+        "kind": "line"
+      },
+      "fnEnd": null,
+      "compromised": 0,
+      "before": [
+        {
+          "n": 88,
+          "t": "                {(wordsList.length < 1 && nonDefinedList.length < 1) ? (<p className=\"text-gray-600 text-sm\">{\"(steg 1 / 3) Laster inn ord ...\"}</p>) :",
+          "k": "code"
+        },
+        {
+          "n": 89,
+          "t": "                (wordsList.length > 0 && nonDefinedList.length < 1) ? (<p className=\"text-gray-600 text-sm\">{'(steg 2 / 3) Filtrerer ord...'}</p>) : (",
+          "k": "code"
+        },
+        {
+          "n": 90,
+          "t": "                    <>",
+          "k": "code"
+        }
+      ],
+      "commentLines": [
+        {
+          "n": 91,
+          "t": "                    {/* TODO: Add the picked word based on the words from the user's list, and update scores too */}",
+          "k": "comment"
+        }
+      ],
+      "after": [
+        {
+          "n": 92,
+          "t": "                    <span className=\"wordSeperator\">{`(${wordsList.length}) Ord`}</span>",
+          "k": "code"
+        },
+        {
+          "n": 93,
+          "t": "                    {/* words with definition here --> */}",
+          "k": "code"
+        },
+        {
+          "n": 94,
+          "t": "                    {wordsList && wordsList.map((item, key) => (",
+          "k": "code"
+        },
+        {
+          "n": 95,
+          "t": "                        <WordRow key={key} data={addRandomVals(item)}/>",
+          "k": "code"
+        }
+      ],
+      "discovered": "2026-09-30T21:19:41.256Z",
+      "lastSeen": "2026-09-30T21:19:54.522Z",
+      "status": "open",
+      "statusDate": "2026-09-30T21:19:41.256Z",
+      "history": [
+        {
+          "status": "open",
+          "date": "2026-09-30T21:19:41.256Z",
+          "note": "Discovered"
+        }
+      ],
+      "previousVersions": [],
+      "nowAt": null
+    }
+  },
+  "files": {
+    "app/api/all-words/route.ts": {
+      "path": "app/api/all-words/route.ts",
+      "loc": 18,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/api/users/[id]/route.ts": {
+      "path": "app/api/users/[id]/route.ts",
+      "loc": 25,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/components/modals/profileCodeModal.tsx": {
+      "path": "app/components/modals/profileCodeModal.tsx",
+      "loc": 27,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/components/modals/profileModal.tsx": {
+      "path": "app/components/modals/profileModal.tsx",
+      "loc": 61,
+      "satd": 1,
+      "compromised": 56,
+      "satdDensity": 16.39,
+      "compDensity": 918.03,
+      "risk": "Medium",
+      "score": 2.1999999999999997,
+      "types": {
+        "FIXME": 1
+      }
+    },
+    "app/components/modals/restoreCodeModal.tsx": {
+      "path": "app/components/modals/restoreCodeModal.tsx",
+      "loc": 28,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/components/words/wordcomponents.tsx": {
+      "path": "app/components/words/wordcomponents.tsx",
+      "loc": 48,
+      "satd": 5,
+      "compromised": 0,
+      "satdDensity": 104.17,
+      "compDensity": 0,
+      "risk": "Low",
+      "score": 1.4,
+      "types": {
+        "FIXME": 3,
+        "TODO": 2
+      }
+    },
+    "app/components/intro.tsx": {
+      "path": "app/components/intro.tsx",
+      "loc": 15,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/components/LoadingSpinner.tsx": {
+      "path": "app/components/LoadingSpinner.tsx",
+      "loc": 39,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/components/topbar.tsx": {
+      "path": "app/components/topbar.tsx",
+      "loc": 64,
+      "satd": 3,
+      "compromised": 0,
+      "satdDensity": 46.88,
+      "compDensity": 0,
+      "risk": "Low",
+      "score": 1.4,
+      "types": {
+        "TODO": 2,
+        "FIXME": 1
+      }
+    },
+    "app/context/userContext.tsx": {
+      "path": "app/context/userContext.tsx",
+      "loc": 32,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/controllers/userController.ts": {
+      "path": "app/controllers/userController.ts",
+      "loc": 20,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/pages/about/page.tsx": {
+      "path": "app/pages/about/page.tsx",
+      "loc": 5,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/pages/home/page.tsx": {
+      "path": "app/pages/home/page.tsx",
+      "loc": 37,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/pages/word-list/page.tsx": {
+      "path": "app/pages/word-list/page.tsx",
+      "loc": 112,
+      "satd": 7,
+      "compromised": 98,
+      "satdDensity": 62.5,
+      "compDensity": 875,
+      "risk": "High",
+      "score": 2.5999999999999996,
+      "types": {
+        "TODO": 7
+      }
+    },
+    "app/services/userService.ts": {
+      "path": "app/services/userService.ts",
+      "loc": 140,
+      "satd": 3,
+      "compromised": 114,
+      "satdDensity": 21.43,
+      "compDensity": 814.29,
+      "risk": "High",
+      "score": 2.5999999999999996,
+      "types": {
+        "TODO": 3
+      }
+    },
+    "app/types/user.ts": {
+      "path": "app/types/user.ts",
+      "loc": 22,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "app/types/word.ts": {
+      "path": "app/types/word.ts",
+      "loc": 19,
+      "satd": 3,
+      "compromised": 0,
+      "satdDensity": 157.89,
+      "compDensity": 0,
+      "risk": "Medium",
+      "score": 1.8000000000000003,
+      "types": {
+        "TODO": 2,
+        "FIXME": 1
+      }
+    },
+    "app/utils/databaseMocker.ts": {
+      "path": "app/utils/databaseMocker.ts",
+      "loc": 18,
+      "satd": 1,
+      "compromised": 17,
+      "satdDensity": 55.56,
+      "compDensity": 944.44,
+      "risk": "High",
+      "score": 2.5999999999999996,
+      "types": {
+        "TODO": 1
+      }
+    },
+    "app/utils/eligeable.ts": {
+      "path": "app/utils/eligeable.ts",
+      "loc": 14,
+      "satd": 2,
+      "compromised": 9,
+      "satdDensity": 142.86,
+      "compDensity": 642.86,
+      "risk": "High",
+      "score": 2.5999999999999996,
+      "types": {
+        "TODO": 2
+      }
+    },
+    "app/utils/logic.ts": {
+      "path": "app/utils/logic.ts",
+      "loc": 10,
+      "satd": 1,
+      "compromised": 0,
+      "satdDensity": 100,
+      "compDensity": 0,
+      "risk": "Low",
+      "score": 1.4,
+      "types": {
+        "FIXME": 1
+      }
+    },
+    "app/utils/profilestringtools.ts": {
+      "path": "app/utils/profilestringtools.ts",
+      "loc": 27,
+      "satd": 3,
+      "compromised": 3,
+      "satdDensity": 111.11,
+      "compDensity": 111.11,
+      "risk": "Medium",
+      "score": 2,
+      "types": {
+        "FIXME": 1,
+        "TODO": 2
+      }
+    },
+    "app/globals.css": {
+      "path": "app/globals.css",
+      "loc": 621,
+      "satd": 1,
+      "compromised": 0,
+      "satdDensity": 1.61,
+      "compDensity": 0,
+      "risk": "Low",
+      "score": 1,
+      "types": {
+        "TODO": 1
+      }
+    },
+    "app/layout.tsx": {
+      "path": "app/layout.tsx",
+      "loc": 52,
+      "satd": 1,
+      "compromised": 0,
+      "satdDensity": 19.23,
+      "compDensity": 0,
+      "risk": "Low",
+      "score": 1.4,
+      "types": {
+        "TODO": 1
+      }
+    },
+    "app/page.tsx": {
+      "path": "app/page.tsx",
+      "loc": 9,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "eslint.config.mjs": {
+      "path": "eslint.config.mjs",
+      "loc": 18,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "next.config.ts": {
+      "path": "next.config.ts",
+      "loc": 7,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    },
+    "postcss.config.mjs": {
+      "path": "postcss.config.mjs",
+      "loc": 7,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
+    }
+  },
+  "scans": [
+    {
+      "date": "2026-09-30T21:19:54.522Z",
+      "found": 31,
+      "added": 0,
+      "gone": 0,
+      "back": 0,
+      "purged": 0
+    },
+    {
+      "date": "2026-09-30T21:19:41.256Z",
+      "found": 31,
+      "added": 5,
+      "gone": 5,
+      "back": 0,
+      "purged": 1
+    },
+    {
+      "date": "2026-09-30T20:46:19.890Z",
+      "found": 32,
+      "added": 32,
+      "gone": 0,
+      "back": 0
+    }
+  ],
+  "dismissed": []
+}

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fraunces, Sora } from "next/font/google"; // TODO: remove geist and geistmono later
 import "./globals.css";
 import TopBar from "./components/topbar";
+import { UserProvider } from "./context/userContext";
+import * as userService from "@/app/services/userService"
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -31,15 +33,19 @@ export const metadata: Metadata = {
   description: "App for å lære nye ord!",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const user = await userService.getCurrentUser();
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <TopBar />
-        {children}
+        <UserProvider initialUser={user}>
+          <TopBar />
+          {children}
+        </UserProvider>
       </body>
     </html>
   );
