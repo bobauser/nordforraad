@@ -4,18 +4,29 @@ import { useState, useEffect } from "react";
 import { Word, WordAndExtraData } from "@/app/types/word";
 import { WordRow } from "@/app/components/words/wordcomponents";
 
+//TODO: Delete this later?
+type doOnceVariables = {
+    fetchOneTime: number,
+    filterOneTime: number
+}
+
 // TODO: View definition from WordRow. Update Cloud userstring once you chose words for a quiz, so that it updates in the cloud after 5 seconds (not every time you interact with a word, thats too frequent).
 export default function WordList() {
     const [rawDataList, setRawDataList] = useState<Word[]>([]);
     const [wordsList, setWordsList] = useState<Word[]>([]);
     const [nonDefinedList, setNonDefinedList] = useState<Word[]>([]);
-    let fetchOneTime = 0
-    let filterOneTime = 0
+    const [doOnce, setDoOnce] = useState<doOnceVariables>({fetchOneTime: 0, filterOneTime: 0})
+    // let fetchOneTime = 0
+    // let filterOneTime = 0
 
+    // Add random vals is just a test function to add a checkmark to words. For later, it can be removed when this data has been replaced with actual userdata
+    //TODO: remove this function after data replacing the weekly stat
     function addRandomVals(word: Word): WordAndExtraData {
         const newWordData: WordAndExtraData = {
             worddata: word,
+            /* eslint-disable */
             weekly: Math.random() > 0.5,
+            /* eslint-enable */
         }
         return newWordData
     }
@@ -29,10 +40,9 @@ export default function WordList() {
     useEffect(() => {
         async function fetchallwords() {
             try {
-                filterOneTime = 0
                 const res = await fetch(`/api/all-words`);
                 const data = await res.json();
-                setRawDataList(data.wordList) //Denne skal OVERSKRIVE all dataen i useStaten. 
+                setRawDataList(data.wordList) //Denne skal OVERSKRIVE all dataen i useStaten.
                 /**Liten TUT for detta:
                  * Dette ville vært syntaxfeil: setWordsList[data]
                  * Dette legger til ord i useState: setWordsList(prev => [...prev, nyttOrd])
@@ -41,16 +51,18 @@ export default function WordList() {
                 console.error("Kunne ikke hente ord:", err);
             }
         }
-        if (fetchOneTime == 0) {
+        if (doOnce.fetchOneTime == 0) {
             fetchallwords()
-            fetchOneTime = 1
+            // fetchOneTime = 1
+            // setDoOnce(doOnce.fetchOneTime = 1)
         }
     }, [])
 
     useEffect(() => {
-        if (filterOneTime == 0) {
+        if (doOnce.filterOneTime == 0) {
             filterNonDefininedWords()
-            filterOneTime = 1
+            // filterOneTime = 1
+            // setDoOnce(doOnce.filterOneTime = 1)
         }
     }, [rawDataList]); // checks everytime wordslist updates. From wordslist = empty, to when it gets all data, and when filtered data is added (at max 3 times, to avoid inifinite loop, add if statement that checks that wordslist is not empty, nonfiltered is)
 
@@ -72,6 +84,7 @@ export default function WordList() {
                 {(wordsList.length < 1 && nonDefinedList.length < 1) ? (<p className="text-gray-600 text-sm">{"(steg 1 / 3) Laster inn ord ..."}</p>) :
                 (wordsList.length > 0 && nonDefinedList.length < 1) ? (<p className="text-gray-600 text-sm">{'(steg 2 / 3) Filtrerer ord...'}</p>) : (
                     <>
+                    {/* TODO: Add the picked word based on the words from the user's list, and update scores too */}
                     <span className="wordSeperator">{`(${wordsList.length}) Ord`}</span>
                     {/* words with definition here --> */}
                     {wordsList && wordsList.map((item, key) => (

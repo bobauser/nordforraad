@@ -20,3 +20,8 @@ export function GetProfileEmojiFromIndex(index: number) {
         return EMOJI_CHOICES[index]
     }
 }
+
+export function getAllEmojiChoices() {
+    const EMOJI_CHOICES = ["🦉","🦊","🐨","🐢","🦁","🐙","🐝","🦄","🐺","🐧","🦖","🐬"];
+    return EMOJI_CHOICES
+}

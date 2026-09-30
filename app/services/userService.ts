@@ -1,6 +1,9 @@
-
-import { ProfileCodeWordEntry, ValidationResult } from "../types/user";
+import "server-only";
+// import { cookies } from "next/headers";
+import { ProfileCodeWordEntry, UserString, ValidationResult } from "../types/user";
 import { mockUserStringDatabase } from "../utils/databaseMocker";
+import * as userController from '@/app/controllers/userController'
+
 
 // validating the userString coming from DB. Process: Get Userstring from UserDB, then validate the string
 export function checkUserAgainstDatabase(id: number): ValidationResult {
@@ -18,6 +21,7 @@ const ID_PATTERN = /^[a-z0-9-]+$/; // matches the app's slug() output
 // -----------------------------------------------------------------------------
 
 //TODO: Resolve: Argument for putting this at userservice. This validation should only happen when getting, or saving a userstring. Faulty userstrings will not be interacted with. Therefore, its not a "util", not a tool type function that many files will use, and is limited to user based actions
+//TODO: Go through this long function and validate wheter its heavy and needs re-vamp
 export function validateProfileCode(rawCode: unknown): ValidationResult {
   const errors: string[] = [];
  
@@ -120,4 +124,17 @@ export function validateProfileCode(rawCode: unknown): ValidationResult {
         parsed: { emojiIndex, username, words }
     }
     return result;
+}
+
+// TODO: implement this function and try to find user by cookie, return a descriptive message if the browser a: contains no cookie, b: cookie is incorrect (most likely session expire), c: something else happens like an error internally
+export async function getCurrentUser(): Promise<UserString | null> {
+  // const sessionToken = (await cookies()).get("session")?.value;
+  // if (!sessionToken) return null;
+  // return userRepository.findBySessionToken(sessionToken);
+
+  const randomId = Math.floor(Math.random() * (4 - 1 + 1)) + 1; // eventuelt: Math.floor(Math.random() * 4) + 1
+  // const randomId = Math.floor(Math.random() * mockUsers.length) + 1;
+  const profile: UserString | null = userController.ValidateUser(randomId);
+  
+  return profile;// either user or null
 }
