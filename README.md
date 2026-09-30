@@ -14,6 +14,12 @@ pnpm dev
 bun dev
 ```
 
+## DATABASE
+<img width="1273" height="471" alt="image" src="https://github.com/user-attachments/assets/b7ababa1-5512-4cb9-a9bd-c568ec4bba73" />
+^^ shows an image for what data the database should store about a specific user!
+
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
