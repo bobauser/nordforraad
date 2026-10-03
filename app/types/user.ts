@@ -1,18 +1,16 @@
+// Simply put: DATABASEPROFILE
 export type UserDB = {
-    email_assosiated: string;
-    userdatastring: string;
+  username: string;
+  userString: string;
+  sessionID: string;
+  weekly_wordlist: WordItem[];
 }
 
+// The parsed unicode string
 export type UserString = {
     emojiIndex: number;
     username: string;
     words: ProfileCodeWordEntry[];
-}
-
-export interface ProfileCodeWordEntry {
-  id: string;
-  score: number;
-  attempts: number;
 }
 
 export interface ValidationResult {
@@ -20,3 +18,26 @@ export interface ValidationResult {
   errors: string[];
   parsed?: UserString;
 }
+
+export interface ValidatedUserProfile {
+  userprofile: UserDB;
+  userstring: UserString;
+}
+
+
+
+// small data -->
+export interface ProfileCodeWordEntry {
+  id: string;
+  score: number;
+  attempts: number;
+}
+
+// weekly-list type
+export type Weekly = {
+  weekly_wordlist: WordItem[];
+};
+
+export type WordItem = {
+  id: string;
+};

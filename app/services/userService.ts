@@ -1,15 +1,16 @@
 import "server-only";
 // import { cookies } from "next/headers";
-import { ProfileCodeWordEntry, UserString, ValidationResult } from "../types/user";
-import { mockUserStringDatabase } from "../utils/databaseMocker";
+import { ProfileCodeWordEntry, UserDB, UserString, ValidatedUserProfile, ValidationResult } from "../types/user";
+import { mockUserDB_GetAllUsersStrings, mockUserDB_GetUserFromId, mockUserDB_GetUserStringFromID } from "../utils/databaseMocker";
 import * as userController from '@/app/controllers/userController'
 
 
 // validating the userString coming from DB. Process: Get Userstring from UserDB, then validate the string
-export function checkUserAgainstDatabase(id: number): ValidationResult {
-    const userStringRaw = mockUserStringDatabase(id)
-    const validate_user: ValidationResult = validateProfileCode(userStringRaw)
-    return validate_user;
+export function checkUserAgainstDatabase(id: number): UserDB | null {
+  const userObj = mockUserDB_GetUserFromId(id)
+    // const userStringRaw = mockUserDB_GetUserStringFromID(id)
+    // const validate_user: ValidationResult = validateProfileCode(userStringRaw)
+    return userObj;
     // UserString
 }
 
@@ -126,15 +127,47 @@ export function validateProfileCode(rawCode: unknown): ValidationResult {
     return result;
 }
 
+// FIXME: Related to the actual mockUserDB part, this function can exist as a test-function, but mark it as such. In the finished product, the api gateway "api/all-users" should not exist
+export const findAllUsers = () => {
+  const userstrings = mockUserDB_GetAllUsersStrings();
+  let datasobj: ValidationResult[] = []
+  let indx = 0
+  userstrings.forEach(element => {
+    const data = validateProfileCode(element)
+    console.log(data)
+    datasobj.push(data)
+  });
+  console.log(datasobj); //
+  return datasobj
+}
+
 // TODO: implement this function and try to find user by cookie, return a descriptive message if the browser a: contains no cookie, b: cookie is incorrect (most likely session expire), c: something else happens like an error internally
-export async function getCurrentUser(): Promise<UserString | null> {
+export async function getCurrentUser(): Promise<ValidatedUserProfile | null> {
   // const sessionToken = (await cookies()).get("session")?.value;
   // if (!sessionToken) return null;
   // return userRepository.findBySessionToken(sessionToken);
 
-  const randomId = Math.floor(Math.random() * (4 - 1 + 1)) + 1; // eventuelt: Math.floor(Math.random() * 4) + 1
-  // const randomId = Math.floor(Math.random() * mockUsers.length) + 1;
-  const profile: UserString | null = userController.ValidateUser(randomId);
+  const randomized_id = Math.floor(Math.random() * (4 - 1 + 1)) + 1; // eventuelt: Math.floor(Math.random() * 4) + 1
+
+  const user_from_database: UserDB | null = checkUserAgainstDatabase(randomized_id);
+  if (!user_from_database) {
+    return null
+  }
+
+  //Validate userstring, now that we have the user (trhough controller)
+  const validate_user: ValidationResult = userController.CheckValidation(user_from_database.userString)
+  const userString: UserString | null = userController.ValidateUser(validate_user)
+
+  if (!userString) {
+    console.error("User from DB confirmed, userstring contains issues. Validation failed?: " + validate_user.parsed + ". Errors: " + validate_user.errors)
+    return null
+  }
+
+  const valid_user: ValidatedUserProfile = {
+    userprofile: user_from_database,
+    userstring: userString
+  }
   
-  return profile;// either user or null
+  // now we return a result where we have checked that the profile exists, and userstring contains no errors. Clean profile
+  return valid_user; // either user or null
 }

@@ -13,7 +13,7 @@ type doOnceVariables = {
 
 // TODO: View definition from WordRow. Update Cloud userstring once you chose words for a quiz, so that it updates in the cloud after 5 seconds (not every time you interact with a word, thats too frequent).
 export default function WordList() {
-    const { user /*, setUser */ } = useUser();
+    const { user /*, setUser */, weeklyWordList } = useUser();
     
     const [rawDataList, setRawDataList] = useState<Word[]>([]);
     const [wordsList, setWordsList] = useState<Word[]>([]);
@@ -28,12 +28,14 @@ export default function WordList() {
         const newWordData: WordAndExtraData = {
             worddata: word,
             /* eslint-disable */
-            weekly: Math.random() > 0.5,
+            // weekly: Math.random() > 0.5,
+            weekly: weeklyWordList ? weeklyWordList.some(item => item.id === word.id) : false,
             /* eslint-enable */
         }
         return newWordData
     }
 
+    // TODO: About isWeekly: make a for-loop where you store the words that are selceted as a weekly task, then add it to the list. OR, do it below in the TSX code
     function filterNonDefininedWords() {
         const unfilteredwords: Word[] = rawDataList.filter(w => !w.standard && !w.akademisk) // ordet skal mangle standard og akademisk, slik at ordet gis status udefinert
         setWordsList(rawDataList.filter(w => w.standard && w.akademisk))
@@ -68,6 +70,12 @@ export default function WordList() {
             // setDoOnce(doOnce.filterOneTime = 1)
         }
     }, [rawDataList]); // checks everytime wordslist updates. From wordslist = empty, to when it gets all data, and when filtered data is added (at max 3 times, to avoid inifinite loop, add if statement that checks that wordslist is not empty, nonfiltered is)
+
+    useEffect(() => {
+        if (!weeklyWordList) {
+            // OPEN MODAL TO SHOW THAT SOMETHING WENT WRONG
+        }
+    }, [weeklyWordList])
 
     return (
         //   <!-- ===================== ORDLISTE ===================== -->
