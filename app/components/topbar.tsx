@@ -5,41 +5,20 @@ import LoadingSpinner from "./LoadingSpinner";
 // import { UserString } from "../types/user";
 import { GetProfileEmojiFromIndex } from "../utils/profilestringtools";
 import { useUser } from "../context/userContext";
+import { useState } from "react";
 
 export default function TopBar() {
-    const { user /*, setUser */ } = useUser();
-    // TODO: Clean up removed API call implementation -->
-    // const [userProfile, setUserProfile] = useState<UserString | null>(null)
-    // const [noUserCookie, setNoUserCookie] = useState(false)
-    // const [userString, setUserString] = useState("")
-    // let fetchProfileOnce = 0
+    const { user } = useUser();
+    const [error, setError] = useState(false)
 
-    // FIXME: Move GetProfile to a higher Hierarchy. -->
-    // async function getProfile() {
-    //     try {
-    //         // just for fun, get a random name every time!
-    //         const id = Math.floor(Math.random() * (4 - 1 + 1)) + 1; // eventuelt: Math.floor(Math.random() * 4) + 1
-    //         // const emojisid = Math.floor(Math.random() * (13 - 0 + 1)) + 0; // eventuelt: Math.floor(Math.random() * 14)
-    //         const res = await fetch(`/api/users/${id}`)
-    //         const data = await res.json();
-    //         const userData: UserString = data
-
-    //         setUserProfile(userData)
-    //         setNoUserCookie(false) //TODO: if the user could not be found, set UserCookie not found to True
-    //         console.log("YUS, hentet profil")
-    //         console.log(data)
-    //     } catch(err) {
-    //         console.error("Uku leleh\n" + err)
-    //     }
-    // }
-    // // ^^^^
-
-    // useEffect(() => {
-    //     if (fetchProfileOnce == 0) {
-    //         getProfile()
-    //         fetchProfileOnce += 1
-    //     }
-    // }, [])
+    // TODO: if a user hasn't been loaded, it might be because you have no session ID, or maybe session has expired. Then it isnt an error. This solution needs "reimagination" later on. Three scenarios: A: user isnt logged in. B: Session has expired/incorrect. C: Error fetching data.
+    var inter = setInterval(() => {
+        // action = action + " hide"
+        if (!user) {
+            setError(true)
+        }
+        clearInterval(inter)
+    }, 10000)
 
     return (
         <div className="topbar" id="topbar">
@@ -49,14 +28,14 @@ export default function TopBar() {
             </div>
             <button id="profileBtn">
             <span className="avatar" id="profileAvatar">
-                {user ? (GetProfileEmojiFromIndex(user.emojiIndex)) : ('❔')}
+                {user ? (GetProfileEmojiFromIndex(user.emojiIndex)) : error == false ? ('❔') : null}
             </span>
             <span id="profileName">
                 {user ? (
                     <>{user.username}</>
-                ) : (
+                ) : error == false ? (
                     <LoadingSpinner color="white" />
-                )}
+                ) : (<>{"Greide ikke laste inn bruker"}</>)}
             </span>
             </button>
         </div>    

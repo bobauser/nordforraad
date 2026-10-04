@@ -1,8 +1,9 @@
 import "server-only";
 // import { cookies } from "next/headers";
-import { ProfileCodeWordEntry, UserDB, UserString, ValidatedUserProfile, ValidationResult } from "../types/user";
+import { UserDB, UserString, ValidatedUserProfile, ValidationResult } from "../types/user";
 import { mockUserDB_GetAllUsersStrings, mockUserDB_GetUserFromId, mockUserDB_GetUserStringFromID } from "../utils/databaseMocker";
 import * as userController from '@/app/controllers/userController'
+import { WordScore } from "../types/word";
 
 
 // validating the userString coming from DB. Process: Get Userstring from UserDB, then validate the string
@@ -70,7 +71,7 @@ export function validateProfileCode(rawCode: unknown): ValidationResult {
   }
  
   // 5. Word entries ("id:score:attempts", comma-separated; empty = no words attempted yet)
-  const words: ProfileCodeWordEntry[] = [];
+  const words: WordScore[] = [];
   const seenIds = new Set<string>();
  
   if (wordPart.length > 0) {

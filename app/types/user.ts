@@ -1,3 +1,5 @@
+import { WordScore } from "./word";
+
 // Simply put: DATABASEPROFILE
 export type UserDB = {
   username: string;
@@ -10,7 +12,7 @@ export type UserDB = {
 export type UserString = {
     emojiIndex: number;
     username: string;
-    words: ProfileCodeWordEntry[];
+    words: WordScore[];
 }
 
 export interface ValidationResult {
@@ -27,11 +29,6 @@ export interface ValidatedUserProfile {
 
 
 // small data -->
-export interface ProfileCodeWordEntry {
-  id: string;
-  score: number;
-  attempts: number;
-}
 
 // weekly-list type
 export type Weekly = {
