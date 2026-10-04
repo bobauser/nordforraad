@@ -3,7 +3,7 @@
   "version": 1,
   "folder": "nordforraad",
   "created": "2026-09-30T20:46:19.823Z",
-  "lastScan": "2026-10-04T01:26:05.438Z",
+  "lastScan": "2026-10-04T01:35:57.413Z",
   "settings": {
     "autoRefresh": 0,
     "rootPath": "",
@@ -74,7 +74,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -1508,7 +1508,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -1584,7 +1584,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -2305,7 +2305,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -2381,7 +2381,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -2439,7 +2439,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -2853,7 +2853,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -2929,7 +2929,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -2982,7 +2982,7 @@
       ],
       "after": [],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -3042,7 +3042,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -3111,7 +3111,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -3185,7 +3185,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -3249,7 +3249,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-09-30T20:46:19.890Z",
       "history": [
@@ -5192,7 +5192,7 @@
         }
       ],
       "discovered": "2026-10-03T14:21:24.175Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T14:21:24.175Z",
       "history": [
@@ -6764,7 +6764,7 @@
         }
       ],
       "discovered": "2026-10-03T14:48:39.763Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T14:48:39.763Z",
       "history": [
@@ -6840,7 +6840,7 @@
         }
       ],
       "discovered": "2026-10-03T14:48:39.763Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T14:48:39.763Z",
       "history": [
@@ -6911,7 +6911,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T14:48:39.763Z",
       "history": [
@@ -7056,7 +7056,7 @@
         }
       ],
       "discovered": "2026-10-03T14:48:39.763Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T14:48:39.763Z",
       "history": [
@@ -7883,7 +7883,7 @@
         }
       ],
       "discovered": "2026-10-03T22:51:32.273Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T22:51:32.273Z",
       "history": [
@@ -8174,7 +8174,7 @@
         }
       ],
       "discovered": "2026-10-03T21:58:02.546Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T22:51:32.273Z",
       "history": [
@@ -8336,7 +8336,7 @@
         }
       ],
       "discovered": "2026-10-03T21:58:02.546Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T22:51:32.273Z",
       "history": [
@@ -8493,7 +8493,7 @@
         }
       ],
       "discovered": "2026-10-03T22:12:23.788Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T22:51:32.273Z",
       "history": [
@@ -10470,7 +10470,7 @@
         }
       ],
       "discovered": "2026-10-03T23:56:02.325Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T23:56:02.325Z",
       "history": [
@@ -12981,7 +12981,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-03T23:56:02.325Z",
       "history": [
@@ -16810,7 +16810,7 @@
         }
       ],
       "discovered": "2026-10-04T00:58:30.796Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T00:58:30.796Z",
       "history": [
@@ -16884,7 +16884,7 @@
         }
       ],
       "discovered": "2026-10-03T21:58:02.546Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T00:58:30.796Z",
       "history": [
@@ -17122,7 +17122,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T00:58:30.796Z",
       "history": [
@@ -20574,7 +20574,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -20812,7 +20812,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -21050,7 +21050,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -21293,7 +21293,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -21541,7 +21541,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -21779,7 +21779,7 @@
         }
       ],
       "discovered": "2026-10-04T00:58:30.796Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -21936,7 +21936,7 @@
         }
       ],
       "discovered": "2026-10-04T00:02:14.921Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -22174,7 +22174,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -22898,7 +22898,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -23622,7 +23622,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -24346,7 +24346,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -25070,7 +25070,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -25298,7 +25298,7 @@
         }
       ],
       "discovered": "2026-10-04T01:23:02.256Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -25372,7 +25372,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -25524,7 +25524,7 @@
         }
       ],
       "discovered": "2026-09-30T20:46:19.890Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:23:02.256Z",
       "history": [
@@ -25666,7 +25666,7 @@
         }
       ],
       "discovered": "2026-10-04T01:26:05.438Z",
-      "lastSeen": "2026-10-04T01:26:05.438Z",
+      "lastSeen": "2026-10-04T01:35:57.413Z",
       "status": "open",
       "statusDate": "2026-10-04T01:26:05.438Z",
       "history": [
@@ -25716,17 +25716,6 @@
       "score": 0,
       "types": {}
     },
-    "app/components/modals/infomodal.tsx": {
-      "path": "app/components/modals/infomodal.tsx",
-      "loc": 35,
-      "satd": 0,
-      "compromised": 0,
-      "satdDensity": 0,
-      "compDensity": 0,
-      "risk": "Clean",
-      "score": 0,
-      "types": {}
-    },
     "app/components/modals/profileCodeModal.tsx": {
       "path": "app/components/modals/profileCodeModal.tsx",
       "loc": 27,
@@ -25750,6 +25739,17 @@
       "types": {
         "FIXME": 1
       }
+    },
+    "app/components/modals/infomodal.tsx": {
+      "path": "app/components/modals/infomodal.tsx",
+      "loc": 35,
+      "satd": 0,
+      "compromised": 0,
+      "satdDensity": 0,
+      "compDensity": 0,
+      "risk": "Clean",
+      "score": 0,
+      "types": {}
     },
     "app/components/modals/restoreCodeModal.tsx": {
       "path": "app/components/modals/restoreCodeModal.tsx",
@@ -26049,6 +26049,14 @@
     }
   },
   "scans": [
+    {
+      "date": "2026-10-04T01:35:57.413Z",
+      "found": 43,
+      "added": 0,
+      "gone": 0,
+      "back": 0,
+      "purged": 0
+    },
     {
       "date": "2026-10-04T01:26:05.438Z",
       "found": 43,

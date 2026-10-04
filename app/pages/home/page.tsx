@@ -1,6 +1,7 @@
 "use client";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
 import { useRouter } from "next/navigation";
+import * as Icons from "@/app/components/icons"
 
 export default function HomeComponent() {
     const router = useRouter();
@@ -31,6 +32,15 @@ export default function HomeComponent() {
             </div>
             <div className="sprakpoeng-banner">
             Språkpoeng: <b id="menuSprakpoeng">0</b>
+            </div>
+            <div style={{backgroundColor: "white", display: "flex", flexDirection: "row", gap: "10px", alignItems: "center"}}>
+                
+                <Icons.NorwayFlagIcon />
+                <Icons.UKFlagIcon />
+                <Icons.SaveIcon stroke={"red"} fill={"yellow"} />
+                <Icons.SyncIcon spinning={true} speed={2} stroke={"red"} fill={"yellow"}/>
+                <Icons.ArrowLeftIcon stroke={"red"} fill={"yellow"} />
+                <Icons.ArrowRightIcon stroke={"red"} fill={"yellow"} />
             </div>
         </div>
     )

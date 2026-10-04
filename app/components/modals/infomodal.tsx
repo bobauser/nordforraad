@@ -28,7 +28,7 @@ export default function InformationModal({text, action}: InfoModal) {
 
     return (
         <div id="notification-box" className={action}>
-            {actiontype == 1 ? (<Icons.InfoIcon />) : actiontype == 2 ? (<Icons.Warning />) : actiontype == 3 ? (<Icons.Error />) : null}
+            {actiontype == 1 ? (<Icons.InfoIcon />) : actiontype == 2 ? (<Icons.WarningIcon />) : actiontype == 3 ? (<Icons.ErrorIcon />) : null}
             {text}
         </div>
     )
