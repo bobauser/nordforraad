@@ -23,6 +23,9 @@
     --font-display: "Fraunces", Georgia, serif;
     --font-body: "Sora", "Segoe UI", sans-serif;
     font-family: var(--font-body);
+    --warning: #FFCD63;
+    --error: #FF4E44;
+    /* --within-budget: #6dff44; */
   }
 
   body { /*TODO: is this already present or do we need to provide fonts here?*/
@@ -104,7 +107,47 @@
     cursor:pointer;
     font-family:inherit;
     font-size:0.95rem;
+    /* transition: 0.15s ease-in-out;
+    transform: scale(1); */
   }
+
+  #notification-box {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    background-color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    z-index: 100;
+    transform: translate(-50%, 0);
+    transition: 0.5s;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    gap: 10px;
+}
+#notification-box.hide {
+    opacity: 0;
+    top: -10%;
+    transform: translate(-50%, 0);
+    transition: 0.5s;
+}
+#notification-box.warning {
+    background-color: var(--warning);
+    color: black;
+}
+#notification-box.inform {
+    background-color: white;
+    color: black;
+}
+#notification-box.error {
+    background-color: var(--error);
+    color: white;
+}
+
+ /* .profile-btn:hover {
+    transform: scale(0.8);
+  } */
+
   #profileBtn .avatar{font-size:1.3rem;}
   #profileBtn:hover{background:rgba(255,255,255,0.15);}
 
@@ -260,6 +303,17 @@
     padding:20px;
     z-index:50;
   }
+  /* .modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 18, 30, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+} */
   .modal-box{
     background:#fff;
     color:#221f33;
