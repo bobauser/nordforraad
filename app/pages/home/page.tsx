@@ -33,7 +33,7 @@ export default function HomeComponent() {
             <div className="sprakpoeng-banner">
             Språkpoeng: <b id="menuSprakpoeng">0</b>
             </div>
-            <div style={{backgroundColor: "white", display: "flex", flexDirection: "row", gap: "10px", alignItems: "center"}}>
+            {/* <div style={{backgroundColor: "white", display: "flex", flexDirection: "row", gap: "10px", alignItems: "center"}}>
                 
                 <Icons.NorwayFlagIcon />
                 <Icons.UKFlagIcon />
@@ -41,7 +41,7 @@ export default function HomeComponent() {
                 <Icons.SyncIcon spinning={true} speed={2} stroke={"red"} fill={"yellow"}/>
                 <Icons.ArrowLeftIcon stroke={"red"} fill={"yellow"} />
                 <Icons.ArrowRightIcon stroke={"red"} fill={"yellow"} />
-            </div>
+            </div> */}
         </div>
     )
 }

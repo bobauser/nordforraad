@@ -303,6 +303,17 @@
     padding:20px;
     z-index:50;
   }
+  /* .modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 18, 30, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+} */
   .modal-box{
     background:#fff;
     color:#221f33;
